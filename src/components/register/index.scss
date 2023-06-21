@@ -1,0 +1,22 @@
+.register-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    font-weight: 1000;
+    font-size: 25px;
+text-align: center;
+}
+.form-register{
+   display: flex;
+   flex-direction: column;
+padding-top: 25px;
+align-content: center;
+    .input{
+        width: 300px;
+        padding-bottom: 10px;
+    };
+};
+.span1{
+    font-size: 15px;
+    padding-top: 20px;
+}
