@@ -1,0 +1,17 @@
+.image-gallery-description {
+    background: none;
+    display: none;
+
+    &:hover {
+        //    display: none;
+    }
+}
+
+.home-baner {
+
+    &:hover {
+        .image-gallery-description {
+                display: block;
+        }
+    }
+}

@@ -1,11 +1,14 @@
 import { Avatar, Card } from "antd";
 import Logo from '../../../public/logopage.png'
+import YTB from '../../../public/img-youtube.png'
+import FB from '../../../public/img-face.png'
+
 import './index.scss'
 const Header = () => {
     return (
         <div className="header">
             <div className="logo-header">
-                <img alt="example" src={Logo} />
+                <a href="/"><img alt="example" src={Logo} /></a>
             </div>
             <div className="content-header">
                 <div className="content-top">
@@ -16,14 +19,21 @@ const Header = () => {
                     <a href="/faqs"><ul>FAQS</ul></a>
                     <a href="/lien-he"><ul>LIÊN HỆ</ul></a>
                     <a href="/megaPlus"> <ul>MEGA+</ul></a>
-                    <a href="/login"><div> ĐĂNG KÝ</div> </a>
-                    <a href="/login"> <button className="btn btn-warning">ĐĂNG NHẬP</button></a>
+                    <a href="/register"><div> ĐĂNG KÝ</div> </a>
+                    <a href="/login"> <button style={{fontWeight:600}} className="btn btn-warning">ĐĂNG NHẬP</button></a>
                 </div>
                 <div className="content-bot">
+                    <div>
                     <a href="/lich-chieu"><span>LỊCH CHIẾU</span></a>
                     <a href="/phim"><span>PHIM</span></a>
                     <a href="rap"><span>RẠP & GIÁ VÉ</span></a>
                     <a href="uu-dai"><span>ƯU ĐÃI</span></a>
+                    </div>
+                    <div style={{paddingLeft:50}}>
+                        <a style={{paddingRight:25}} href="https://www.facebook.com/nguyenquang.truon" target="_blank" title="Facebook"><img src={FB} /></a>
+                        <a href="https://www.youtube.com/channel/UCYAIiDVBbuO6V4BBERWe-LQ" target="_blank" title="Youtube"><img src={YTB} /></a>
+                    </div>
+
                 </div>
 
             </div>
