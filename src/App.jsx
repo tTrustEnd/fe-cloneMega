@@ -13,6 +13,8 @@ import { doRefresh } from './redux/user/userSlice';
 import { useSelector } from 'react-redux'
 import NotFound from './components/notfound';
 import ProtectedRoute from './components/protectedRouter';
+import Phim from './components/home/page/phim';
+import DetailFilm from './components/home/page/phim/detailPhim';
 
 const Layout = () => {
   return (
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       index: true,
       element: <Home />
     },
+    {
+      path: 'phim',
+      element: <Phim />
+    },
+    {
+      path: 'phim/:slug',
+      element: <DetailFilm />
+    },
     ]
   },
   {
@@ -59,28 +69,28 @@ const router = createBrowserRouter([
         </ProtectedRoute>
     },
     {
-      path:'dasboard',
+      path: 'dasboard',
       element:
         <ProtectedRoute>
           <HomeAdmin />
         </ProtectedRoute>
     },
     {
-      path:'users',
+      path: 'users',
       element:
         <ProtectedRoute>
           <HomeAdmin />
         </ProtectedRoute>
     },
     {
-      path:'films',
+      path: 'films',
       element:
         <ProtectedRoute>
           <HomeAdmin />
         </ProtectedRoute>
     },
     {
-      path:'order',
+      path: 'order',
       element:
         <ProtectedRoute>
           <HomeAdmin />

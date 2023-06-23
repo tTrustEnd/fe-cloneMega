@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import { getFilmsByFieldSV, getFilmsSV } from '../../../service/api';
-import { Pagination, } from 'antd';
+import { Modal, Pagination, } from 'antd';
 import './index.scss'
 import { FieldTimeOutlined, PlayCircleOutlined, PlaySquareOutlined, TagOutlined } from '@ant-design/icons';
 import { FaYoutube } from "react-icons/fa6";
@@ -11,14 +11,14 @@ const FilmsNow = () => {
     const [pageSize, setPageSize] = useState(4)
     const [query, setQuery] = useState('')
     const [showVideo, setShowVideo] = useState(false);
-    const [srcTrailer, setSrcTrailer] = useState('https://www.youtube.com/watch?v=yoaH00LdkIo')
+
+    const [srcTrailer, setSrcTrailer] = useState('')
     const onChangePage = async (page) => {
-        if (page != current) {
-            setCurrent(page)
-            const query = `page=${page}&limit=${3}`
-            let res = await getFilmsByFieldSV(query)
-            setListFilms(res.data)
-        }
+        setCurrent(page)
+        const query = `page=${page}&limit=${pageSize}`
+        let res = await getFilmsByFieldSV(query)
+        setListFilms(res.data)
+
     }
     const getFilm = async (query) => {
         query = `page=${current}&limit=${pageSize}`
@@ -29,33 +29,33 @@ const FilmsNow = () => {
     }
 
     const showTrailer = (item) => {
-        console.log(item.name)
-
         setShowVideo(true)
-        if (item.name === 'THE FLASH') {
-            console.log('s')
-            setSrcTrailer("https://www.youtube.com/embed/yoaH00LdkIo")
-        }
+        setSrcTrailer(item.trailer)
     }
-
+    const handleCancel = () => {
+        setShowVideo(false);
+        setSrcTrailer('https://www.youtube.com/embed/SPx_VdIerzM')
+    };
     useEffect(() => {
         getFilm(query)
-    }, [current, pageSize,query])
+    }, [query, current, pageSize])
     return (
         <div style={{ display: 'block' }}>
-            {showVideo &&
-                <iframe width="1780 " height="1080"
-                    src={srcTrailer}
-                    title="THE FLASH | OFFICIAL TRAILER 2 | DỰ KIẾN KHỞI CHIẾU 16.06.2023"
-                    autoPlay={true}
-                >
-                </iframe>
-            }
-            <div style={{ display: 'flex' }}>
 
+            <div style={{ display: 'flex' }}>
+                <Modal
+                    width={'100%'} footer={false} title="s" open={showVideo} onCancel={handleCancel}>
+                    <iframe width="100% " height={800} style={{ margin: '0 auto' }}
+                        src={srcTrailer}
+                        title="THE FLASH | OFFICIAL TRAILER 2 | DỰ KIẾN KHỞI CHIẾU 16.06.2023"
+                    >
+                    </iframe>
+                </Modal>
                 {listFilms.map((item, index) => {
                     return (
                         <div className="container" key={`${index}`}>
+
+
                             <img
                                 className='img'
                                 height={400}

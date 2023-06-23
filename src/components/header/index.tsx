@@ -1,7 +1,7 @@
 import { Avatar, Card } from "antd";
-import Logo from '../../../public/logopage.png'
-import YTB from '../../../public/img-youtube.png'
-import FB from '../../../public/img-face.png'
+import Logo from '../../../src/public/logopage.png'
+import YTB from '../../../src/public/img-youtube.png'
+import FB from '../../../src/public/img-face.png'
 import { useState } from 'react'
 import './index.scss'
 const Header = () => {
@@ -32,7 +32,7 @@ const Header = () => {
                         <a href="uu-dai"><b>ƯU ĐÃI</b></a>
                     </div>
                     <div style={{ paddingLeft: 50 }}>
-                        <a style={{ paddingRight: 25 }} href="https://www.facebook.com/nguyenquang.truon" target="_blank" title="Facebook"><img src={FB} /></a>
+                        <a style={{ paddingRight: 25 }} href="https://www.facebook.com/nguyenquang.truong.9237" target="_blank" title="Facebook"><img src={FB} /></a>
                         <a href="https://www.youtube.com/channel/UCYAIiDVBbuO6V4BBERWe-LQ" target="_blank" title="Youtube"><img src={YTB} /></a>
                     </div>
 

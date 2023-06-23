@@ -2,11 +2,12 @@ import { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 import './index.scss'
 import "react-image-gallery/styles/scss/image-gallery.scss";
-import Baner1 from '../../../public/xu-so-banner.png';
-import Baner2 from '../../../public/flash-banner-1.png';
-import Baner3 from '../../../public/doremon-banner.png'
+import Baner1 from '../../../src/public/xu-so-banner.png';
+import Baner2 from '../../../src/public/flash-banner-1.png';
+import Baner3 from '../../../src/public/doremon-banner.png'
 import { Input, Select, Space, Tabs } from 'antd';
 import FilmsNow from './filmsNow';
+import { useLocation } from 'react-router-dom';
 
 const images = [
     {
@@ -54,6 +55,7 @@ const images = [
     },
 ];
 const Home = () => {
+   
 
     const handleChange = (value) => {
         console.log(`selected ${value}`);

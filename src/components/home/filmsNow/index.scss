@@ -6,6 +6,7 @@
       display: none;
       font-weight: 1000;
     }
+    
     &:hover{
         div{
             display: block;
@@ -20,5 +21,18 @@
     top: 8px;
     left: 16px;
   }
-
-
+  .ant-modal .ant-modal-content {
+    position: relative;
+    padding: 0;
+    button{
+      color: red;
+      span{
+        font-size: 30px;
+        }
+    }
+   
+  }
+  .ant-modal-title{
+    display: none;
+  }
+  
