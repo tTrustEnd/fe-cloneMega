@@ -1,34 +1,36 @@
 import { useEffect, useState } from 'react'
 import "react-image-gallery/styles/scss/image-gallery.scss";
-import { getFilmsByFieldSV, getFilmsSV } from '../../../service/api';
+import { getFilmsByFieldSV } from '../../../service/api';
 import { Modal, Pagination, } from 'antd';
 import './index.scss'
-import { FieldTimeOutlined, PlayCircleOutlined, PlaySquareOutlined, TagOutlined } from '@ant-design/icons';
+import { FieldTimeOutlined, PlayCircleOutlined, TagOutlined } from '@ant-design/icons';
 import { FaYoutube } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
+import { IFilm } from '../page/phim';
 const FilmsNow = () => {
     const [listFilms, setListFilms] = useState([])
     const [current, setCurrent] = useState(1)
     const [pageSize, setPageSize] = useState(4)
     const [query, setQuery] = useState('')
     const [showVideo, setShowVideo] = useState(false);
-
+    const navigate = useNavigate()
     const [srcTrailer, setSrcTrailer] = useState('')
-    const onChangePage = async (page) => {
+    const onChangePage = async (page:any) => {
         setCurrent(page)
         const query = `page=${page}&limit=${pageSize}`
-        let res = await getFilmsByFieldSV(query)
+        const res = await getFilmsByFieldSV(query)
         setListFilms(res.data)
 
     }
-    const getFilm = async (query) => {
+    const getFilm = async (query:any) => {
         query = `page=${current}&limit=${pageSize}`
-        let result = await getFilmsByFieldSV(query)
+        const result = await getFilmsByFieldSV(query)
         if (result && result.data) {
             setListFilms(result.data)
         }
     }
 
-    const showTrailer = (item) => {
+    const showTrailer = (item:IFilm) => {
         setShowVideo(true)
         setSrcTrailer(item.trailer)
     }
@@ -51,11 +53,9 @@ const FilmsNow = () => {
                     >
                     </iframe>
                 </Modal>
-                {listFilms.map((item, index) => {
+                {listFilms.map((item:IFilm, index) => {
                     return (
                         <div className="container" key={`${index}`}>
-
-
                             <img
                                 className='img'
                                 height={400}
@@ -91,7 +91,7 @@ const FilmsNow = () => {
 
                                     <div style={{ padding: '0 8px' }}>
                                         <button title='Xem chi tiết' className='btn btn-warning'>
-                                            <span style={{ fontWeight: 700, margin: '0 auto' }}>Xem chi tiết</span>
+                                            <a href={`/phim/${item.name}`} style={{ fontWeight: 700, margin: '0 auto' }}>Xem chi tiết</a>
                                         </button >
                                     </div>
 

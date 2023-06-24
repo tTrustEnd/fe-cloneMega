@@ -98,12 +98,14 @@ const DetailFilm = () => {
                                             <div>
                                                 <span style={{ color: 'white' }}> <b>Ngôn ngữ: </b>{item.sub}</span>
                                             </div>
+                                            
                                             <div className="scrollable-container" >
                                                 <div className="content">
                                                     {item.sumary}
                                                 </div>
+                                              
                                             </div>
-
+                                        
                                         </div>
 
                                         <div className="container-image" style={{ display: 'flex', paddingLeft: 300, justifyContent: 'center' }}>
@@ -139,7 +141,7 @@ const DetailFilm = () => {
                                         <b style={{ color: '#ffcf29' }}>(Click vào xuất chiếu để đặt vé )</b>
                                     </div>
                                     <Row className="datve">
-                                        <Col xxl={11} style={{paddingLeft:35}}>
+                                        <Col xxl={11} style={{ paddingLeft: 35 }}>
                                             <div>Hôm nay (24/6/2023)</div>
                                             <ul><h6 style={{ color: '#ffcf29', fontSize: 20, fontWeight: 900 }}>RẠP CAO THẮNG</h6></ul>
                                             <ul style={{ display: 'flex' }}>
@@ -200,22 +202,22 @@ const DetailFilm = () => {
                                         Các phim khác
                                         <div className="underline"></div>
                                     </span>
-                                   <div>
-                                   &nbsp; &nbsp; &nbsp; &nbsp;
-                                   </div>
-                                   
-                                    <div style={{paddingLeft:300}}>
-                           
+                                    <div>
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                    </div>
 
-                                </div >
+                                    <div style={{ paddingLeft: 300 }}>
+
+
+                                    </div >
                                 </Col>
-                                <div style={{paddingLeft:320 }}>
+                                <div style={{ paddingLeft: 320 }}>
 
-                                <FilmsNow/>
+                                    <FilmsNow />
                                 </div>
                                 <Col xxl={5}></Col>
                             </Row>
-                       
+
                         </div>
 
                     )

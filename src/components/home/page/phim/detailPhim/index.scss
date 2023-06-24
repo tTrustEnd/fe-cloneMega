@@ -1,4 +1,5 @@
 .contents-page {
+
     width: 1140px;
     margin: 0 auto;
     .dt-contents{
@@ -18,7 +19,9 @@
         color:#333;
         font-weight: 700;
         font-family: 'Open Sans Condensed',sans-serif;
-
+        &:hover{
+            color: #e63e8c;
+        }
     }
     
 }
@@ -27,7 +30,19 @@
     height: 100px;
     overflow: auto; /* Cho phép cuộn nội dung khi vượt quá kích thước khung */
     padding-top: 10px;
+    
+      
   }
+  .scrollable-container::-webkit-scrollbar {
+    width: 4px; /* Chiều rộng của thanh cuộn */
+  }
+//   .scrollable-container::-webkit-scrollbar-track {
+//     background: #f1f1f1; /* Màu nền của vùng track */
+//   }
+  .scrollable-container::-webkit-scrollbar-thumb {
+    background: #888; /* Màu của thanh cuộn */
+  }
+  
   
   .content {
   color: #ece4e4  ;
@@ -75,3 +90,5 @@
     height: 400px;
     background-color: rgb(185, 180, 180);
   }
+
+  
