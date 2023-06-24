@@ -28,8 +28,8 @@ const Header = () => {
                     <div>
                         <a href="/lich-chieu"><b>LỊCH CHIẾU</b></a>
                         <a href="/phim"><b>PHIM</b></a>
-                        <a href="rap"><b>RẠP & GIÁ VÉ</b></a>
-                        <a href="uu-dai"><b>ƯU ĐÃI</b></a>
+                        <a href="/rap"><b>RẠP & GIÁ VÉ</b></a>
+                        <a href="/uu-dai"><b>ƯU ĐÃI</b></a>
                     </div>
                     <div style={{ paddingLeft: 50 }}>
                         <a style={{ paddingRight: 25 }} href="https://www.facebook.com/nguyenquang.truong.9237" target="_blank" title="Facebook"><img src={FB} /></a>

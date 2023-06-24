@@ -7,6 +7,11 @@ import { PersistGate } from 'redux-persist/integration/react'
 import 'bootstrap/dist/css/bootstrap.css';
 import "react-image-gallery/styles/css/image-gallery.css";
 import 'video-react/dist/video-react.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+library.add(fas);
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Provider store={store}>
        <PersistGate loading={null} persistor={persistor}>

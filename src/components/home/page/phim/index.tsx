@@ -4,6 +4,7 @@ import { Col, Modal, Row, Tabs } from 'antd'
 import './index.scss'
 import { CalendarOutlined, FieldTimeOutlined, TagOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
+import CurrentPage from '../currentPage'
 
 export interface IFilm {
     _id: string,
@@ -145,10 +146,9 @@ const Phim = () => {
     };
     return (
         <div>
-            <div className='contents-page'>
-                <a href="/">Trang chủ </a> {'> '}
-                <a href="/phim">Phim</a>
-            </div>
+           <CurrentPage
+           page={'phim'}
+           />
             <Tabs
                 className='tab' items={items} onChange={onChange} />
         </div>

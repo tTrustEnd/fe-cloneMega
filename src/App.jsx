@@ -16,6 +16,7 @@ import ProtectedRoute from './components/protectedRouter';
 import Phim from './components/home/page/phim';
 import DetailFilm from './components/home/page/phim/detailPhim';
 import HeaderFlex from './components/header/headerFlex';
+import Rap from './components/home/page/rap';
 
 const Layout = () => {
   return (
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
     {
       path: 'phim/:slug',
       element: <DetailFilm />
+    },
+    {
+      path: 'rap',
+      element: <Rap />
     },
     ]
   },

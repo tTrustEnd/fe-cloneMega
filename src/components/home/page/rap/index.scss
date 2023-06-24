@@ -1,0 +1,42 @@
+.title-rap {
+    display: flex;
+    justify-content: center;
+    background-color: #5c5c5c;
+    h3{
+        color: white;
+        padding-top: 8px;
+        font-weight: 700;
+    }
+
+}
+.select-rap{
+    padding-top: 35px;
+
+    span{
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+}
+div{
+    // color: white;
+    font-weight: 600;
+
+}
+.iconMap{
+    color: yellow;
+    font-size: 35px;
+    padding-right: 6px;
+    padding-bottom: 25px;
+    display: flex;
+    // padding-left: 160px;
+  &:hover{
+   color: rgb(228, 225, 61);
+  }
+}
+
+span{
+    font-size: 17px;
+    font-weight: 600;
+}
+
