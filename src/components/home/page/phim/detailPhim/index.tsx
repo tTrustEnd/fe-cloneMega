@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import './index.scss'
 import { IFilm } from "..";
 import { CalendarOutlined, FieldTimeOutlined, PlaySquareFilled, TagOutlined } from "@ant-design/icons";
-import { Modal } from "antd";
+import { Col, Modal, Row } from "antd";
+import FilmsNow from "../../../filmsNow";
 
 const DetailFilm = () => {
     const [film, setFilm] = useState([])
@@ -104,23 +105,121 @@ const DetailFilm = () => {
                                             </div>
 
                                         </div>
-                                        <div className="container-image" style={{ display: 'flex', paddingLeft: 300, justifyContent: 'center' }}>
-                                            <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" />
-                                            <div style={{ display: 'flex', justifyItems: 'center' }} className="centered">
-                                                <div onClick={() => showTrailer(item)} className="play">
-                                                    <img width={60} src="https://www.megagscinemas.vn/images/home/play-icon.png" alt="" />
-                                                </div>
 
+                                        <div className="container-image" style={{ display: 'flex', paddingLeft: 300, justifyContent: 'center' }}>
+                                            <div className="background">
+                                                <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" />
+                                                <div style={{ display: 'flex', justifyItems: 'center' }} className="centered">
+                                                    <div onClick={() => showTrailer(item)} className="play">
+                                                        <img width={60} src="https://www.megagscinemas.vn/images/home/play-icon.png" alt="" />
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
+                                        <div className="container-image">
+                                            &nbsp; &nbsp; &nbsp; &nbsp;
+                                            &nbsp; &nbsp; &nbsp; &nbsp;
+                                            &nbsp; &nbsp; &nbsp; &nbsp;
+
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
+                            <Row gutter={[20, 20]} style={{ paddingTop: 35 }} >
+                                <Col xxl={4}>
+                                </Col>
+                                <Col xxl={16} style={{ background: 'rgba(0,0,0,.6)' }}>
+                                    <div style={{ paddingTop: 25 }}>
+                                        <span style={{ fontSize: 35, color: 'white', fontWeight: 900, paddingLeft: 35, paddingTop: 35 }}>LỊCH CHIẾU-{item.name}</span>
+                                    </div>
+                                    <div className="underline"></div>
+                                    <div style={{ paddingBottom: 25 }}>
+                                        <b style={{ color: '#ffcf29' }}>(Click vào xuất chiếu để đặt vé )</b>
+                                    </div>
+                                    <Row className="datve">
+                                        <Col xxl={11} style={{paddingLeft:35}}>
+                                            <div>Hôm nay (24/6/2023)</div>
+                                            <ul><h6 style={{ color: '#ffcf29', fontSize: 20, fontWeight: 900 }}>RẠP CAO THẮNG</h6></ul>
+                                            <ul style={{ display: 'flex' }}>
+                                                <button className="btn btn-warning">13:40</button>
+                                                <div style={{ padding: '0 10px' }}>
+                                                    <button className="btn btn-warning">17:30</button>
+                                                </div>
+                                                <button className="btn btn-warning">19:55</button>
+                                            </ul>
+                                            <div>Ngày mai (25/6/2023)</div>
+                                            <ul><h6 style={{ color: '#ffcf29', fontSize: 20, fontWeight: 900 }}>RẠP CAO THẮNG</h6></ul>
+                                            <ul style={{ display: 'flex' }}>
+                                                <button className="btn btn-warning">08:40</button>
+                                                <div style={{ paddingLeft: 10 }}>
+                                                    <button className="btn btn-warning">13:40</button></div>
+                                                <div style={{ padding: '0 10px' }}>
+                                                    <button className="btn btn-warning">17:30</button>
+                                                </div>
+                                                <button className="btn btn-warning">19:55</button>
+                                            </ul>
+                                            <div>Ngày mốt (26/6/2023)</div>
+                                            <ul><h6 style={{ color: '#ffcf29', fontSize: 20, fontWeight: 900 }}>RẠP CAO THẮNG</h6></ul>
+                                            <ul style={{ display: 'flex' }}>
+                                                <button className="btn btn-warning">08:40</button>
+                                                <div style={{ paddingLeft: 10 }}>
+                                                    <button className="btn btn-warning">13:40</button></div>
+                                                <div style={{ padding: '0 10px' }}>
+                                                    <button className="btn btn-warning">17:30</button>
+                                                </div>
+                                                <button className="btn btn-warning">19:55</button>
+                                            </ul>
+                                            <div style={{ paddingBottom: 25 }}></div>
+                                        </Col>
+                                        <Col className="vertical-line"></Col>
+                                        <Col xxl={12} style={{ paddingLeft: 35 }}>
+                                            <div>27/6/2023</div>
+                                            <ul><h6 style={{ color: '#ffcf29', fontSize: 20, fontWeight: 900 }}>RẠP CAO THẮNG</h6></ul>
+                                            <ul style={{ display: 'flex' }}>
+                                                <button className="btn btn-warning">08:40</button>
+                                                <div style={{ paddingLeft: 10 }}>
+                                                    <button className="btn btn-warning">13:40</button></div>
+                                                <div style={{ padding: '0 10px' }}>
+                                                    <button className="btn btn-warning">17:30</button>
+                                                </div>
+                                                <button className="btn btn-warning">19:55</button>
+                                            </ul>
+                                        </Col>
+                                    </Row>
+
+                                </Col>
+                                <Col xxl={5}>
+                                </Col>
+                            </Row>
+                            <Row gutter={[20, 20]} style={{ paddingTop: 35 }}>
+                                <Col xxl={4}></Col>
+                                <Col xxl={16} style={{ background: 'rgba(0,0,0,.6)' }}>
+                                    <span style={{ paddingTop: 25, fontSize: 30, fontWeight: 700, color: 'white', paddingLeft: 35 }}>
+                                        Các phim khác
+                                        <div className="underline"></div>
+                                    </span>
+                                   <div>
+                                   &nbsp; &nbsp; &nbsp; &nbsp;
+                                   </div>
+                                   
+                                    <div style={{paddingLeft:300}}>
+                           
+
+                                </div >
+                                </Col>
+                                <div style={{paddingLeft:320 }}>
+
+                                <FilmsNow/>
+                                </div>
+                                <Col xxl={5}></Col>
+                            </Row>
+                       
                         </div>
 
                     )
                 })
-
             }
 
 

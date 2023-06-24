@@ -24,7 +24,7 @@
 }
 .scrollable-container {
     width: 500px; /* Kích thước xác định cho khung điền chữ */
-    height: 200px;
+    height: 100px;
     overflow: auto; /* Cho phép cuộn nội dung khi vượt quá kích thước khung */
     padding-top: 10px;
   }
@@ -40,11 +40,38 @@
         position: absolute;
         top: 50%;
         // left: 50%;
-        transform: translate(-0%, -50%);
+        transform: translate(156%, -50%);
       }
       .play{
         &:hover{
             border: 2px solid white;
         }
       }
+  }
+  .container-image{
+    background: url(https://www.megagscinemas.vn/Images/home/bg-img-detail_02.png) no-repeat;
+  }
+  .datve{
+    button{
+        font-weight: 600;
+        &:hover{
+            border: 1px solid rgb(232, 243, 235);
+            color: red;
+        }
+    }
+    div{
+        color: #fffbfb;
+        font-size: 22px;
+    }
+  }
+  .underline {
+    width: 97%;
+    height: 1px;
+    background-color: rgb(214, 211, 211);
+    float: right;
+  }
+  .vertical-line {
+    width: 1px;
+    height: 400px;
+    background-color: rgb(185, 180, 180);
   }

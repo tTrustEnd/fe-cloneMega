@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+}
+
+.header-flex {
+    position: fixed;
+    top: -500px;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    transition: top 0.3s ease;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+
+    /* Các thuộc tính khác cho kiểu dáng của thanh trên cùng */
+    .mega-day {
+        padding-top: 35px;
+
+        span {
+            font-family: 'SVN-NexaRushSlabBlackShadow';
+            font-size: 30px;
+            color: #ffcf29;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #f1f1f1;
+        font-weight: 600;
+        &:hover {
+            color: #ffcf29;
+        }
+    }
+}
+
+.btn-menu {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+
+    span {
+        width: 25px;
+        height: 4px;
+        background: #fff;
+        display: block;
+        margin-bottom: 5px;
+    }
+ 
+}
+.open-Div {
+    height: 0;
+    // overflow: hidden;
+    transition: height 0.5s ease; /* Thời gian và hiệu ứng mở */
+  }
+  
+  .open-Div.open {
+    height: 300px; /* Đặt chiều cao mong muốn */
+  }

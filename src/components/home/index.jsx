@@ -18,7 +18,7 @@ const images = [
                 <div style={{ paddingTop: '100px', marginBottom: 0 }}>
                     <button
                         className='btn btn-warning'>
-                        <a className='nav-link' href='/'><h4>Xem thi tiết</h4></a>
+                        <a className='nav-link' href='/'><h4>Xem chi tiết</h4></a>
                     </button>
                 </div>
 
@@ -33,7 +33,7 @@ const images = [
                 <div style={{ paddingTop: '100px', marginBottom: 0 }}>
                     <button
                         className='btn btn-warning'>
-                        <a className='nav-link' href='/'><h4>Xem thi tiết</h4></a>
+                        <a className='nav-link' href='/'><h4>Xem chi tiết</h4></a>
                     </button>
                 </div>
 
@@ -67,12 +67,17 @@ const Home = () => {
     const items = [
         {
             key: '1',
-            label: <div className='btn' style={{ display: 'flex', justifyItems: 'center' }}><button className='btn btn-warning'> <h4 style={{ margin: '0 auto', textAlign: 'center' }}>PHIM ĐANG CHIẾU</h4> </button> </div>,
+            label: <div className='btn' style={{ display: 'flex', justifyItems: 'center' }}>
+                <button className='btn btn-warning'> 
+                <h4 style={{ margin: '0 auto', textAlign: 'center',opacity:0.9,fontWeight:800 }}>PHIM ĐANG CHIẾU</h4> </button> </div>,
             children: <FilmsNow />,
         },
         {
             key: '2',
-            label: <div className='btn'> <button className='btn btn-warning'><h4 style={{ margin: '0 auto', textAlign: 'center' }}>PHIM SẮP CHIẾU</h4></button> </div>,
+            label: <div className='btn'> 
+            <button className='btn btn-warning'>
+                <h4 style={{ margin: '0 auto', textAlign: 'center',opacity:0.9,fontWeight:800 }}>PHIM SẮP CHIẾU</h4>
+                </button> </div>,
             children: <FilmsNow />,
         },
     ];
