@@ -54,7 +54,7 @@ const Phim = () => {
 
                     <Modal
                         width={'100%'} footer={false} title="s" open={showVideo} onCancel={handleCancel}>
-                        {showVideo && <iframe width="100% " height={800} style={{ margin: '0 auto' }}
+                        {showVideo && <iframe width="100% " height={750} style={{ margin: '0 auto' }}
                             src={srcTrailer}
                             title="THE FLASH | OFFICIAL TRAILER 2 | DỰ KIẾN KHỞI CHIẾU 16.06.2023"
                         >
@@ -73,9 +73,9 @@ const Phim = () => {
                                     <div className='contentss' style={{ width: 300, paddingLeft: 15 }}>
                                         <div><a href={`/phim/${item.name}/`}>{item.name} </a></div>
                                         <div style={{ display: 'flex' }}>
-                                            <FieldTimeOutlined style={{ paddingTop: 5 }} />  &nbsp;  <span> Thời lượng:</span> {item.time}</div>
-                                        <div style={{ display: 'flex' }}><TagOutlined style={{ paddingTop: 5 }} />   &nbsp;<span>Thể loại: </span> {item.caterogy}</div>
-                                        <div style={{ display: 'flex' }}> <CalendarOutlined style={{ paddingTop: 5 }} />  &nbsp;<span>Khởi chiếu: </span>{item.premiere}</div>
+                                            <FieldTimeOutlined style={{ paddingTop: 5 }} />  &nbsp;  <span> Thời lượng: {item.time}</span> </div>
+                                        <div style={{ display: 'flex' }}><TagOutlined style={{ paddingTop: 5 }} />   &nbsp;<span>Thể loại: {item.caterogy}</span> </div>
+                                        <div style={{ display: 'flex' }}> <CalendarOutlined style={{ paddingTop: 5 }} />  &nbsp;<span>Khởi chiếu: {item.premiere}</span></div>
                                         <div><span>Đạo diễn: </span>{item.director}</div>
                                         <div><span>Diễn viên: </span>{item.actor}</div>
                                         <div><span>Phụ đề: </span>{item.sub}</div>
@@ -83,9 +83,6 @@ const Phim = () => {
                                     <div><button className='btn btn-warning' onClick={() => showTrailer(item)}> {`>>`}trailer</button> </div>
 
                                 </div>
-
-
-
                             )
                         })
                     }

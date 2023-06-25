@@ -29,3 +29,9 @@ export const updateFilmSV = (data:any) => {
 export const deleteFilmSV = (id:any) =>{
     return axios.delete(`v2/api/films/?id=${id}`)
 }
+export const getUudaiSV = () => {
+    return axios.get('v3/api/uudai')
+}
+export const getUudaiSVbyField = (query?:any) => {
+    return axios.get(`v3/api/uudai/?${query}`)
+}

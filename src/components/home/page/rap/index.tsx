@@ -19,6 +19,7 @@ import { faCamera, faEnvelope, faMapLocation } from '@fortawesome/free-solid-svg
 
 import { HomeOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { FaMapLocation, FaMapLocationDot } from "react-icons/fa6";
+
 const Rap = () => {
     const images: any = [
         { original: Rap11, },

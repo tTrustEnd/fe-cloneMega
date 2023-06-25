@@ -1,0 +1,22 @@
+.container-uudai {
+    flex-wrap: wrap;
+
+    .uudai {
+        text-decoration: none;
+        color: black;
+        padding: 20px 20px;
+
+        &:hover {
+            color: rgb(201, 204, 7);
+
+        }
+
+    }
+
+    .content-uudai {
+
+        width: 300px;
+        word-break: break-all;
+
+    }
+}

@@ -29,6 +29,7 @@ const DetailFilm = () => {
         return result;
     }
     const nameFilm = replaceAllCharacters(name, '-', ' ')
+    console.log(nameFilm)
     const getFilm = async () => {
         const query = `name=/${nameFilm}/i`
         const res = await getFilmsByFieldSV(query)
@@ -49,7 +50,8 @@ const DetailFilm = () => {
         <div>
             <Modal
                 width={'100%'} footer={false} title="s" open={showVideo} onCancel={handleCancel}>
-                {showVideo && <iframe width="100% " height={800} style={{ margin: '0 auto' }}
+                {showVideo && 
+                <iframe className="fullscreen-iframe" width="100% " height={800} style={{ margin: '0 auto' }}
                     src={srcTrailer}
                     title="THE FLASH | OFFICIAL TRAILER 2 | DỰ KIẾN KHỞI CHIẾU 16.06.2023"
                 >
@@ -98,7 +100,7 @@ const DetailFilm = () => {
                                             <div>
                                                 <span style={{ color: 'white' }}> <b>Ngôn ngữ: </b>{item.sub}</span>
                                             </div>
-                                            
+
                                             <div className="scrollable-container" >
                                                 <div className="content">
                                                     {item.sumary}

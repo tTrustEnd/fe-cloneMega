@@ -17,7 +17,9 @@ import Phim from './components/home/page/phim';
 import DetailFilm from './components/home/page/phim/detailPhim';
 import HeaderFlex from './components/header/headerFlex';
 import Rap from './components/home/page/rap';
-
+import Uudai from './components/home/page/uu-dai';
+import DetaiUudai from './components/home/page/uu-dai/detailUudai';
+import AllUudai from './components/home/page/uu-dai/allUudai';
 const Layout = () => {
   return (
     <>
@@ -57,6 +59,18 @@ const router = createBrowserRouter([
     {
       path: 'rap',
       element: <Rap />
+    },
+    {
+      path: 'uu-dai',
+      element:<Uudai/>
+    },
+    {
+      path: 'uu-dai/:slug',
+      element:<DetaiUudai/>
+    },
+    {
+      path: 'lich-chieu',
+      element:<></>,
     },
     ]
   },

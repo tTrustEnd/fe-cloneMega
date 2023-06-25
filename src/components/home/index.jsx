@@ -18,7 +18,7 @@ const images = [
                 <div style={{ paddingTop: '100px', marginBottom: 0 }}>
                     <button
                         className='btn btn-warning'>
-                        <a className='nav-link' href='/'><h4>Xem chi tiết</h4></a>
+                        <a className='nav-link' href='/phim/XỨ%20SỞ%20CÁC%20NGUYÊN%20TỐ%20%7C%20ELEMENTAL/'><h4 style={{paddingTop:10}}>Xem chi tiết</h4></a>
                     </button>
                 </div>
 
@@ -33,7 +33,7 @@ const images = [
                 <div style={{ paddingTop: '100px', marginBottom: 0 }}>
                     <button
                         className='btn btn-warning'>
-                        <a className='nav-link' href='/'><h4>Xem chi tiết</h4></a>
+                        <a className='nav-link' href='/phim/THE%20FLASH'><h4 style={{paddingTop:10}}>Xem chi tiết</h4></a>
                     </button>
                 </div>
 
@@ -47,7 +47,8 @@ const images = [
                 <div style={{ paddingTop: '100px', marginBottom: 0 }}>
                     <button
                         className='btn btn-warning'>
-                        <a className='nav-link' href='/'><h4>Xem thi tiết</h4></a>
+                        <a className='nav-link' href='/phim/PHIM%20ĐIỆN%20ẢNH%20DORAEMON:%20NOBITA%20VÀ%20VÙNG%20ĐẤT%20LÝ%20TƯỞNG%20TRÊN%20BẦU%20TRỜI/'>
+                            <h4 style={{paddingTop:10}}>Xem chi tiết</h4></a>
                     </button>
                 </div>
 
@@ -78,7 +79,7 @@ const Home = () => {
             <button className='btn btn-warning'>
                 <h4 style={{ margin: '0 auto', textAlign: 'center',opacity:0.9,fontWeight:800 }}>PHIM SẮP CHIẾU</h4>
                 </button> </div>,
-            children: <FilmsNow />,
+            children:<>s</> ,
         },
     ];
     return (

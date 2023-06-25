@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import { getFilmsByFieldSV } from '../../../service/api';
-import { Modal, Pagination, } from 'antd';
+import { Modal, Pagination } from 'antd';
 import './index.scss'
 import { FieldTimeOutlined, PlayCircleOutlined, TagOutlined } from '@ant-design/icons';
-import { FaYoutube } from "react-icons/fa6";
+import { FaLungs, FaYoutube } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import { IFilm } from '../page/phim';
+
 const FilmsNow = () => {
     const [listFilms, setListFilms] = useState([])
     const [current, setCurrent] = useState(1)
@@ -15,14 +16,15 @@ const FilmsNow = () => {
     const [showVideo, setShowVideo] = useState(false);
     const navigate = useNavigate()
     const [srcTrailer, setSrcTrailer] = useState('')
-    const onChangePage = async (page:any) => {
+
+    const onChangePage = async (page: any) => {
         setCurrent(page)
         const query = `page=${page}&limit=${pageSize}`
         const res = await getFilmsByFieldSV(query)
         setListFilms(res.data)
 
     }
-    const getFilm = async (query:any) => {
+    const getFilm = async (query: any) => {
         query = `page=${current}&limit=${pageSize}`
         const result = await getFilmsByFieldSV(query)
         if (result && result.data) {
@@ -30,7 +32,7 @@ const FilmsNow = () => {
         }
     }
 
-    const showTrailer = (item:IFilm) => {
+    const showTrailer = (item: IFilm) => {
         setShowVideo(true)
         setSrcTrailer(item.trailer)
     }
@@ -38,6 +40,7 @@ const FilmsNow = () => {
         setShowVideo(false);
         setSrcTrailer('https://www.youtube.com/embed/SPx_VdIerzM')
     };
+   
     useEffect(() => {
         getFilm(query)
     }, [query, current, pageSize])
@@ -46,14 +49,16 @@ const FilmsNow = () => {
 
             <div style={{ display: 'flex' }}>
                 <Modal
-                    width={'100%'} footer={false} title="s" open={showVideo} onCancel={handleCancel}>
-                    <iframe width="100% " height={800} style={{ margin: '0 auto' }}
+                    width={'100%'}
+                    style={{ paddingTop: 25 }}
+                    footer title="s" open={showVideo} onCancel={handleCancel}>
+                    <iframe className='fullscreen-iframe' width="100% " height={800} style={{ margin: '0 auto' }}
                         src={srcTrailer}
                         title="THE FLASH | OFFICIAL TRAILER 2 | DỰ KIẾN KHỞI CHIẾU 16.06.2023"
                     >
                     </iframe>
                 </Modal>
-                {listFilms.map((item:IFilm, index) => {
+                {listFilms.map((item: IFilm, index) => {
                     return (
                         <div className="container" key={`${index}`}>
                             <img
@@ -108,6 +113,7 @@ const FilmsNow = () => {
                     )
                 })}
             </div>
+
             <div style={{ textAlign: 'center', paddingTop: 15 }}>
                 <Pagination
                     onChange={onChangePage}
@@ -116,6 +122,8 @@ const FilmsNow = () => {
                     total={10}
                 />
             </div>
+
+     
         </div>
 
 
