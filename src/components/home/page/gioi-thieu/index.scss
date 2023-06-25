@@ -1,0 +1,22 @@
+.left-link {
+
+    b {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(62, 62, 62, .5);
+        height: 50px;
+        width: 250px;
+        justify-content: center;
+        float: right;
+        padding-left: 10px;
+    }
+    .active{
+        color: rgb(236, 240, 10);
+    }
+    a {
+        text-decoration: none;
+        color: rgb(241, 231, 231);
+        font-weight: 1000;
+        
+    }
+}

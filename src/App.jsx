@@ -20,6 +20,14 @@ import Rap from './components/home/page/rap';
 import Uudai from './components/home/page/uu-dai';
 import DetaiUudai from './components/home/page/uu-dai/detailUudai';
 import AllUudai from './components/home/page/uu-dai/allUudai';
+import MegaPlus from './components/home/page/mega-plus';
+import LienHe from './components/home/page/lien-he';
+import TuyenDung from './components/home/page/tuyen-dung';
+import Faqs from './components/home/page/faqs';
+import DichVu from './components/home/page/dich-vu';
+import LichChieu from './components/home/page/lich-chieu';
+import GioiThieu from './components/home/page/gioi-thieu';
+import SuKien from './components/home/page/su-kien';
 const Layout = () => {
   return (
     <>
@@ -70,7 +78,35 @@ const router = createBrowserRouter([
     },
     {
       path: 'lich-chieu',
-      element:<></>,
+      element:<LichChieu/>,
+    },
+    {
+      path: 'dich-vu',
+      element:<DichVu/>,
+    },
+    {
+      path: 'faqs',
+      element:<Faqs/>,
+    },
+    {
+      path: 'tuyen-dung',
+      element:<TuyenDung/>,
+    },
+    {
+      path: 'lien-he',
+      element:<LienHe/>,
+    },
+    {
+      path: 'megaPlus',
+      element:<MegaPlus/>,
+    },
+    {
+      path: 'gioi-thieu',
+      element:<GioiThieu/>,
+    },
+    {
+      path: 'su-kien',
+      element:<SuKien/>,
     },
     ]
   },
