@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, Input, InputNumber, Pagination, Popconfirm, Table, Typography, message } from 'antd';
-import { useSelector } from 'react-redux';
-import { IRootState } from '../../../redux/store';
-import { deleteFilmSV, deleteUserSV, getFilmsByFieldSV, getFilmsSV, getUserSV, sortbyField, updateFilmSV, updateUserAdminSV } from '../../../service/api';
-import { current } from '@reduxjs/toolkit';
+import { Button, Form, Input, InputNumber, Popconfirm, Table, Typography, message } from 'antd';
+import { deleteFilmSV, getFilmsByFieldSV, getFilmsSV, updateFilmSV} from '../../../service/api';
 import { useNavigate } from 'react-router-dom';
 
 interface Item {
@@ -99,7 +96,7 @@ const Films: React.FC = () => {
     const navigate = useNavigate()
     const [data, setData] = useState(originData);
     const [current, setCurent] = useState(1);
-    const [pageSize, setPageSize] = useState(5);
+    const [pageSize, _setPageSize] = useState(5);
     const [editingKey, setEditingKey] = useState('');
     const [query, setQuery] = useState({})
 
@@ -153,7 +150,7 @@ const Films: React.FC = () => {
         navigate(window.location.pathname = '/admin/films')
     }
 
-    const onchangeTable = async (pagination: any, filters: any, sorter: any) => {
+    const onchangeTable = async (pagination: any, _filters: any, sorter: any) => {
         if (pagination.current != current) {
             setCurent(pagination.current)
         }

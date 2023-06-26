@@ -128,7 +128,7 @@ const Users: React.FC = () => {
         navigate(window.location.pathname='/admin/users')
     }
 
-    const onchangeTable = async (pagination: any, filters: any, sorter: any) => {
+    const onchangeTable = async (pagination: any, _filters: any, sorter: any) => {
         if (pagination.current != current) {
             setCurent(pagination.current)
         }

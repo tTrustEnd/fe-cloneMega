@@ -10,8 +10,8 @@ import { IFilm } from '../page/phim';
 const FilmsNow = () => {
     const [listFilms, setListFilms] = useState([])
     const [current, setCurrent] = useState(1)
-    const [pageSize, setPageSize] = useState(4)
-    const [query, setQuery] = useState('')
+    const [pageSize, _setPageSize] = useState(4)
+    const [query, _setQuery] = useState('')
     const [showVideo, setShowVideo] = useState(false);
     const [srcTrailer, setSrcTrailer] = useState('')
 

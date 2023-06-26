@@ -1,8 +1,6 @@
-import { Avatar, Card } from "antd";
 import Logo from '../../../src/public/logopage.png'
 import YTB from '../../../src/public/img-youtube.png'
 import FB from '../../../src/public/img-face.png'
-import { useState } from 'react'
 import './index.scss'
 const Header = () => {
     return (
