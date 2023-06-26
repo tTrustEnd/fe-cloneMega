@@ -2,7 +2,9 @@ import Logo from '../../../src/public/logopage.png'
 import YTB from '../../../src/public/img-youtube.png'
 import FB from '../../../src/public/img-face.png'
 import './index.scss'
+import { Order } from '../../service/api'
 const Header = () => {
+ 
     return (
         <div className="header">
             <div className="logo-header">

@@ -35,3 +35,11 @@ export const getUudaiSV = () => {
 export const getUudaiSVbyField = (query?:any) => {
     return axios.get(`v3/api/uudai/?${query}`)
 }
+
+export const getChairs = () => {
+    return axios.get('v4/api/chair')
+}
+//vnpay
+export const Order = () => {
+    return axios.get('order/create_payment_url')
+}

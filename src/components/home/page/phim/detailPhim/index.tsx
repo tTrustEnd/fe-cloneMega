@@ -136,7 +136,8 @@ const DetailFilm = () => {
                                 </Col>
                                 <Col xxl={16} style={{ background: 'rgba(0,0,0,.6)' }}>
                                     <div style={{ paddingTop: 25 }}>
-                                        <span style={{ fontSize: 35, color: 'white', fontWeight: 900, paddingLeft: 35, paddingTop: 35 }}>LỊCH CHIẾU-{item.name}</span>
+                                        <span style={{ fontSize: 35, color: 'white', fontWeight: 900, paddingLeft: 35, paddingTop: 35 }}>
+                                            LỊCH CHIẾU-{item.name}</span>
                                     </div>
                                     <div className="underline"></div>
                                     <div style={{ paddingBottom: 25 }}>

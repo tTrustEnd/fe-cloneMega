@@ -119,3 +119,24 @@ a {
     justify-content: center;
 }
 
+.mua-ves{
+    position: absolute;
+    width: 800px; /* Chiều rộng cố định của thẻ div */
+    height: 600px; /* Chiều cao cố định của thẻ div */
+    box-sizing: border-box;
+   padding-top: 50px;
+ 
+}
+.underline1{
+    width: 2px;
+    height: 1px;
+    background-color: rgb(153, 9, 9);
+    float: right;
+}
+.botModal{
+    padding-top: 15px;
+    a{
+        text-decoration: none;
+        color: #ffca2c;
+    }
+}
