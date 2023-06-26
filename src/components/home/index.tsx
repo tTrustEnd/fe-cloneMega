@@ -12,8 +12,6 @@ import { IFilm } from './page/phim';
 import { MinusCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { doBuyFilm } from '../../redux/buy/buySlice';
-import { doMinus1 } from '../../redux/chair/chairSlice';
-
 export interface IChair {
     name: string,
     price: number
