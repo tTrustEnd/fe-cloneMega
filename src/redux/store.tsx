@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import userReducer from './user/userSlice'
 export type IRootState = ReturnType<typeof userReducer>
 import filmReducer from './buy/buySlice'
-import chairReducer from './chair/chairSlice'
+// import chairReducer from './chair/chairSlice'
 import {
   persistStore,
   persistReducer,
@@ -29,7 +29,7 @@ export const store = configureStore({
     auth:persistedReducer,
     film:filmReducer,
     saveFilm:filmPersisReducer,
-    chair:chairReducer
+    // chair:chairReducer
   },
   middleware: getDefaultMiddleware =>
   getDefaultMiddleware({
