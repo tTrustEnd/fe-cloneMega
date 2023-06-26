@@ -1,9 +1,9 @@
 import { useLocation } from "react-router-dom";
-import { getFilmsByFieldSV, getFilmsSV } from "../../../../../service/api";
+import { getFilmsByFieldSV } from "../../../../../service/api";
 import { useEffect, useState } from "react";
 import './index.scss'
 import { IFilm } from "..";
-import { CalendarOutlined, FieldTimeOutlined, PlaySquareFilled, TagOutlined } from "@ant-design/icons";
+import { CalendarOutlined, FieldTimeOutlined, TagOutlined } from "@ant-design/icons";
 import { Col, Modal, Row } from "antd";
 import FilmsNow from "../../../filmsNow";
 

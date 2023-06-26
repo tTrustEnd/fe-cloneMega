@@ -1,10 +1,6 @@
 import './index.scss'
 import Logo from '../../../../src/public/logopage.png'
-import { Dropdown, Space } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
-import { useState } from 'react'
 const HeaderFlex = () => {
-  // const [open, setOpen] = useState(false)
   window.addEventListener('scroll', function () {
     const stickyHeader = document.getElementById('header-flex');
     var openDiv = document.getElementById('openDiv');
@@ -18,10 +14,6 @@ const HeaderFlex = () => {
     }
   });
 
-  function myFunction() {
-    // Đoạn mã xử lý khi cuộn chuột
-    console.log("Đã cuộn chuột");
-  }
   const openDiv = () => {
     const openDiv = document.getElementById('openDiv');
     openDiv.classList.toggle('open');
@@ -48,7 +40,7 @@ const HeaderFlex = () => {
             </div>
           </div>
           <div style={{ paddingLeft: 50, paddingTop: 10 }}>
-            <button className='btn btn-warning'><span className='muave' style={{fontWeight:600}}>MUA VÉ NHANH</span></button>
+            <button className='btn btn-warning'><span className='muave' style={{ fontWeight: 600 }}>MUA VÉ NHANH</span></button>
 
           </div>
 

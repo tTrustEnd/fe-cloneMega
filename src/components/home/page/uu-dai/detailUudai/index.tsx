@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom"
 import { getUudaiSVbyField } from "../../../../../service/api";
 import { useEffect, useState } from 'react'
-import { Col, Row, Select } from "antd";
+import { Col, Row } from "antd";
 import CurrentPage from "../../currentPage";
 import AllUudai from "../allUudai";
 export interface IUudai {

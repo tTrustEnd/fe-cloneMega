@@ -1,12 +1,8 @@
 
 import { Col, Row } from "antd"
 import CurrentPage from "../currentPage"
-import './index.scss'
-import { CaretRightOutlined } from '@ant-design/icons';
-import type { CollapseProps } from 'antd';
-import { Collapse, theme } from 'antd';
-import { useState, type CSSProperties } from 'react';
-// import Mau from '../../../../public/'
+import './index.scss';
+
 const LienHe = () => {
     return (
         <div>

@@ -4,8 +4,7 @@ import { getFilmsByFieldSV } from '../../../service/api';
 import { Modal, Pagination } from 'antd';
 import './index.scss'
 import { FieldTimeOutlined, PlayCircleOutlined, TagOutlined } from '@ant-design/icons';
-import { FaLungs, FaYoutube } from "react-icons/fa6";
-import { useNavigate } from 'react-router-dom';
+import { FaYoutube } from "react-icons/fa6";
 import { IFilm } from '../page/phim';
 
 const FilmsNow = () => {
@@ -14,7 +13,6 @@ const FilmsNow = () => {
     const [pageSize, setPageSize] = useState(4)
     const [query, setQuery] = useState('')
     const [showVideo, setShowVideo] = useState(false);
-    const navigate = useNavigate()
     const [srcTrailer, setSrcTrailer] = useState('')
 
     const onChangePage = async (page: any) => {

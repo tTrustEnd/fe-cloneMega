@@ -11,14 +11,6 @@ const TuyenDung = () => {
     const { token } = theme.useToken();
     const [red, setRed] = useState(false)
     const [red2, setRed2] = useState(false)
-    const [red3, setRed3] = useState(false)
-    const [red4, setRed4] = useState(false)
-    const [red5, setRed5] = useState(false)
-    const [red6, setRed6] = useState(false)
-    const [red7, setRed7] = useState(false)
-    const [red8, setRed8] = useState(false)
-    const [red9, setRed9] = useState(false)
-
 
     const setColor = () => {
         setRed(!red)

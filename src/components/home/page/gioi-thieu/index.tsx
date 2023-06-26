@@ -1,4 +1,4 @@
-import { Col, Row, message } from "antd"
+import { Col, Row } from "antd"
 import CurrentPage from "../currentPage"
 import './index.scss'
 import Gioithieu from '../../../../public/gioithieu.jpg'
