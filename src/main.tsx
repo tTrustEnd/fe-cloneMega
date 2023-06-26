@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import {persistor, store} from '../src/redux/store.tsx'
@@ -9,7 +8,6 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import 'video-react/dist/video-react.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 library.add(fas);

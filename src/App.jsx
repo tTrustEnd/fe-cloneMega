@@ -19,7 +19,6 @@ import HeaderFlex from './components/header/headerFlex';
 import Rap from './components/home/page/rap';
 import Uudai from './components/home/page/uu-dai';
 import DetaiUudai from './components/home/page/uu-dai/detailUudai';
-import AllUudai from './components/home/page/uu-dai/allUudai';
 import MegaPlus from './components/home/page/mega-plus';
 import LienHe from './components/home/page/lien-he';
 import TuyenDung from './components/home/page/tuyen-dung';
@@ -170,7 +169,6 @@ const router = createBrowserRouter([
 
 function App() {
   const saveaccount = useSelector(state => state.auth);
-  const user = useSelector(state => state.user)
   const dispatch = useDispatch();
   const getAccount = () => {
     if (window.location.pathname === '/login') return;
@@ -180,7 +178,7 @@ function App() {
   }
   useEffect(() => {
     getAccount()
-  }, [])
+  },[])
   return (
     <div className='body'>
       <RouterProvider router={router} />
