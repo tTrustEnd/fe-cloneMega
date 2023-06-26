@@ -13,21 +13,21 @@ const GioiThieu = () => {
 
             <Row gutter={[20, 20]}>
 
-                <Col xxl={4} style={{ border: '1px solid red' }}>
+                <Col xxl={4}>
                 </Col>
-                <Col className="left-link" xxl={5} style={{ border: '1px solid yellow', paddingTop: 30 }}>
+                <Col className="left-link" xxl={5} style={{ paddingTop: 30 }}>
                     <div style={{ background: 'rgba(0,0,0,.3)', width: 300, height: 400 }}>
                         <a className="active" href="/gioi-thieu"><b >GIỚI THIỆU</b><br /></a>
                         <a   href="/faqs"><b>FAQS</b><br /></a>
                         <a   href="/tuyen-dung"><b>TUYỂN DỤNG</b><br /></a>
                         <a  href="/lien-he"> <b>LIÊN HỆ</b><br /></a>
-                        <a  href=""><b>ĐIỀU KHOẢN CHUNGC</b><br /></a>
+                        <a  href=""><b>ĐIỀU KHOẢN CHUNG</b><br /></a>
                         <a  href=""><b>CHÍNH SÁCH THANH TOÁN VÉ TRỰC TUYẾN</b><br /></a>
                         <a href="/megaPlus"><b>MEGA+</b><br /></a>
                     </div>
 
                 </Col>
-                <Col xxl={11} style={{ border: '1px solid blue', paddingTop: 30 }}>
+                <Col xxl={11} style={{ paddingTop: 30 }}>
 
                     <div className="title-rap" >
                         <h2 style={{ paddingTop: 5, color: 'white' }}> GIỚI THIỆU</h2>
@@ -55,7 +55,7 @@ const GioiThieu = () => {
                         điểm vui chơi giải trí đáng ghé thăm dành cho tất cả mọi người.<br />
                     </div>
                 </Col>
-                <Col xxl={4} style={{ border: '1px solid green' }}>
+                <Col xxl={4}>
                 </Col>
             </Row>
         </div>

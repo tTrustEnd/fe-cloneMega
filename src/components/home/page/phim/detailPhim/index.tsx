@@ -39,9 +39,9 @@ const DetailFilm = () => {
         setShowVideo(true)
         setSrcTrailer(item.trailer)
     }
-    const handleCancel = () => {
-        setShowVideo(false);
-        setSrcTrailer('')
+    const handleCancel =async () => {
+        await setSrcTrailer('')
+        await setShowVideo(false);
     };
     useEffect(() => {
         getFilm()

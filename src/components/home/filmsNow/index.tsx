@@ -35,12 +35,14 @@ const FilmsNow = () => {
     const showTrailer = (item: IFilm) => {
         setShowVideo(true)
         setSrcTrailer(item.trailer)
+
     }
-    const handleCancel = () => {
-        setShowVideo(false);
-        setSrcTrailer('https://www.youtube.com/embed/SPx_VdIerzM')
+    const handleCancel = async () => {
+        await setSrcTrailer('')
+        await setShowVideo(false);
+
     };
-   
+
     useEffect(() => {
         getFilm(query)
     }, [query, current, pageSize])
@@ -123,7 +125,7 @@ const FilmsNow = () => {
                 />
             </div>
 
-     
+
         </div>
 
 

@@ -151,7 +151,7 @@ const Faqs = () => {
     return (
         <div>
             <CurrentPage
-                page={'gioi-thieu'}
+                page={'faqs'}
             />
 
             <Row gutter={[20, 20]}>
@@ -164,7 +164,7 @@ const Faqs = () => {
                         <a className="active" href="/faqs"><b>FAQS</b><br /></a>
                         <a href="/tuyen-dung"><b>TUYỂN DỤNG</b><br /></a>
                         <a href="/lien-he"> <b>LIÊN HỆ</b><br /></a>
-                        <a href=""><b>ĐIỀU KHOẢN CHUNGC</b><br /></a>
+                        <a href=""><b>ĐIỀU KHOẢN CHUNG</b><br /></a>
                         <a href=""><b>CHÍNH SÁCH THANH TOÁN VÉ TRỰC TUYẾN</b><br /></a>
                         <a href="/megaPlus"><b>MEGA+</b><br /></a>
                     </div>
