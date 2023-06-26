@@ -51,7 +51,7 @@ const DetailFilm = () => {
             <Modal
                 width={'100%'} footer={false} title="s" open={showVideo} onCancel={handleCancel}>
                 {showVideo && 
-                <iframe className="fullscreen-iframe" width="100% " height={800} style={{ margin: '0 auto' }}
+                <iframe className="fullscreen-iframe" width="100% "
                     src={srcTrailer}
                     title="THE FLASH | OFFICIAL TRAILER 2 | DỰ KIẾN KHỞI CHIẾU 16.06.2023"
                 >
