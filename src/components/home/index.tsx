@@ -7,9 +7,12 @@ import Baner2 from '../../../src/public/flash-banner-1.png';
 import Baner3 from '../../../src/public/doremon-banner.png'
 import { Col, Modal, Row, Select, Tabs, message } from 'antd';
 import FilmsNow from './filmsNow';
-import { getChairs, getFilmsByFieldSV, getFilmsSV } from '../../service/api';
+import { getChairs, getFilmsByFieldSV, getFilmsSV, updateChair } from '../../service/api';
 import { IFilm } from './page/phim';
 import { MinusCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
+import { doBuyFilm } from '../../redux/buy/buySlice';
+import { doMinus1 } from '../../redux/chair/chairSlice';
 
 export interface IChair {
     name: string,
@@ -66,7 +69,7 @@ const Home = () => {
     const [listFilms, setListFilms] = useState([])
     const [filmSelected, setFilmSelected] = useState([])
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [chair, setChair] = useState<any>([])
+    const [chair, setChair] = useState<any>()
     const [value1, setValue1] = useState(0)
     const [value2, setValue2] = useState(0)
     const [value3, setValue3] = useState(0)
@@ -76,6 +79,7 @@ const Home = () => {
     const [quantity1, setQuantity1] = useState(0)
     const [quantity2, setQuantity2] = useState(0)
     const [quantity3, setQuantity3] = useState(0)
+    const dispatch = useDispatch()
     const getAllFilms = async () => {
         const res = await getFilmsSV()
         if (res && res.data) {
@@ -121,6 +125,54 @@ const Home = () => {
         // Ẩn thẻ div
 
     });
+    const handleMinus1 = async () => {
+        if (value1 > 0) {
+            const data = { id: chair[0]._id, quantity: quantity1 - 1 }
+            setValue1(value1 - 1), setQuantity1(quantity1 - 1)
+            await updateChair(data)
+        }
+    }
+    const handleMinus2 = async () => {
+        if (value2 > 0) {
+            const data = { id: chair[1]._id, quantity: quantity2 - 1 }
+            setValue2(value2 - 1), setQuantity2(quantity2 - 1)
+            await updateChair(data)
+        }
+    }
+    const handleMinus3 = async () => {
+        if (value3 > 0) {
+            const data = { id: chair[2]._id, quantity: quantity3 - 1 }
+            setValue3(value3 - 1), setQuantity3(quantity3 - 1)
+            await updateChair(data)
+        }
+    }
+    const handlePlus1 = async () => {
+        if (quantity1 + quantity2 + quantity3 < 10) {
+            setQuantity1(quantity1 + 1)
+            setValue1(value1 + 1)
+            const data = { id: chair[0]._id, quantity: quantity1 + 1 }
+            await updateChair(data)
+        }
+        else { message.error('Bạn có thể đặt tối đa 10 vé') }
+    }
+    const handlePlus2 = async () => {
+        if (quantity1 + quantity2 + quantity3 < 10) {
+            setQuantity2(quantity2 + 1)
+            setValue2(value2 + 1)
+            const data = { id: chair[1]._id, quantity: quantity2 + 1 }
+            await updateChair(data)
+        }
+        else { message.error('Bạn có thể đặt tối đa 10 vé') }
+    }
+    const handlePlus3 = async () => {
+        if (quantity1 + quantity2 + quantity3 < 10) {
+            setQuantity3(quantity3 + 1)
+            setValue3(value3 + 1)
+            const data = { id: chair[2]._id, quantity: quantity3 + 1 }
+            await updateChair(data)
+        }
+        else { message.error('Bạn có thể đặt tối đa 10 vé') }
+    }
     const items = [
         {
             key: '1',
@@ -139,15 +191,27 @@ const Home = () => {
         },
     ];
     const handleBuy = (item) => {
-        console.log(item)
         setIsModalOpen(true)
+        dispatch(doBuyFilm(item))
+
+    }
+    const handleChair = () => {
+        console.log('check chair', chair)
+
     }
     const handleOk = () => {
         setIsModalOpen(false);
     };
 
-    const handleCancel = () => {
+    const handleCancel = async () => {
+        setValue1(0)
+        setValue2(0)
+        setValue3(0)
+        setQuantity1(0)
+        setQuantity2(0)
+        setQuantity3(0)
         setIsModalOpen(false);
+        await updateChair()
     };
     return (
         <div className="mega-content">
@@ -172,10 +236,11 @@ const Home = () => {
                             </p>
                         </div>
                     </div>
-                    <Modal width={800} footer={false} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                    <Modal
+                        width={800} footer={false} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                         <Row gutter={[20, 20]}>
                             <Col xxl={7} >
-                                <div style={{ background: '#bebebe' }}><h6>LOẠI VÉ</h6></div>
+                                <div style={{ background: '#ffca2c' }}><h6><b>LOẠI VÉ</b></h6></div>
                                 {chair && chair.length &&
                                     chair.map((item: IChair, index) => {
                                         return (
@@ -209,21 +274,32 @@ const Home = () => {
                                     .
                                 </div>
                             </div>
-
-                            <Col style={{ textAlign: 'center', }} xxl={5} >
-                                <div style={{ background: '#bebebe' }}>SỐ LƯỢNG</div>
-                                <div style={{ paddingTop: 20 }}>
-                                    <MinusCircleOutlined onClick={() => { if (value1 > 0) { setValue1(value1 - 1), setQuantity1(quantity1 - 1) } }} /> <input value={value1} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined
-                                        onClick={() => { if (quantity1 + quantity2 + quantity3 < 10) { setQuantity1(quantity1 + 1), setValue1(value1 + 1) } else { message.error('Bạn có thể đặt tối đa 10 vé') } }} />
-                                </div>
-                                <div style={{ paddingTop: 30 }}>
-                                    <MinusCircleOutlined onClick={() => { if (value2 > 0) { setValue2(value2 - 1), setQuantity2(quantity2 - 1) } }} /> <input value={value2} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined
-                                        onClick={() => { if (quantity1 + quantity2 + quantity3 < 10) { setQuantity2(quantity2 + 1), setValue2(value2 + 1) } else { message.error('Bạn có thể đặt tối đa 10 vé') } }} />
-                                </div>
-                                <div style={{ paddingTop: 30 }}>
-                                    <MinusCircleOutlined onClick={() => { if (value3 > 0) { setValue3(value3 - 1), setQuantity3(quantity3 - 1) } }} /> <input value={value3} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { if (quantity1 + quantity2 + quantity3 < 10) { setQuantity3(quantity3 + 1), setValue3(value3 + 1) } else { message.error('Bạn có thể đặt tối đa 10 vé') } }} />
-                                </div>
-                            </Col>
+                            {chair && chair.length &&
+                                <Col style={{ textAlign: 'center', }} xxl={5} >
+                                    <div style={{ background: '#ffca2c' }}><b>SỐ LƯỢNG </b> </div>
+                                    <div style={{ paddingTop: 20 }}>
+                                        <MinusCircleOutlined
+                                            onClick={() => { handleMinus1() }} />
+                                        <input value={value1} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly />
+                                        <PlusCircleOutlined
+                                            onClick={() =>
+                                                handlePlus1()} />
+                                    </div>
+                                    <div style={{ paddingTop: 30 }}>
+                                        <MinusCircleOutlined onClick={() => handleMinus2()} />
+                                        <input value={value2}
+                                            style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly />
+                                        <PlusCircleOutlined
+                                            onClick={() => handlePlus2()} />
+                                    </div>
+                                    <div style={{ paddingTop: 30 }}>
+                                        <MinusCircleOutlined
+                                            onClick={() => handleMinus3()}
+                                        /> <input value={value3} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly />
+                                        <PlusCircleOutlined
+                                            onClick={() => handlePlus3()} />
+                                    </div>
+                                </Col>}
                             <div>
                                 <div>
                                     .
@@ -249,7 +325,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <Col style={{ textAlign: 'center' }} xxl={6}>
-                                <div style={{ background: '#bebebe' }}>GIÁ VÉ</div>
+                                <div style={{ background: '#ffca2c' }}> <b>GIÁ VÉ</b></div>
                                 {chair && chair.length &&
                                     chair.map((item: IChair, index) => {
                                         return (
@@ -284,7 +360,7 @@ const Home = () => {
                             </div>
                             <Col style={{ textAlign: 'center' }} xxl={5}>
 
-                                <div style={{ background: '#bebebe' }}>THÀNH TIỀN</div>
+                                <div style={{ background: '#ffca2c' }}><b> THÀNH TIỀN </b></div>
                                 {chair && chair.length &&
                                     <div>
                                         <div style={{ padding: '15px 0', color: 'red' }}>
@@ -342,7 +418,7 @@ const Home = () => {
                         <div style={{ display: 'flex', paddingTop: 30 }}>
                             <b>Ghi chú: </b> &nbsp; <div style={{ color: 'red' }}> Mỗi lần đặt vé bạn chỉ được chọn tối đa 10 vé.</div>
                             <div style={{ paddingLeft: 290 }}>
-                                <button style={{ display: 'flex', color: 'black' }} className='btn btn-warning'>Chọn ghế</button>
+                                <button onClick={() => handleChair()} style={{ display: 'flex', color: 'black' }} className='btn btn-warning'>Chọn ghế</button>
                             </div>
 
                         </div>

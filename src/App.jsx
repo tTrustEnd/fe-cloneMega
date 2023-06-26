@@ -9,7 +9,6 @@ import Login from './components/login';
 import Register from './components/register';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { doRefresh } from './redux/user/userSlice';
 import { useSelector } from 'react-redux'
 import NotFound from './components/notfound';
 import ProtectedRoute from './components/protectedRouter';
@@ -27,6 +26,8 @@ import DichVu from './components/home/page/dich-vu';
 import LichChieu from './components/home/page/lich-chieu';
 import GioiThieu from './components/home/page/gioi-thieu';
 import SuKien from './components/home/page/su-kien';
+import { doRefreshFilm } from './redux/buy/buySlice';
+import { doRefresh } from './redux/user/userSlice';
 const Layout = () => {
   return (
     <>
@@ -107,6 +108,10 @@ const router = createBrowserRouter([
       path: 'su-kien',
       element:<SuKien/>,
     },
+    {
+      path: 'booking/:slug',
+      element:<SuKien/>,
+    },
     ]
   },
   {
@@ -170,7 +175,9 @@ const router = createBrowserRouter([
 function App() {
   const saveaccount = useSelector(state => state.auth);
   const dispatch = useDispatch();
+  const film = useSelector(state => state.saveFilm.film)
   const getAccount = () => {
+    dispatch(doRefreshFilm(film))
     if (window.location.pathname === '/login') return;
     else {
       dispatch(doRefresh(saveaccount))

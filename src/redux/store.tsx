@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import userReducer from './user/userSlice'
 export type IRootState = ReturnType<typeof userReducer>
-
+import filmReducer from './buy/buySlice'
+import chairReducer from './chair/chairSlice'
 import {
   persistStore,
   persistReducer,
@@ -20,11 +21,15 @@ const persistConfig = {
   // blacklist:['account/user']
 }
 const persistedReducer = persistReducer(persistConfig, userReducer)
+const filmPersisReducer = persistReducer(persistConfig, filmReducer)
 
 export const store = configureStore({
   reducer: {
     user:userReducer,
-    auth:persistedReducer
+    auth:persistedReducer,
+    film:filmReducer,
+    saveFilm:filmPersisReducer,
+    chair:chairReducer
   },
   middleware: getDefaultMiddleware =>
   getDefaultMiddleware({
