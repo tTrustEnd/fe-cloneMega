@@ -301,7 +301,7 @@ const BookKing = () => {
 
                 <Col xxl={4} style={{ paddingTop: 50 }}>
                     <div style={{ display: 'flex', background: '#ffd029', width: 400 }}>
-                        <img width={100} src={`${import.meta.env.VITE_BASE_URL}/imageFilms/${film.image}`} alt="" />
+                        <img width={100} src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${film.image}`} alt="" />
                         <div style={{ paddingLeft: 10 }}>
                             <h2 style={{ paddingLeft: 12 }}>Thời gian còn lại</h2>
                             <Countdown />
