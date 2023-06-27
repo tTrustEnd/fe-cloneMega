@@ -533,7 +533,7 @@ const BookKing = () => {
                             <div>
                               <button onClick={async() => {
                               
-                              const res =   await Order(5000000)
+                              const res =   await Order({amount:5000000})
                               console.log(res)
                              }}  className="btn btn-warning"> THANH TOÁN</button>
                       
