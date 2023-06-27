@@ -123,7 +123,6 @@ const Users: React.FC = () => {
         const dataDel = newdata[index];
         const id = dataDel.id
         const result = await deleteUserSV(id)
-        console.log(result)
         setListUsers(listUsers)
         navigate(window.location.pathname='/admin/users')
     }

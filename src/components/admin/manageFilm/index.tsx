@@ -129,7 +129,6 @@ const Films: React.FC = () => {
                 setEditingKey('');
             }
             const data = { id: newData[index].id, dataUpdate: newData[index] }
-            console.log(data)
             const result = await updateFilmSV(data)
             navigate(window.location.pathname = '/admin/films')
             message.success('update thành công')
@@ -142,10 +141,8 @@ const Films: React.FC = () => {
         const newdata = [...originData]
         const index = newdata.findIndex((item) => key === item.key)
         const dataDel = newdata[index];
-        console.log(dataDel)
         const id = dataDel.id
         const result = await deleteFilmSV(id)
-        console.log(result)
         setListFilm(listFilms)
         navigate(window.location.pathname = '/admin/films')
     }
@@ -155,11 +152,9 @@ const Films: React.FC = () => {
             setCurent(pagination.current)
         }
         if (sorter) {
-            console.log(sorter)
             if (sorter.order === 'ascend') {
                 const query = `sort=${sorter.field}`
                 const result = await getFilmsByFieldSV(query)
-                console.log('check result', result)
                 setListFilm(result.data)
             }
             if (sorter.order === 'descend') {
@@ -282,11 +277,9 @@ const Films: React.FC = () => {
         };
     });
     const Search = async (e: any) => {
-        // console.log(e.target.value)
         const data = `name=/${e.target.value}/i`;
         if (data) {
             const result = await getFilmsByFieldSV(data)
-            // console.log(result)
             setListFilm(result.data)
         }
     }
