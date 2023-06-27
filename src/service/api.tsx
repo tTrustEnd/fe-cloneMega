@@ -47,5 +47,5 @@ export const updateChair = (data?:any) => {
 }
 //vnpay
 export const Order = () => {
-    return axios.get('order/create_payment_url')
+    return axios.post('order/create_payment_url')
 }

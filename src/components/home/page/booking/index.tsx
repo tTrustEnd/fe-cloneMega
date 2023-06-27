@@ -4,14 +4,17 @@ import './index.scss'
 import { useSelector } from "react-redux"
 import { useState, useEffect } from "react"
 import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons"
-import { getChairDidBuy, getChairs } from "../../../../service/api"
+import { Order, getChairDidBuy, getChairs } from "../../../../service/api"
 import Countdown from "./countDownPassReloadPage"
 import { IChair } from "../.."
+import { useNavigate } from "react-router-dom"
 
 
 const BookKing = () => {
     const [chairDidBuy, setChairDidBuy] = useState<IChair>()
     const film = useSelector((state: any) => state.film).film;
+    const navigate = useNavigate()
+
     const [green1, setGreen1] = useState(false)
     const [green2, setGreen2] = useState(false)
     const [green3, setGreen3] = useState(false)
@@ -70,13 +73,21 @@ const BookKing = () => {
     useEffect(() => {
         getChair()
     }, [])
-
+    const test = async() => {
+       const res = await Order()
+       console.log(res)
+        // navigate('/')
+    }
     return (
         <div>
             <CurrentPage
                 page={`Booking-${film.name}`}
             />
-
+        <div>
+            <h2 onClick={()=>test()}>
+                test
+            </h2>
+        </div>
             <Row className="body-book" gutter={[20, 20]}>
 
                 <Col xxl={4}>
