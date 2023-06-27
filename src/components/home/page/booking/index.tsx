@@ -70,23 +70,22 @@ const BookKing = () => {
         let res = await getChairDidBuy(0)
         setChairDidBuy(res.data)
     }
+    const test = async() => {
+        let res = await Order()
+        console.log(res)
+    }
+
     useEffect(() => {
         getChair()
     }, [])
-    const test = async() => {
-       const res = await Order()
-       console.log(res)
-        // navigate('/')
-    }
+    
     return (
         <div>
             <CurrentPage
                 page={`Booking-${film.name}`}
             />
         <div>
-            <h2 onClick={()=>test()}>
-                test
-            </h2>
+           <button onClick={()=>test()}>tét</button>
         </div>
             <Row className="body-book" gutter={[20, 20]}>
 
