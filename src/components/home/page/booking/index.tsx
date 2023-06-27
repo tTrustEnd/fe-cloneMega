@@ -1,4 +1,4 @@
-import { Col, Divider, Row, message, notification } from "antd"
+import { Col, Divider, Modal, Row, message, notification } from "antd"
 import CurrentPage from "../currentPage"
 import './index.scss'
 import { useSelector } from "react-redux"
@@ -38,199 +38,219 @@ const BookKing = () => {
     const [totalChairBought, setTotalChairBought] = useState(0)
     const [chairSlected, setChairSelected] = useState(0)
     const [totalAll, setTotalAll] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const changeColor1 = () => {
-        if(green1){
-            setChairSelected(chairSlected-1)
+        if (green1) {
+            setChairSelected(chairSlected - 1)
             setGreen1(!green1)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen1(!green1)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen1(!green1)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
     const changeColor2 = () => {
-        if(green2){
-            setChairSelected(chairSlected-1)
+        if (green2) {
+            setChairSelected(chairSlected - 1)
             setGreen2(!green2)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen2(!green2)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen2(!green2)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
     const changeColor3 = () => {
-        if(green3){
-            setChairSelected(chairSlected-1)
+        if (green3) {
+            setChairSelected(chairSlected - 1)
             setGreen3(!green3)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen3(!green3)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen3(!green3)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
     const changeColor4 = () => {
-        if(green4){
-            setChairSelected(chairSlected-1)
+        if (green4) {
+            setChairSelected(chairSlected - 1)
             setGreen4(!green4)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen4(!green4)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen4(!green4)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
     const changeColor5 = () => {
-        if(green5){
-            setChairSelected(chairSlected-1)
+        if (green5) {
+            setChairSelected(chairSlected - 1)
             setGreen5(!green5)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen5(!green5)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen5(!green5)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
     const changeColor6 = () => {
-        if(green6){
-            setChairSelected(chairSlected-1)
+        if (green6) {
+            setChairSelected(chairSlected - 1)
             setGreen6(!green6)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen6(!green6)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen6(!green6)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
     const changeColor7 = () => {
-        if(green7){
-            setChairSelected(chairSlected-1)
+        if (green7) {
+            setChairSelected(chairSlected - 1)
             setGreen7(!green7)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen7(!green7)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen7(!green7)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
-    const changeColor8= () => {
-        if(green8){
-            setChairSelected(chairSlected-1)
+    const changeColor8 = () => {
+        if (green8) {
+            setChairSelected(chairSlected - 1)
             setGreen8(!green8)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen8(!green8)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen8(!green8)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
     const changeColor9 = () => {
-        if(green9){
-            setChairSelected(chairSlected-1)
+        if (green9) {
+            setChairSelected(chairSlected - 1)
             setGreen9(!green9)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen9(!green9)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen9(!green9)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
     }
     const changeColor10 = () => {
-        if(green10){
-            setChairSelected(chairSlected-1)
+        if (green10) {
+            setChairSelected(chairSlected - 1)
             setGreen10(!green10)
         }
-       else if(chairSlected < totalChairBought){
-        setChairSelected(chairSlected+1)
-        setGreen10(!green10)
-       }
-       else{
-        message.error(
-            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
-          )
-       }
-  
+        else if (chairSlected < totalChairBought) {
+            setChairSelected(chairSlected + 1)
+            setGreen10(!green10)
+        }
+        else {
+            message.error(
+                `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought + 1} à`
+            )
+        }
+
+    }
+    const handleCancelBuy = () => {
+        setIsModalOpen(true)
     }
     const getChair = async () => {
         let res = await getChairDidBuy(0)
         let total = 0;
         let totalQuantity = 0
-       if(res && res.data){
-        setChairDidBuy(res.data)
-        for(let i = 0; i<res.data.length;i++){
-            total += res.data[i].price*res.data[i].quantity;
-            totalQuantity += res.data[i].quantity
+        if (res && res.data) {
+            setChairDidBuy(res.data)
+            for (let i = 0; i < res.data.length; i++) {
+                total += res.data[i].price * res.data[i].quantity;
+                totalQuantity += res.data[i].quantity
+            }
         }
-       }
-      setTotalAll(total)
-      setTotalChairBought(totalQuantity)
+        setTotalAll(total)
+        setTotalChairBought(totalQuantity)
     }
-    const test = async() => {
-        let res = await Order()
-    }
-
     useEffect(() => {
         getChair()
     }, [])
-    
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
     return (
         <div>
             <CurrentPage
                 page={`Booking-${film.name}`}
             />
-        
+
             <Row className="body-book" gutter={[20, 20]}>
 
                 <Col xxl={4}>
                 </Col>
-
+                <div>
+                <Modal footer={false} title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                    <h2>Hủy đặt vé?</h2>
+                    <span>Các thông tin sẽ không lưu</span>
+                    <div style={{display:'flex',justifyContent:'end'}}>
+                    <button onClick={() => {navigate('/')}} className="btn btn-warning">Ok</button>
+                    </div>
+                  
+                </Modal>
+                </div>
+            
                 <Col xxl={11} style={{ paddingTop: 30, paddingLeft: 45 }}>
                     <div style={{ display: 'flex' }} >
                         <div className="tag"> 1</div>&nbsp; <h3 style={{ paddingTop: 5, color: 'black', fontWeight: 900 }}> CHỌN VỊ TRÍ</h3>
@@ -377,7 +397,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iBIG SHARE Combo (107,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value1 > 0) { setValue1(value1 - 1),setTotalAll(totalAll-107000) } }} /> <input value={value1} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue1(value1 + 1),setTotalAll(totalAll+107000) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value1 > 0) { setValue1(value1 - 1), setTotalAll(totalAll - 107000) } }} /> <input value={value1} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue1(value1 + 1), setTotalAll(totalAll + 107000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -388,7 +408,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iSHARE Combo (97,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value2 > 0) { setValue2(value2 - 1),setTotalAll(totalAll-97000) } }} /> <input value={value2} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue2(value2 + 1),setTotalAll(totalAll+97000) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value2 > 0) { setValue2(value2 - 1), setTotalAll(totalAll - 97000) } }} /> <input value={value2} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue2(value2 + 1), setTotalAll(totalAll + 97000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -404,7 +424,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iCaramel Popcorn 40oz (55,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value3 > 0) { setValue3(value3 - 1),setTotalAll(totalAll-55000) } }} /> <input value={value3} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue3(value3 + 1),setTotalAll(totalAll+55000) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value3 > 0) { setValue3(value3 - 1), setTotalAll(totalAll - 55000) } }} /> <input value={value3} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue3(value3 + 1), setTotalAll(totalAll + 55000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -415,7 +435,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>Cheese Popcorn 40oz (55,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value4 > 0) { setValue4(value4 - 1),setTotalAll(totalAll-55000) } }} /> <input value={value4} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue4(value4 + 1),setTotalAll(totalAll+55000) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value4 > 0) { setValue4(value4 - 1), setTotalAll(totalAll - 55000) } }} /> <input value={value4} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue4(value4 + 1), setTotalAll(totalAll + 55000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -430,7 +450,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iSweet Popcorn 40oz (55,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value5 > 0) { setValue5(value5 - 1),setTotalAll(totalAll-55000) } }} /> <input value={value5} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue5(value5 + 1),setTotalAll(totalAll+55000) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value5 > 0) { setValue5(value5 - 1), setTotalAll(totalAll - 55000) } }} /> <input value={value5} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue5(value5 + 1), setTotalAll(totalAll + 55000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -458,7 +478,7 @@ const BookKing = () => {
                         <div>
                             <h4>{film.name}</h4>
                         </div>
-                        <div style={{fontSize:15}}>
+                        <div style={{ fontSize: 15 }}>
                             {film.sub}
                         </div>
                         <div>
@@ -482,36 +502,44 @@ const BookKing = () => {
                             }
                         </div>
                         <div>
-                          <h3>CHỌN ĐỒ ĂN & THỨC UỐNG</h3>
-                          <div className="underline2">
+                            <h3>CHỌN ĐỒ ĂN & THỨC UỐNG</h3>
+                            <div className="underline2">
 
-</div>
-                           {value1 >0 && 
-                             <div> <span style={{color:'yellow'}} >iBIG SHARE Combo </span> {value1} x 107.000VNĐ</div>
-                           }
-                             {value2 >0 && 
-                           <div> <span style={{color:'yellow'}}>iSHARE Combo  </span>  {value2} x 97.000VNĐ</div>
-                           }
-                             {value3>0 && 
-                           <div> <span style={{color:'yellow'}}>iCaramel Popcorn 40oz </span>  {value3} x 55.000VNĐ</div>
-                           }
-                             {value4 >0 && 
-                           <div><span style={{color:'yellow'}}>Cheese Popcorn 40oz</span>  {value4} x 55.000VNĐ</div>
-                           }
-                             {value5 >0 && 
-                           <div> <span style={{color:'yellow'}}>iSweet Popcorn 40oz </span>   {value5} x 55.000VNĐ</div>
-                           }
+                            </div>
+                            {value1 > 0 &&
+                                <div> <span style={{ color: 'yellow' }} >iBIG SHARE Combo </span> {value1} x 107.000VNĐ</div>
+                            }
+                            {value2 > 0 &&
+                                <div> <span style={{ color: 'yellow' }}>iSHARE Combo  </span>  {value2} x 97.000VNĐ</div>
+                            }
+                            {value3 > 0 &&
+                                <div> <span style={{ color: 'yellow' }}>iCaramel Popcorn 40oz </span>  {value3} x 55.000VNĐ</div>
+                            }
+                            {value4 > 0 &&
+                                <div><span style={{ color: 'yellow' }}>Cheese Popcorn 40oz</span>  {value4} x 55.000VNĐ</div>
+                            }
+                            {value5 > 0 &&
+                                <div> <span style={{ color: 'yellow' }}>iSweet Popcorn 40oz </span>   {value5} x 55.000VNĐ</div>
+                            }
                         </div>
-                         <div style={{display:'flex', justifyContent:'end',fontSize:20}}>
-                         Tổng giá tiền
-                            </div>  
-                            <div style={{display:'flex', justifyContent:'end',fontSize:40}}>
-                        {totalAll.toLocaleString()} VNĐ
-                            </div>  
-                          
+                        <div style={{ display: 'flex', justifyContent: 'end', fontSize: 20 }}>
+                            Tổng giá tiền
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'end', fontSize: 40 }}>
+                            {totalAll.toLocaleString()} VNĐ
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <div onClick={() => handleCancelBuy()} >Hủy đặt vé</div>
+                            <div>
+                              <button onClick={async() => {
+                                await Order({amount:5000000})
+                             }}  className="btn btn-warning"> THANH TOÁN</button>
+                      
+                            </div>
+                        </div>
                     </div>
 
-                        {/* <iframe height={400} width={400} src={`${import.meta.env.VITE_BASE_URL}/order`} ></iframe> */}
+                    <iframe height={800} width={600} src={`${import.meta.env.VITE_BASE_URL}/order`} ></iframe>
                 </Col>
             </Row>
         </div>

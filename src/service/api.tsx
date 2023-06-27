@@ -46,6 +46,6 @@ export const updateChair = (data?:any) => {
     return axios.put('http://localhost:8080/v4/api/chair',data)
 }
 //vnpay
-export const Order = () => {
-    return axios.post('order/create_payment_url')
+export const Order = (amount) => {
+    return axios.post('order/create_payment_url',amount)
 }
