@@ -29,6 +29,7 @@ import SuKien from './components/home/page/su-kien';
 import { doRefreshFilm } from './redux/buy/buySlice';
 import { doRefresh } from './redux/user/userSlice';
 import BookKing from './components/home/page/booking';
+import { updateChair } from './service/api';
 const Layout = () => {
   return (
     <>
@@ -184,9 +185,11 @@ function App() {
       dispatch(doRefresh(saveaccount))
     }
   }
+
   useEffect(() => {
     localStorage.removeItem('count')
     getAccount()
+   
   },[])
   return (
     <div className='body'>

@@ -1,4 +1,4 @@
-import { Col, Row, message } from "antd"
+import { Col, Divider, Row, message, notification } from "antd"
 import CurrentPage from "../currentPage"
 import './index.scss'
 import { useSelector } from "react-redux"
@@ -35,44 +35,185 @@ const BookKing = () => {
     const [price3, setPrice3] = useState(55000)
     const [price4, setPrice4] = useState(55000)
     const [price5, setPrice5] = useState(55000)
-
+    const [totalChairBought, setTotalChairBought] = useState(0)
+    const [chairSlected, setChairSelected] = useState(0)
+    const [totalAll, setTotalAll] = useState(0);
     const changeColor1 = () => {
+        if(green1){
+            setChairSelected(chairSlected-1)
+            setGreen1(!green1)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen1(!green1)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const changeColor2 = () => {
+        if(green2){
+            setChairSelected(chairSlected-1)
+            setGreen2(!green2)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen2(!green2)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const changeColor3 = () => {
+        if(green3){
+            setChairSelected(chairSlected-1)
+            setGreen3(!green3)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen3(!green3)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const changeColor4 = () => {
+        if(green4){
+            setChairSelected(chairSlected-1)
+            setGreen4(!green4)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen4(!green4)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const changeColor5 = () => {
+        if(green5){
+            setChairSelected(chairSlected-1)
+            setGreen5(!green5)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen5(!green5)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const changeColor6 = () => {
+        if(green6){
+            setChairSelected(chairSlected-1)
+            setGreen6(!green6)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen6(!green6)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const changeColor7 = () => {
+        if(green7){
+            setChairSelected(chairSlected-1)
+            setGreen7(!green7)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen7(!green7)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
-    const changeColor8 = () => {
+    const changeColor8= () => {
+        if(green8){
+            setChairSelected(chairSlected-1)
+            setGreen8(!green8)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen8(!green8)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const changeColor9 = () => {
+        if(green9){
+            setChairSelected(chairSlected-1)
+            setGreen9(!green9)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen9(!green9)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const changeColor10 = () => {
+        if(green10){
+            setChairSelected(chairSlected-1)
+            setGreen10(!green10)
+        }
+       else if(chairSlected < totalChairBought){
+        setChairSelected(chairSlected+1)
         setGreen10(!green10)
+       }
+       else{
+        message.error(
+            `Đặt có ${totalChairBought} vé mà đòi chọn ${totalChairBought +1} à`
+          )
+       }
+  
     }
     const getChair = async () => {
         let res = await getChairDidBuy(0)
+        let total = 0;
+        let totalQuantity = 0
+       if(res && res.data){
         setChairDidBuy(res.data)
+        for(let i = 0; i<res.data.length;i++){
+            total += res.data[i].price*res.data[i].quantity;
+            totalQuantity += res.data[i].quantity
+        }
+       }
+      setTotalAll(total)
+      setTotalChairBought(totalQuantity)
     }
     const test = async() => {
         let res = await Order()
-        console.log(res)
     }
 
     useEffect(() => {
@@ -158,7 +299,7 @@ const BookKing = () => {
                                 <th>D</th>
                                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_item, index) => {
                                     return (
-                                        <td key={`${index}`}> <b>{index + 1}</b><img onClick={() => message.error('Chọn ghế hàng A đi')} src="https://www.megagscinemas.vn/Images/Seating/25/seat_0.png" alt="" /></td>
+                                        <td key={`${index}`}> <b>{index + 1}</b><img onClick={() => message.error('Chọn ghế hàng A đi')} src="https://www.megagscinemas.vn/Images/Seating/25/seat_0.png" alt="2" /></td>
                                     )
                                 })}
 
@@ -217,9 +358,6 @@ const BookKing = () => {
 
                         </tbody>
 
-
-
-
                     </table>
 
                     <div className="food-container">
@@ -237,11 +375,11 @@ const BookKing = () => {
                             <div style={{ display: 'flex' }}>
                                 <div style={{ display: 'flex' }}>
 
-                                    <div> <img src="https://cms.megagscinemas.vn//media/76071/combo-bigshare.png" alt="" /></div>
+                                    <div> <img src="https://cms.megagscinemas.vn//media/76071/combo-bigshare.png" title="s" /></div>
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iBIG SHARE Combo (107,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value1 > 0) { setValue1(value1 - 1) } }} /> <input value={value1} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue1(value1 + 1) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value1 > 0) { setValue1(value1 - 1),setTotalAll(totalAll-107000) } }} /> <input value={value1} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue1(value1 + 1),setTotalAll(totalAll+107000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -252,7 +390,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iSHARE Combo (97,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value2 > 0) { setValue2(value2 - 1) } }} /> <input value={value2} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue2(value2 + 1) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value2 > 0) { setValue2(value2 - 1),setTotalAll(totalAll-97000) } }} /> <input value={value2} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue2(value2 + 1),setTotalAll(totalAll+97000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -268,7 +406,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iCaramel Popcorn 40oz (55,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value3 > 0) { setValue3(value3 - 1) } }} /> <input value={value3} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue3(value3 + 1) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value3 > 0) { setValue3(value3 - 1),setTotalAll(totalAll-55000) } }} /> <input value={value3} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue3(value3 + 1),setTotalAll(totalAll+55000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -279,7 +417,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>Cheese Popcorn 40oz (55,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value4 > 0) { setValue4(value4 - 1) } }} /> <input value={value4} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue4(value4 + 1) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value4 > 0) { setValue4(value4 - 1),setTotalAll(totalAll-55000) } }} /> <input value={value4} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue4(value4 + 1),setTotalAll(totalAll+55000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -294,7 +432,7 @@ const BookKing = () => {
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iSweet Popcorn 40oz (55,000 VNĐ)</i>
                                         <div >
-                                            <MinusCircleOutlined onClick={() => { if (value5 > 0) { setValue5(value5 - 1) } }} /> <input value={value5} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue5(value5 + 1) }} />
+                                            <MinusCircleOutlined onClick={() => { if (value5 > 0) { setValue5(value5 - 1),setTotalAll(totalAll-55000) } }} /> <input value={value5} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue5(value5 + 1),setTotalAll(totalAll+55000) }} />
                                         </div>
                                     </span>
                                 </div>
@@ -331,23 +469,51 @@ const BookKing = () => {
                         <div>
                             {chairDidBuy && chairDidBuy[0] &&
                                 <div>
-                                    <span> Loại vé: </span><span style={{ color: 'red' }} >{chairDidBuy[0].name} </span>{chairDidBuy[0].quantity}<span>x</span> {chairDidBuy[0].price} VNĐ
+                                    <span> Loại vé: </span><span style={{ color: 'red' }} >{chairDidBuy[0].name} </span>{chairDidBuy[0].quantity}<span>x</span> {chairDidBuy[0].price.toLocaleString()} VNĐ
                                 </div>
                             }
                             {chairDidBuy && chairDidBuy[1] &&
                                 <div>
-                                    <span> Loại vé: </span> <span style={{ color: 'red' }} >{chairDidBuy[1].name} </span> {chairDidBuy[1].quantity} <span>x</span> {chairDidBuy[1].price} VNĐ
+                                    <span> Loại vé: </span> <span style={{ color: 'red' }} >{chairDidBuy[1].name} </span> {chairDidBuy[1].quantity} <span>x</span> {chairDidBuy[1].price.toLocaleString()} VNĐ
                                 </div>
                             }
                             {chairDidBuy && chairDidBuy[2] &&
                                 <div>
-                                    <span> Loại vé: </span><span style={{ color: 'red' }}>{chairDidBuy[2].name}  </span>  {chairDidBuy[2].quantity}<span>x</span> {chairDidBuy[2].price} VNĐ
+                                    <span> Loại vé: </span><span style={{ color: 'red' }}>{chairDidBuy[2].name}  </span>  {chairDidBuy[2].quantity}<span>x</span> {chairDidBuy[2].price.toLocaleString()} VNĐ
                                 </div>
                             }
                         </div>
+                        <div>
+                          <h3>CHỌN ĐỒ ĂN & THỨC UỐNG</h3>
+                          <div className="underline2">
+
+</div>
+                           {value1 >0 && 
+                             <div> <span style={{color:'yellow'}} >iBIG SHARE Combo </span> {value1} x 107.000VNĐ</div>
+                           }
+                             {value2 >0 && 
+                           <div> <span style={{color:'yellow'}}>iSHARE Combo  </span>  {value2} x 97.000VNĐ</div>
+                           }
+                             {value3>0 && 
+                           <div> <span style={{color:'yellow'}}>iCaramel Popcorn 40oz </span>  {value3} x 55.000VNĐ</div>
+                           }
+                             {value4 >0 && 
+                           <div><span style={{color:'yellow'}}>Cheese Popcorn 40oz</span>  {value4} x 55.000VNĐ</div>
+                           }
+                             {value5 >0 && 
+                           <div> <span style={{color:'yellow'}}>iSweet Popcorn 40oz </span>   {value5} x 55.000VNĐ</div>
+                           }
+                        </div>
+                         <div style={{display:'flex', justifyContent:'end',fontSize:20}}>
+                         Tổng giá tiền
+                            </div>  
+                            <div style={{display:'flex', justifyContent:'end',fontSize:40}}>
+                        {totalAll.toLocaleString()} VNĐ
+                            </div>  
+                          
                     </div>
 
-                        <iframe height={400} width={400} src="http://localhost:8080/order" ></iframe>
+                        {/* <iframe height={400} width={400} src={`${import.meta.env.VITE_BASE_URL}/order`} ></iframe> */}
                 </Col>
             </Row>
         </div>

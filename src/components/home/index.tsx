@@ -80,7 +80,7 @@ const Home = () => {
     const [quantity3, setQuantity3] = useState(0)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const film = useSelector((state:any) => state.film)
+    const film = useSelector((state: any) => state.film)
     const getAllFilms = async () => {
         const res = await getFilmsSV()
         if (res && res.data) {
@@ -91,7 +91,6 @@ const Home = () => {
         const res = await getChairs();
         setChair(res.data)
     }
-
     useEffect(() => {
         getChair()
         getAllFilms()
@@ -105,7 +104,6 @@ const Home = () => {
 
     };
     const onChange = (key) => {
-        console.log(key);
     };
     // { value: 'MEGA LÝ CHÍNH THẮNG', label: 'MEGA LÝ CHÍNH THẮNG' },
     // { value: 'MEGA CAO THẮNG', label: 'MEGA CAO THẮNG' },
@@ -189,7 +187,9 @@ const Home = () => {
             children: <>s</>,
         },
     ];
-    const handleBuy = (item) => {
+    const handleBuy = async(item) => {
+        await updateChair(0)
+        console.log(item)
         setIsModalOpen(true)
         dispatch(doBuyFilm(item))
 
@@ -202,7 +202,7 @@ const Home = () => {
             navigate(`/booking/${filmSelected}`)
         }
         else {
-            message.error('Bạn cần chọn ít nhất 1 vé để mua')   
+            message.error('Bạn cần chọn ít nhất 1 vé để mua')
         }
     }
     const handleOk = () => {
@@ -290,7 +290,7 @@ const Home = () => {
                                         <MinusCircleOutlined onClick={() => handleMinus2()} /> <input value={value2} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => handlePlus2()} />
                                     </div>
                                     <div style={{ paddingTop: 30 }}>
-                                        <MinusCircleOutlined onClick={() => handleMinus3()}/> <input value={value3} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => handlePlus3()} />
+                                        <MinusCircleOutlined onClick={() => handleMinus3()} /> <input value={value3} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => handlePlus3()} />
                                     </div>
                                 </Col>}
                             <div>

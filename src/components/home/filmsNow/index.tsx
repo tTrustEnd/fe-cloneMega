@@ -6,6 +6,7 @@ import './index.scss'
 import { FieldTimeOutlined, PlayCircleOutlined, TagOutlined } from '@ant-design/icons';
 import { FaYoutube } from "react-icons/fa6";
 import { IFilm } from '../page/phim';
+import { useNavigate } from 'react-router-dom';
 
 const FilmsNow = () => {
     const [listFilms, setListFilms] = useState([])
@@ -14,7 +15,7 @@ const FilmsNow = () => {
     const [query, _setQuery] = useState('')
     const [showVideo, setShowVideo] = useState(false);
     const [srcTrailer, setSrcTrailer] = useState('')
-
+    const navigate = useNavigate()
     const onChangePage = async (page: any) => {
         setCurrent(page)
         const query = `page=${page}&limit=${pageSize}`
@@ -102,7 +103,7 @@ const FilmsNow = () => {
 
                                     <div>
                                         <button title='Xem chi tiết' className='btn btn-warning'>
-                                            <span style={{ fontWeight: 700, margin: '0 auto' }}> Mua vé</span>
+                                            <span onClick={() => navigate(`/phim/${item.name}`)} style={{ fontWeight: 700, margin: '0 auto' }}> Mua vé</span>
                                         </button >
                                     </div>
 
