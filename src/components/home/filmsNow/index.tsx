@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import "react-image-gallery/styles/scss/image-gallery.scss";
-import { getFilmsByFieldSV } from '../../../service/api';
+import { getFilmsByFieldSV, getFilmsSV } from '../../../service/api';
 import { Modal, Pagination } from 'antd';
 import './index.scss'
 import { FieldTimeOutlined, PlayCircleOutlined, TagOutlined } from '@ant-design/icons';
@@ -16,6 +16,7 @@ const FilmsNow = () => {
     const [showVideo, setShowVideo] = useState(false);
     const [srcTrailer, setSrcTrailer] = useState('')
     const navigate = useNavigate()
+    const [total,setTotal] = useState(0)
     const onChangePage = async (page: any) => {
         setCurrent(page)
         const query = `page=${page}&limit=${pageSize}`
@@ -24,6 +25,11 @@ const FilmsNow = () => {
 
     }
     const getFilm = async (query: any) => {
+        const allFilm = await getFilmsSV()
+        console.log(allFilm)
+        if(allFilm && allFilm.data && allFilm.data.length > 0){
+            setTotal(allFilm.data.length)
+        }
         query = `page=${current}&limit=${pageSize}`
         const result = await getFilmsByFieldSV(query)
         if (result && result.data) {
@@ -120,7 +126,7 @@ const FilmsNow = () => {
                     onChange={onChangePage}
                     current={current}
                     pageSize={pageSize}
-                    total={10}
+                    total={total}
                 />
             </div>
 

@@ -225,9 +225,7 @@ const BookKing = () => {
             <CurrentPage
                 page={`Booking-${film.name}`}
             />
-        <div>
-           <button onClick={()=>test()}>tét</button>
-        </div>
+        
             <Row className="body-book" gutter={[20, 20]}>
 
                 <Col xxl={4}>
