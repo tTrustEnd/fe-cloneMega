@@ -532,7 +532,9 @@ const BookKing = () => {
                             <div onClick={() => handleCancelBuy()} >Hủy đặt vé</div>
                             <div>
                               <button onClick={async() => {
-                                await Order({amount:5000000})
+                              
+                              const res =   await Order(5000000)
+                              console.log(res)
                              }}  className="btn btn-warning"> THANH TOÁN</button>
                       
                             </div>
