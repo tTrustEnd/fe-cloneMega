@@ -43,7 +43,7 @@ export const getChairDidBuy = (query?:number)=> {
     return axios.get(`v4/api/chair?quantity=${query}`)
 }
 export const updateChair = (data?:any) => {
-    return axios.put('http://localhost:8080/v4/api/chair',data)
+    return axios.put('v4/api/chair',data)
 }
 //vnpay
 export const Order = (data) => {
