@@ -104,6 +104,7 @@ const Home = () => {
 
     };
     const onChange = (key) => {
+        console.log(key)
     };
     // { value: 'MEGA LÝ CHÍNH THẮNG', label: 'MEGA LÝ CHÍNH THẮNG' },
     // { value: 'MEGA CAO THẮNG', label: 'MEGA CAO THẮNG' },
