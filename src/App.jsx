@@ -28,6 +28,7 @@ import GioiThieu from './components/home/page/gioi-thieu';
 import SuKien from './components/home/page/su-kien';
 import { doRefreshFilm } from './redux/buy/buySlice';
 import { doRefresh } from './redux/user/userSlice';
+import BookKing from './components/home/page/booking';
 const Layout = () => {
   return (
     <>
@@ -110,7 +111,7 @@ const router = createBrowserRouter([
     },
     {
       path: 'booking/:slug',
-      element:<SuKien/>,
+      element:<BookKing/>,
     },
     ]
   },
@@ -184,6 +185,7 @@ function App() {
     }
   }
   useEffect(() => {
+    localStorage.removeItem('count')
     getAccount()
   },[])
   return (

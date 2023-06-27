@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import userReducer from './user/userSlice'
 export type IRootState = ReturnType<typeof userReducer>
+export type IfilmSelected = ReturnType<typeof filmReducer>
+
 import filmReducer from './buy/buySlice'
 // import chairReducer from './chair/chairSlice'
 import {
