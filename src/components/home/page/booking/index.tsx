@@ -541,7 +541,7 @@ const BookKing = () => {
                         </div>
                     </div>
 
-                    <iframe height={800} width={600} src={`${import.meta.env.VITE_BASE_URL}/order`} ></iframe>
+                 
                 </Col>
             </Row>
         </div>
