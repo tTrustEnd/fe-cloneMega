@@ -381,7 +381,7 @@ const DetailFilm = () => {
 
                                         <div className="container-image" style={{ display: 'flex', paddingLeft: 300, justifyContent: 'center' }}>
                                             <div className="background">
-                                                <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" />
+                                                <img style={{height:'100%'}} src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" />
                                                 <div style={{ display: 'flex', justifyItems: 'center' }} className="centered">
                                                     <div onClick={() => showTrailer(item)} className="play">
                                                         <img width={60} src="https://www.megagscinemas.vn/images/home/play-icon.png" alt="" />

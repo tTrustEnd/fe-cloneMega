@@ -1,3 +1,4 @@
+
 import axios from '../utils/customize-axios'
 export const getUserSV = () => {
     return axios.get('v1/api/user')
@@ -49,6 +50,12 @@ export const updateChair = (data?:any) => {
 export const Order = (data) => {
     return axios.post(`order/create_payment_url`,data)
 }
+//getLink :))
+export const GetLink = () => {
+    return axios.get('/v5/api?sort=-createdAt')
+}
+
 export const Order2 = (query) => {
     return axios.get(`order/create_payment_url?amount=${query}`)
+   
 }

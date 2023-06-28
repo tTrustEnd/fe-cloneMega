@@ -1,20 +1,23 @@
-import { Col, Divider, Modal, Row, message, notification } from "antd"
+import { Checkbox, Col, Divider, Modal, Row, message, notification } from "antd"
 import CurrentPage from "../currentPage"
 import './index.scss'
 import { useSelector } from "react-redux"
 import { useState, useEffect } from "react"
-import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons"
-import { Order, getChairDidBuy, getChairs } from "../../../../service/api"
+import { MinusCircleOutlined, PlusCircleOutlined, RightCircleOutlined } from "@ant-design/icons"
+import { GetLink, Order, getChairDidBuy, updateChair } from "../../../../service/api"
 import Countdown from "./countDownPassReloadPage"
 import { IChair } from "../.."
 import { useNavigate } from "react-router-dom"
+import ModalBuyTicket from "../ModalBuyTicket"
+import { faL } from "@fortawesome/free-solid-svg-icons"
 
 
 const BookKing = () => {
     const [chairDidBuy, setChairDidBuy] = useState<IChair>()
     const film = useSelector((state: any) => state.film).film;
     const navigate = useNavigate()
-
+    const user = useSelector((state: any) => state.user.account.user)
+    console.log(user)
     const [green1, setGreen1] = useState(false)
     const [green2, setGreen2] = useState(false)
     const [green3, setGreen3] = useState(false)
@@ -38,7 +41,11 @@ const BookKing = () => {
     const [totalChairBought, setTotalChairBought] = useState(0)
     const [chairSlected, setChairSelected] = useState(0)
     const [totalAll, setTotalAll] = useState(0);
+    const [bankCode, setBankCode] = useState('')
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isBuy, setIsBuy] = useState(true)
+    const [isBuyChinhsach, setisBuyChinhsach] = useState(true)
+    const [showModalBuyTicket, setShowModalBuyTicket] = useState(false)
     const changeColor1 = () => {
         if (green1) {
             setChairSelected(chairSlected - 1)
@@ -222,14 +229,35 @@ const BookKing = () => {
     const showModal = () => {
         setIsModalOpen(true);
     };
-
+    const close = () => {
+        setShowModalBuyTicket(false)
+    }
     const handleOk = () => {
         setIsModalOpen(false);
     };
 
     const handleCancel = () => {
+
         setIsModalOpen(false);
     };
+    const [link, setLinh] = useState('')
+    const VnpAPI = async () => {
+        setisBuyChinhsach(!isBuyChinhsach)
+        await Order({ amount: totalAll, bankCode: bankCode, language: 'vn', token: localStorage.getItem('access_token') })
+    }
+    const getlinkbuy = async () => {
+        setIsBuy(!isBuy)
+        const res = await GetLink()
+        if (res) {
+            setLinh(res.data[0].name)
+            console.log(link)
+        }
+    }
+    const toggleCheckbox = () => {
+        var square: any = document.getElementById("square");
+        square.classList.toggle("checked");
+    }
+    console.log(link)
     return (
         <div>
             <CurrentPage
@@ -241,16 +269,16 @@ const BookKing = () => {
                 <Col xxl={4}>
                 </Col>
                 <div>
-                <Modal footer={false} title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                    <h2>Hủy đặt vé?</h2>
-                    <span>Các thông tin sẽ không lưu</span>
-                    <div style={{display:'flex',justifyContent:'end'}}>
-                    <button onClick={() => {navigate('/')}} className="btn btn-warning">Ok</button>
-                    </div>
-                  
-                </Modal>
+                    <Modal footer={false} title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                        <h2>Hủy đặt vé?</h2>
+                        <span>Các thông tin sẽ không lưu</span>
+                        <div style={{ display: 'flex', justifyContent: 'end' }}>
+                            <button onClick={() => { navigate('/') }} className="btn btn-warning">Ok</button>
+                        </div>
+
+                    </Modal>
                 </div>
-            
+
                 <Col xxl={11} style={{ paddingTop: 30, paddingLeft: 45 }}>
                     <div style={{ display: 'flex' }} >
                         <div className="tag"> 1</div>&nbsp; <h3 style={{ paddingTop: 5, color: 'black', fontWeight: 900 }}> CHỌN VỊ TRÍ</h3>
@@ -377,7 +405,9 @@ const BookKing = () => {
                         </tbody>
 
                     </table>
-
+                    <div style={{ display: 'flex', paddingTop: 10, paddingLeft: 580, textAlign: 'center' }}>
+                        <button onClick={async () => { await updateChair(), setShowModalBuyTicket(true) }} style={{ display: 'flex' }} className="btn btn-warning"><div><RightCircleOutlined style={{ color: 'red', fontSize: 25, paddingRight: 5 }} /></div><div> Cập nhật số lượng vé</div> </button>
+                    </div>
                     <div className="food-container">
                         <div style={{ display: 'flex' }} >
                             <div className="tag"> 2</div>&nbsp;
@@ -423,7 +453,7 @@ const BookKing = () => {
                                     <div> <img src="https://cms.megagscinemas.vn//media/76090/popcorn-caramel-40oz.png" alt="" /></div>
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iCaramel Popcorn 40oz (55,000 VNĐ)</i>
-                                        <div >
+                                        <div>
                                             <MinusCircleOutlined onClick={() => { if (value3 > 0) { setValue3(value3 - 1), setTotalAll(totalAll - 55000) } }} /> <input value={value3} style={{ width: 30, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => { setValue3(value3 + 1), setTotalAll(totalAll + 55000) }} />
                                         </div>
                                     </span>
@@ -525,24 +555,61 @@ const BookKing = () => {
                         <div style={{ display: 'flex', justifyContent: 'end', fontSize: 20 }}>
                             Tổng giá tiền
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'end', fontSize: 40 }}>
+                        <div style={{ display: 'flex', justifyContent: 'end', fontSize: 40, color: 'khaki', fontWeight: 1000 }}>
                             {totalAll.toLocaleString()} VNĐ
                         </div>
+
+                        <div style={{ color: 'yellow', fontSize: 15 }}>
+                            Thông tin thanh toán
+                        </div>
+                        {user &&
+                            <div>
+                                <div style={{ background: '#333' }}>
+                                    Họ và Tên: {user.name}
+                                </div>
+                                <div style={{ background: '#333' }}>
+                                    Email:{user.email}
+                                </div>
+                                <div style={{ background: '#333' }}>
+                                    Số điện thoại:
+                                </div>
+                            </div>
+
+                        }
+
+                        <div style={{ color: 'yellow', fontSize: 15 }}>
+                            Phương thức thanh toán
+                        </div>
+                        <Checkbox onClick={() => VnpAPI()} style={{ color: 'white' }} onChange={(e) => { if (e.target.checked) { setBankCode('VNBANK') } }}>
+                            NGÂN HÀNG TÙY CHỌN (ATM CARD)
+                        </Checkbox>
+                        <Checkbox disabled={isBuyChinhsach} onClick={() => getlinkbuy()}>
+                            <div style={{ paddingLeft: 0, paddingTop: 20, fontSize: 15, color: 'white' }}> Tôi đã đọc và đồng ý với
+                                <a href=""> Chính sách thanh toán vé trực tuyến</a></div>
+                        </Checkbox>
+                        <div style={{color:'red'}}>
+                            (*)Vé đã mua không thể đổi hoặc hoàn tiền.
+
+                            Mã vé sẽ được gửi qua tin nhắn SMS và Email đã nhập.
+                        </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+
                             <div onClick={() => handleCancelBuy()} >Hủy đặt vé</div>
                             <div>
-                              <button onClick={async() => {
-                             
-                              const res =   await Order({amount:5000000,bankCode:'VNBANK',language:'vn',token:localStorage.getItem('access_token')})
-                              console.log(res)
-                             }}  className="btn btn-warning"> THANH TOÁN</button>
-                      
+                                <button className="btn btn-warning" disabled={isBuy}> <a href={link}>THANH TOÁN</a></button>
                             </div>
+
+
+
                         </div>
                     </div>
 
-                 
+
                 </Col>
+                <ModalBuyTicket
+                    showModalBuyTicket={showModalBuyTicket}
+                    close={close}
+                />
             </Row>
         </div>
     )

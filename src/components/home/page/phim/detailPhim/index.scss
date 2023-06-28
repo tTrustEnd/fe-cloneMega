@@ -25,9 +25,10 @@
     }
     
 }
+
 .scrollable-container {
     width: 500px; /* Kích thước xác định cho khung điền chữ */
-    height: 100px;
+    height: 180px;
     overflow: auto; /* Cho phép cuộn nội dung khi vượt quá kích thước khung */
     padding-top: 10px;
     
@@ -43,7 +44,7 @@
     background: #888; /* Màu của thanh cuộn */
   }
   
-  
+
   .content {
   color: #ece4e4  ;
   }

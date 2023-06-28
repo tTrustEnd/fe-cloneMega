@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const Countdown = () => {
   const [count, setCount] = useState(() => {
     const storedCount = localStorage.getItem('count');
-    return storedCount ? parseInt(storedCount) : 300;
+    return storedCount ? parseInt(storedCount) : 3000;
   });
  
   const [timeIsUp, setTimeIsUp] = useState(false);

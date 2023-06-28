@@ -1,0 +1,142 @@
+.image-gallery-description {
+    background: none;
+    display: none;
+}
+
+.home-baner {
+    &:hover {
+        .image-gallery-description {
+            display: block;
+        }
+    }
+}
+
+.booking-form {
+    margin-top: 0;
+    z-index: 77;
+    position: relative;
+    padding-bottom: 50px;
+
+    div {
+        display: block;
+    }
+
+    .wrapper {
+        width: 940px;
+        margin: 0 auto;
+        background: rgba(49, 49, 50, .7);
+        padding: 10px 58px 10px 58px;
+    }
+
+    * {
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+    }
+
+    .title {
+        text-align: center;
+        color: #fff;
+        b {
+            color: rgb(230, 22, 22);
+        }
+        h3 {
+            font-weight: 1000;
+            font-size: 26px;
+            font-family: 'UTMNeutra';
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        
+    }
+
+    p {
+        font-weight: 600;
+        margin: 0 0 10px;
+    }
+
+    h3 {
+        font-size: 26px;
+        font-family: 'UTMNeutra';
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+}
+
+.form-selected {
+    display: flex;
+    flex-direction: column;
+}
+
+.ant-select {
+    width: 100px;
+}
+
+.mega-films {
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+   
+}
+.all{
+  
+   a{
+   color: red;
+   text-decoration: none;
+   &:hover{
+    text-decoration:underline
+   }
+   }
+
+}
+.advertise-wrap {
+    background: #313132;
+    display: flex;
+
+  .content {
+        width: 1000px;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+    
+element.style {
+    display: block;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+}
+.big-offer{
+   padding-left: 310px;
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
+.ant-tabs-nav-wrap{
+    justify-content: center;
+}
+
+.mua-ves{
+    position: absolute;
+    width: 800px; /* Chiều rộng cố định của thẻ div */
+    height: 600px; /* Chiều cao cố định của thẻ div */
+    box-sizing: border-box;
+   padding-top: 50px;
+ 
+}
+.underline1{
+    width: 2px;
+    height: 1px;
+    background-color: rgb(153, 9, 9);
+    float: right;
+}
+.botModal{
+    padding-top: 15px;
+    a{
+        text-decoration: none;
+        color: #ffca2c;
+    }
+}
