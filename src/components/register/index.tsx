@@ -102,7 +102,7 @@ const Register = () => {
                                     //         .length
                                     // }
                                     >
-                                        Đăng ký
+                                    <i  style={{fontSize:15,fontWeight:800}}> Đăng ký </i>
                                     </Button>
 
                                 )

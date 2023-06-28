@@ -130,7 +130,7 @@ const ModalBuyTicket = (props) => {
         await updateChair()
     };
     return(
-        <Modal className='modal-buy'
+        <Modal className='modal-buy' keyboard={false} maskClosable={false}
         width={800} footer={false} open={showModalBuyTicket} onOk={close} onCancel={close}>
         <Row gutter={[20, 20]}>
             <Col xxl={7} >

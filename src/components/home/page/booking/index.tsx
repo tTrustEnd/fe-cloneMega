@@ -17,7 +17,6 @@ const BookKing = () => {
     const film = useSelector((state: any) => state.film).film;
     const navigate = useNavigate()
     const user = useSelector((state: any) => state.user.account.user)
-    console.log(user)
     const [green1, setGreen1] = useState(false)
     const [green2, setGreen2] = useState(false)
     const [green3, setGreen3] = useState(false)
@@ -231,6 +230,7 @@ const BookKing = () => {
     };
     const close = () => {
         setShowModalBuyTicket(false)
+        location.reload()
     }
     const handleOk = () => {
         setIsModalOpen(false);
@@ -558,7 +558,7 @@ const BookKing = () => {
                         <div style={{ display: 'flex', justifyContent: 'end', fontSize: 40, color: 'khaki', fontWeight: 1000 }}>
                             {totalAll.toLocaleString()} VNĐ
                         </div>
-                            
+
                         <div style={{ color: 'yellow', fontSize: 15 }}>
                             Thông tin thanh toán
                         </div>

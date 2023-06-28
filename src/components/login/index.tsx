@@ -89,6 +89,7 @@ const Login = () => {
                                 <Form.Item style={{paddingLeft:450,paddingTop:30}} shouldUpdate>
                                     {() => (
                                         <Button
+                                        style={{textAlign:'center'}}
                                             loading={isLoading}
                                             type="primary"
                                             htmlType="submit"
@@ -98,7 +99,7 @@ const Login = () => {
                                         //         .length
                                         // }
                                         >
-                                            Đăng nhập
+                                           <i  style={{fontSize:15,fontWeight:800}}> Đăng nhập </i>
                                         </Button>
 
                                     )
