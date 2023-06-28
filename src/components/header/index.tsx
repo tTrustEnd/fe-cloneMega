@@ -2,16 +2,18 @@ import Logo from '../../../src/public/logopage.png'
 import YTB from '../../../src/public/img-youtube.png'
 import FB from '../../../src/public/img-face.png'
 import './index.scss'
-import { Order } from '../../service/api'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 const Header = () => {
- 
+    const user = useSelector((state: any) => state.user.account.user)
+    console.log(user)
     return (
         <div className="header">
             <div className="logo-header">
                 <a href="/"><img alt="example" src={Logo} /></a>
             </div>
-        
-                    
+
+
             <div className="content-header">
                 <div className="content-top">
                     <a href="/gioi-thieu"><ul>GIỚI THIỆU</ul></a>
@@ -21,8 +23,25 @@ const Header = () => {
                     <a href="/faqs"><ul>FAQS</ul></a>
                     <a href="/lien-he"><ul>LIÊN HỆ</ul></a>
                     <a href="/megaPlus"> <ul>MEGA+</ul></a>
-                    <a href="/register"><div> ĐĂNG KÝ</div> </a>
-                    <a href="/login"> <button style={{ fontWeight: 600 }} className="btn btn-warning">ĐĂNG NHẬP</button></a>
+                    {!user && <a href="/register"><div> ĐĂNG KÝ</div> </a>}
+                        
+                    {!user && <a href="/login"> <button style={{ fontWeight: 600 }} className="btn btn-warning">ĐĂNG NHẬP</button></a>}
+                    {user && user.name &&
+                        <div style={{ display: 'block' }}>
+
+                            <span className='hello'><Link to="/phim">Chào bạn : {user.name} !</Link>
+                            </span>
+                            <i style={{color:"white"}}>  Điểm thưởng 0 {`>>`}</i>
+                            <span
+                                onClick={() => {
+                                    localStorage.removeItem("access_token"),
+                                    localStorage.removeItem("persist:root"),
+                                    location.reload()
+                                }} className='dangxuat'
+                                style={{ color: 'yellow', fontSize: 14, textAlign: 'center', height: 19,paddingLeft:10 }}>Đăng xuất</span>
+                        </div>
+                    }
+
                 </div>
                 <div className="content-bot">
                     <div>

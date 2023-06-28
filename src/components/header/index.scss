@@ -1,29 +1,35 @@
-
-*{
+* {
     margin: 0;
 }
-.header{
+
+.header {
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: #313132;
     height: 128px;
-    .logo-header{
+
+    .logo-header {
         padding-top: 15px;
-        img{
+
+        img {
             max-width: 100%;
             vertical-align: middle;
             border: 0;
             padding-right: 40px;
         }
     }
-    .content-header{
-        .content-top{
+
+    .content-header {
+        .content-top {
             display: flex;
             padding-top: 15px;
             padding-left: 30px;
             line-height: 47px;
-            ul,li,a{
+
+            ul,
+            li,
+            a {
                 color: #fff;
                 font-weight: 500;
                 padding-right: 5px;
@@ -32,12 +38,14 @@
                 text-decoration: none;
 
             }
-            div{
+
+            div {
                 padding-left: 50px;
                 padding-right: 15px;
             }
         }
-        .content-bot{
+
+        .content-bot {
             display: flex;
             flex-direction: row;
             // justify-content: center;
@@ -47,23 +55,50 @@
             text-align: center;
             text-transform: uppercase;
             opacity: 0.95;
-            b{
-                color:#111113;
+
+            b {
+                color: #111113;
                 font-size: 26px;
                 font-weight: 900;
                 padding: 6px 20px;
-                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
-            a{
+
+            a {
                 text-decoration: none;
             }
-            ul{
+
+            ul {
                 width: 29px;
                 height: 29px;
                 display: inline-block;
                 position: relative;
-                top: 10px; 
-            } 
+                top: 10px;
+            }
         }
+    }
+}
+
+.hello {
+    width: 250px;
+    // height: 30px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to left, rgb(243, 12, 12), rgba(218, 18, 4, 0.87), yellow, green, rgb(37, 143, 78), rgb(236, 64, 20), rgb(218, 205, 25));
+    font-size: 20;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.dangxuat {
+    width: 300px;
+    text-decoration: block;
+    height: 20px;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
     }
 }

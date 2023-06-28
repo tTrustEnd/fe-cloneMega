@@ -423,7 +423,7 @@ const BookKing = () => {
                             <div style={{ display: 'flex' }}>
                                 <div style={{ display: 'flex' }}>
 
-                                    <div> <img src="https://cms.megagscinemas.vn//media/76071/combo-bigshare.png" title="s" /></div>
+                                    <div> <img src="https://cms.megagscinemas.vn//media/76071/combo-bigshare.png" title="Yêu bạn" /></div>
                                     <span style={{ paddingLeft: 15 }}>
                                         <i style={{ fontSize: 15 }}>iBIG SHARE Combo (107,000 VNĐ)</i>
                                         <div >
@@ -537,19 +537,19 @@ const BookKing = () => {
 
                             </div>
                             {value1 > 0 &&
-                                <div> <span style={{ color: 'yellow' }} >iBIG SHARE Combo </span> {value1} x 107.000VNĐ</div>
+                                <div> <span style={{ color: 'yellow' }} >iBIG SHARE Combo </span> {value1} x 107.000 VNĐ</div>
                             }
                             {value2 > 0 &&
-                                <div> <span style={{ color: 'yellow' }}>iSHARE Combo  </span>  {value2} x 97.000VNĐ</div>
+                                <div> <span style={{ color: 'yellow' }}>iSHARE Combo  </span>  {value2} x 97.000 VNĐ</div>
                             }
                             {value3 > 0 &&
-                                <div> <span style={{ color: 'yellow' }}>iCaramel Popcorn 40oz </span>  {value3} x 55.000VNĐ</div>
+                                <div> <span style={{ color: 'yellow' }}>iCaramel Popcorn 40oz </span>  {value3} x 55.000 VNĐ</div>
                             }
                             {value4 > 0 &&
-                                <div><span style={{ color: 'yellow' }}>Cheese Popcorn 40oz</span>  {value4} x 55.000VNĐ</div>
+                                <div><span style={{ color: 'yellow' }}>Cheese Popcorn 40oz</span>  {value4} x 55.000 VNĐ</div>
                             }
                             {value5 > 0 &&
-                                <div> <span style={{ color: 'yellow' }}>iSweet Popcorn 40oz </span>   {value5} x 55.000VNĐ</div>
+                                <div> <span style={{ color: 'yellow' }}>iSweet Popcorn 40oz </span>   {value5} x 55.000 VNĐ</div>
                             }
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'end', fontSize: 20 }}>
@@ -558,7 +558,7 @@ const BookKing = () => {
                         <div style={{ display: 'flex', justifyContent: 'end', fontSize: 40, color: 'khaki', fontWeight: 1000 }}>
                             {totalAll.toLocaleString()} VNĐ
                         </div>
-
+                            
                         <div style={{ color: 'yellow', fontSize: 15 }}>
                             Thông tin thanh toán
                         </div>
@@ -568,10 +568,10 @@ const BookKing = () => {
                                     Họ và Tên: {user.name}
                                 </div>
                                 <div style={{ background: '#333' }}>
-                                    Email:{user.email}
+                                    Email: {user.email}
                                 </div>
                                 <div style={{ background: '#333' }}>
-                                    Số điện thoại:
+                                    Số điện thoại: {user.phone}
                                 </div>
                             </div>
 
@@ -594,7 +594,7 @@ const BookKing = () => {
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
-                            <div onClick={() => handleCancelBuy()} >Hủy đặt vé</div>
+                            <div className="rject-buy" onClick={() => handleCancelBuy()} >Hủy đặt vé</div>
                             <div>
                                 <button className="btn btn-warning" disabled={isBuy}> <a href={link}>THANH TOÁN</a></button>
                             </div>

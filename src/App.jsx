@@ -114,6 +114,16 @@ const router = createBrowserRouter([
       path: 'booking/:slug',
       element:<BookKing/>,
     },
+    {
+      path: "/login",
+      element: <Login />,
+      errorElement: <NotFound />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+      errorElement: <NotFound />,
+    },
     ]
   },
   {
@@ -159,17 +169,8 @@ const router = createBrowserRouter([
           <HomeAdmin />
         </ProtectedRoute>
     },
+    
     ]
-  },
-  {
-    path: "/login",
-    element: <Login />,
-    errorElement: <NotFound />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-    errorElement: <NotFound />,
   },
 ]);
 

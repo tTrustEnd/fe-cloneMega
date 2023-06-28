@@ -1,6 +1,11 @@
 import './index.scss'
 import Logo from '../../../../src/public/logopage.png'
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 const HeaderFlex = () => {
+
+
+  const user = useSelector((state) => state.user.account.user)
   window.addEventListener('scroll', function () {
     const stickyHeader = document.getElementById('header-flex');
     var openDiv = document.getElementById('openDiv');
@@ -30,17 +35,34 @@ const HeaderFlex = () => {
 
         </div>
         <div>
-          <div style={{ display: 'flex', paddingTop: 15, paddingLeft: 35 }}>
-            <div style={{ paddingRight: 25 }}>
-              <a href="/register"><div> ĐĂNG KÝ</div> </a>
+          {user && user.name &&
+            <div style={{ display: 'block',paddingTop:3,paddingLeft:15 }}>
 
+              <span className='hello' ><Link to="/phim">Chào bạn : {user.name} !</Link>
+              </span>
+              <br /><i style={{color:"white"}}>  Điểm thưởng 0 {`>>`}</i> &nbsp;
+              <span
+                onClick={() => {
+                  localStorage.removeItem("access_token"),
+                    localStorage.removeItem("persist:root"),
+                    location.reload()
+                }} className='dangxuat'
+                style={{ color: 'yellow', fontSize: 14, textAlign: 'center', height: 19, }}>Đăng xuất</span>
+            </div>}
+          {!user &&
+            <div style={{ display: 'flex', paddingTop: 15, paddingLeft: 35 }}>
+              <div style={{ paddingRight: 25 }}>
+                <a href="/register"><div> ĐĂNG KÝ</div> </a>
+
+              </div>
+              <div>
+                <a href="/login">ĐĂNG NHẬP</a>
+              </div>
             </div>
-            <div>
-              <a href="/login">ĐĂNG NHẬP</a>
-            </div>
-          </div>
+          }
+
           <div style={{ paddingLeft: 50, paddingTop: 10 }}>
-            <button className='btn btn-warning'><span className='muave' style={{ fontWeight: 600 }}>MUA VÉ NHANH</span></button>
+            <button className='btn btn-warning'><span className='muave' id='muavenhanh' style={{ fontWeight: 600 }}>MUA VÉ NHANH</span></button>
 
           </div>
 

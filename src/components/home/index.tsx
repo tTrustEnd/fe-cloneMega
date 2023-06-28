@@ -232,7 +232,7 @@ const Home = () => {
                     autoPlay={true}
                 />
             </div>
-            <div className='booking-form'>
+            <div className='booking-form' >
                 <div className='wrapper'>
                     <div className='contents'>
                         <div className='title'>
