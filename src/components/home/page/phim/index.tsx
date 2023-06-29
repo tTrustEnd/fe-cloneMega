@@ -81,8 +81,9 @@ const Phim = () => {
                                             <div><span>Đạo diễn: </span>{item.director}</div>
                                             <div><span>Diễn viên: </span>{item.actor}</div>
                                             <div><span>Phụ đề: </span>{item.sub}</div>
+                                            <div><button style={{position:'absolute'}} className='btn btn-warning' onClick={() => showTrailer(item)}> {`>>`}trailer</button> </div>
+
                                         </div>
-                                        <div><button className='btn btn-warning' onClick={() => showTrailer(item)}> {`>>`}trailer</button> </div>
 
                                     </div>
                                 </Col>
@@ -128,8 +129,8 @@ const Phim = () => {
                                             <div><span>Đạo diễn: </span>{item.director}</div>
                                             <div><span>Diễn viên: </span>{item.actor}</div>
                                             <div><span>Phụ đề: </span>{item.sub}</div>
+                                            <div><button className='btn btn-warning' onClick={() => showTrailer(item)}> {`>>`}trailer</button> </div>
                                         </div>
-                                        <div><button className='btn btn-warning' onClick={() => showTrailer(item)}> {`>>`}trailer</button> </div>
 
                                     </div>
                                 </Col>

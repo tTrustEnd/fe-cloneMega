@@ -16,7 +16,7 @@ const FilmsNow = () => {
     const [showVideo, setShowVideo] = useState(false);
     const [srcTrailer, setSrcTrailer] = useState('')
     const navigate = useNavigate()
-    const [total,setTotal] = useState(0)
+    const [total, setTotal] = useState(0)
     const onChangePage = async (page: any) => {
         setCurrent(page)
         const query = `page=${page}&limit=${pageSize}`
@@ -26,7 +26,7 @@ const FilmsNow = () => {
     }
     const getFilm = async (query: any) => {
         const allFilm = await getFilmsSV()
-        if(allFilm && allFilm.data && allFilm.data.length > 0){
+        if (allFilm && allFilm.data && allFilm.data.length > 0) {
             setTotal(allFilm.data.length)
         }
         query = `page=${current}&limit=${pageSize}`
@@ -79,41 +79,44 @@ const FilmsNow = () => {
                                     &nbsp;&nbsp; &nbsp;  <TagOutlined style={{ color: 'yellow', paddingTop: 5 }} />{item.caterogy}
                                 </div>
                                 <br /><br /><br />
-                                <div style={{ paddingRight: 55 }}>
-                                    <span style={{ color: '#eddede' }}>  <b style={{ color: 'red' }}>(*)</b> Chọn vào xuất chiếu để đặt vé </span>
+
+                                
+                                <div style={{ display: 'flex', paddingRight: 55,color:'yellow' }}>
+                                 {`>>`} Chọn vào xuất chiếu để đặt vé
                                 </div>
 
                                 <div style={{ display: 'flex', paddingRight: 55 }}>
                                     <PlayCircleOutlined style={{ color: 'yellow', paddingTop: 5 }} />&nbsp;  {item.sub}
                                 </div>
 
-                                <div className='group-btn' style={{ display: 'flex' }} >
-                                    <div>
-                                        <button
-                                            onClick={() => showTrailer(item)}
-                                            className='btn btn-warning'>
-                                            <span
-                                                style={{ fontWeight: 700, margin: '0 auto' }}>
-                                                <FaYoutube
-                                                    style={{ color: 'red' }} /> </span>
 
-                                        </button>
-                                    </div>
+                            </div>
+                            <div className='bottom-left group-btn' style={{ display: 'flex', paddingTop: 100 }} >
+                                <div>
+                                    <button
+                                        onClick={() => showTrailer(item)}
+                                        className='btn btn-warning'>
+                                        <span
+                                            style={{ fontWeight: 700, margin: '0 auto' }}>
+                                            <FaYoutube
+                                                style={{ color: 'red' }} /> </span>
 
-                                    <div style={{ padding: '0 8px' }}>
-                                        <button title='Xem chi tiết' className='btn btn-warning'>
-                                            <a href={`/phim/${item.name}`} style={{ fontWeight: 700, margin: '0 auto' }}>Xem chi tiết</a>
-                                        </button >
-                                    </div>
-
-                                    <div>
-                                        <button title='Xem chi tiết' className='btn btn-warning'>
-                                            <span onClick={() => navigate(`/phim/${item.name}`)} style={{ fontWeight: 700, margin: '0 auto' }}> Mua vé</span>
-                                        </button >
-                                    </div>
-
-
+                                    </button>
                                 </div>
+
+                                <div style={{ padding: '0 8px' }}>
+                                    <button title='Xem chi tiết' className='btn btn-warning'>
+                                        <a href={`/phim/${item.name}`} style={{ fontWeight: 700, margin: '0 auto' }}>Xem chi tiết</a>
+                                    </button >
+                                </div>
+
+                                <div>
+                                    <button title='Xem chi tiết' className='btn btn-warning'>
+                                        <span onClick={() => navigate(`/phim/${item.name}`)} style={{ fontWeight: 700, margin: '0 auto' }}> Mua vé</span>
+                                    </button >
+                                </div>
+
+
                             </div>
                         </div>
                     )

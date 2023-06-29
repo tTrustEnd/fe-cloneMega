@@ -518,7 +518,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="big-offer img">
-                <a title="ƯU ĐÃI HỌC SINH - SINH VIÊN GIỎI HÈ 2023" className="bg-special" href="/uu-dai/uu-dai-hoc-sinh-sinh-vien-gioi-he-2023/">
+                <a title="ƯU ĐÃI HỌC SINH - SINH VIÊN GIỎI HÈ 2023" className="bg-special" href="/uu-dai">
                     <img alt="ƯU ĐÃI HỌC SINH - SINH VIÊN GIỎI HÈ 2023"
                         src="https://cms.megagscinemas.vn//media/77066/hè-1920-1080-px-1.png?width=745&amp;height=420"
                         style={{ width: 745, height: 420 }} />
