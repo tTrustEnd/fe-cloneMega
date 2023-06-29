@@ -26,7 +26,6 @@ const FilmsNow = () => {
     }
     const getFilm = async (query: any) => {
         const allFilm = await getFilmsSV()
-        console.log(allFilm)
         if(allFilm && allFilm.data && allFilm.data.length > 0){
             setTotal(allFilm.data.length)
         }

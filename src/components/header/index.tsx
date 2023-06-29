@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 const Header = () => {
     const user = useSelector((state: any) => state.user.account.user)
-    console.log(user)
     return (
         <div className="header">
             <div className="logo-header">

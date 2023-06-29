@@ -198,10 +198,7 @@ function App() {
   const film = useSelector(state => state.saveFilm.film)
   const getAccount = () => {
     dispatch(doRefreshFilm(film))
-    if (window.location.pathname === '/login') return;
-    else {
       dispatch(doRefresh(saveaccount))
-    }
   }
 
   useEffect(() => {

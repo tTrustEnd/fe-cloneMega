@@ -3,7 +3,7 @@ import axios from '../utils/customize-axios'
 export const getUserSV = () => {
     return axios.get('v1/api/user')
 }
-export const createUserSV = (data:{email:string,password:string,name:string}) => {
+export const createUserSV = (data:{email:string,password:string,name:string,phone:string}) => {
     return axios.post('v1/api/user',data)
 }
 export const loginSV = (data:{email:string, password:string}) => {
