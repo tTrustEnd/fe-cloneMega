@@ -7,7 +7,7 @@ setTimeout(() => {
 const Countdown = () => {
   const [count, setCount] = useState(() => {
     const storedCount = localStorage.getItem('count');
-    return storedCount ? parseInt(storedCount) : 3000;
+    return storedCount ? parseInt(storedCount) : 300;
   });
 
   const [timeIsUp, setTimeIsUp] = useState(false);
