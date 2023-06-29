@@ -12,7 +12,7 @@ import { IChair } from "../../..";
 import { useSelector } from "react-redux";
 
 const DetailFilm = () => {
-    const user = useSelector((state:any) => state.user.account.user)
+    const user = useSelector((state: any) => state.user.account.user)
     const [isModalOpen, setIsModalOpen] = useState(false)
     const dispatch = useDispatch()
     const [chair, setChair] = useState<any>()
@@ -317,8 +317,8 @@ const DetailFilm = () => {
                     </div>
                 </Row>
                 {!user && <div className='botModal' style={{ paddingLeft: 350 }}>
-                            <a href="/login">Đăng nhập</a> / <a href="/register">Đăng ký</a> Thành viên Mega+ để tích lũy điểm
-                        </div>}
+                    <a href="/login">Đăng nhập</a> / <a href="/register">Đăng ký</a> Thành viên Mega+ để tích lũy điểm
+                </div>}
                 <div style={{ display: 'flex', paddingTop: 30 }}>
                     <b>Ghi chú: </b> &nbsp; <div style={{ color: 'red' }}> Mỗi lần đặt vé bạn chỉ được chọn tối đa 10 vé.</div>
                     <div style={{ paddingLeft: 290 }}>
@@ -404,7 +404,7 @@ const DetailFilm = () => {
                             </div>
                             <Row gutter={[20, 20]} style={{ paddingTop: 35, display: 'flex', justifyContent: 'center' }} >
 
-                                <Col xxl={16} xl={16} style={{ background: 'rgba(0,0,0,.6)' }}>
+                                <Col xxl={16} xl={18} style={{ background: 'rgba(0,0,0,.6)' }}>
                                     <div style={{ paddingTop: 25 }}>
                                         <span style={{ fontSize: 35, color: 'white', fontWeight: 900, paddingLeft: 35, paddingTop: 35 }}>
                                             LỊCH CHIẾU-{item.name}</span>
@@ -415,7 +415,7 @@ const DetailFilm = () => {
                                     </div>
                                     {filmSelected &&
                                         <Row className="datve">
-                                            <Col xxl={11} style={{ paddingLeft: 35 }}>
+                                            <Col xxl={11} xl={11} style={{ paddingLeft: 35 }}>
                                                 <div>Hôm nay (24/6/2023)</div>
                                                 <ul><h6 style={{ color: '#ffcf29', fontSize: 20, fontWeight: 900 }}>RẠP CAO THẮNG</h6></ul>
                                                 <ul style={{ display: 'flex' }}>
@@ -450,7 +450,7 @@ const DetailFilm = () => {
                                                 <div style={{ paddingBottom: 25 }}></div>
                                             </Col>
                                             <Col className="vertical-line"></Col>
-                                            <Col xxl={12} style={{ paddingLeft: 35 }}>
+                                            <Col xxl={12} xl={11} style={{ paddingLeft: 35 }}>
                                                 <div>27/6/2023</div>
                                                 <ul><h6 style={{ color: '#ffcf29', fontSize: 20, fontWeight: 900 }}>RẠP CAO THẮNG</h6></ul>
                                                 <ul style={{ display: 'flex' }}>
@@ -469,30 +469,30 @@ const DetailFilm = () => {
                                 \
                             </Row>
 
-                                        <Row style={{display:'flex',justifyContent:'center',paddingTop:30}}> 
+                            <Row style={{ display: 'flex', justifyContent: 'center', paddingTop: 30 }}>
 
-                                        <Col xxl={16} xl={16} style={{ background: 'rgba(0,0,0,.6)',display:'flex',justifyContent:'center'}}>
-                                <div>
-                                <div style={{ paddingTop: 25, fontSize: 30, fontWeight: 700, color: 'white', paddingLeft: 35 }}>
-                                    Các phim khác
-                                    
-                                </div>
-                                <div className="underline"></div>
-                                <div>
-                                    &nbsp; &nbsp; &nbsp; &nbsp;
-                                </div>
+                                <Col xxl={17} xl={20} style={{ background: 'rgba(0,0,0,.6)', display: 'flex', justifyContent: 'center' }}>
+                                    <div>
+                                        <div style={{ paddingTop: 25, fontSize: 30, fontWeight: 700, color: 'white', paddingLeft: 35 }}>
+                                            Các phim khác
 
-                            
-                                <div>
-                                <FilmsNow />
-                                </div>
-                                </div>
-                            
-                               
-                            </Col>
+                                        </div>
+                                        <div className="underline"></div>
+                                        <div>
+                                            &nbsp; &nbsp; &nbsp; &nbsp;
+                                        </div>
 
-                                        </Row>
-                      
+
+                                        <div>
+                                            <FilmsNow />
+                                        </div>
+                                    </div>
+
+
+                                </Col>
+
+                            </Row>
+
 
 
 

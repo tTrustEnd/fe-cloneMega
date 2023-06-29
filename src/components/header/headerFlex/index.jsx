@@ -46,7 +46,7 @@ const HeaderFlex = () => {
                   localStorage.removeItem("access_token"),
                     localStorage.removeItem("persist:root"),
                     location.reload()
-                }} className='dangxuat'
+                }} 
                 style={{ color: 'yellow', fontSize: 14, textAlign: 'center', height: 19, }}>Đăng xuất</span>
             </div>}
           {!user &&

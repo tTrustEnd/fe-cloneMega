@@ -18,10 +18,10 @@ const BookKing = () => {
     const film = useSelector((state: any) => state.film).film;
     const navigate = useNavigate()
     const user = useSelector((state: any) => state.user.account.user)
-    const [green1, setGreen1] = useState(false)
-    const [green2, setGreen2] = useState(false)
-    const [green3, setGreen3] = useState(false)
-    const [green4, setGreen4] = useState(false)
+    const [green1, setGreen1] = useState<boolean>()
+    const [green2, setGreen2] = useState<boolean>()
+    const [green3, setGreen3] = useState<boolean>()
+    const [green4, setGreen4] = useState<boolean>()
     const [green5, setGreen5] = useState(false)
     const [green6, setGreen6] = useState(false)
     const [green7, setGreen7] = useState(false)
@@ -223,13 +223,104 @@ const BookKing = () => {
         }
         setTotalAll(total)
         setTotalChairBought(totalQuantity)
+    if(totalChairBought===1){
+            setGreen1(true)
+            setChairSelected(1)
+
+        }
+        if(totalChairBought===2){
+            setGreen1(true)
+            setGreen2(true)
+            setChairSelected(2)
+
+        }
+        if(totalChairBought===3){
+            setGreen1(true)
+            setGreen2(true)
+            setGreen3(true)
+            setChairSelected(3)
+
+        }
+        if(totalChairBought===4){
+            setGreen1(true)
+            setGreen2(true)
+            setGreen3(true)
+            setGreen4(true)
+            setChairSelected(4)
+        } 
+        if(totalChairBought===5){
+            setGreen1(true)
+            setGreen2(true)
+            setGreen3(true)
+            setGreen4(true)
+            setGreen5(true)
+            setChairSelected(5)
+
+        }
+        if(totalChairBought===6){
+            setGreen1(true)
+            setGreen2(true)
+            setGreen4(true)
+            setGreen5(true)
+            setGreen6(true)
+            setChairSelected(6)
+
+        }
+        if(totalChairBought===7){
+            setGreen1(true)
+            setGreen2(true)
+            setGreen3(true)
+            setGreen4(true)
+            setGreen5(true)
+            setGreen6(true)
+            setGreen7(true)
+            setChairSelected(7)
+
+        }
+        if(totalChairBought===8){
+            setGreen1(true)
+            setGreen2(true)
+            setGreen3(true)
+            setGreen4(true)
+            setGreen5(true)
+            setGreen6(true)
+            setGreen7(true)
+            setGreen8(true)
+            setChairSelected(8)
+
+        }
+        if(totalChairBought===9){
+            setGreen1(true)
+            setGreen2(true)
+            setGreen3(true)
+            setGreen4(true)
+            setGreen5(true)
+            setGreen6(true)
+            setGreen7(true)
+            setGreen8(true)
+            setGreen9(true)
+            setChairSelected(9)
+
+        }
+        if(totalChairBought===10){
+            setGreen1(true)
+            setGreen2(true)
+            setGreen3(true)
+            setGreen4(true)
+            setGreen5(true)
+            setGreen6(true)
+            setGreen7(true)
+            setGreen8(true)
+            setGreen9(true)
+            setGreen10(true)
+            setChairSelected(10)
+
+        }
     }
     useEffect(() => {
         getChair()
-    }, [])
-    const showModal = () => {
-        setIsModalOpen(true);
-    };
+    },[totalChairBought])
+  
     const close = () => {
         setShowModalBuyTicket(false)
         location.reload()
@@ -263,18 +354,14 @@ const BookKing = () => {
         var square: any = document.getElementById("square");
         square.classList.toggle("checked");
     }
+    console.log(totalChairBought)
     console.log(link)
     return (
         <div>
             <CurrentPage
                 page={`Booking-${film.name}`}
             />
-
-            <Row className="body-book" gutter={[20, 20]}>
-
-                <Col xxl={4}>
-                </Col>
-                <div>
+   <div>
                     <Modal footer={false} title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                         <h2>Hủy đặt vé?</h2>
                         <span>Các thông tin sẽ không lưu</span>
@@ -285,9 +372,11 @@ const BookKing = () => {
                     </Modal>
                 </div>
 
-                <Col xxl={11} style={{ paddingTop: 30, paddingLeft: 45 }}>
+            <Row className="body-book" gutter={[20, 20]}>
+
+                <Col xxl={11} style={{ paddingTop: 30 }}>
                     <div style={{ display: 'flex' }} >
-                        <div className="tag"> 1</div>&nbsp; <h3 style={{ paddingTop: 5, color: 'black', fontWeight: 900 }}> CHỌN VỊ TRÍ</h3>
+                        <div className="tag"> <a>1 </a></div>&nbsp; <h3 style={{ paddingTop: 5, color: 'black', fontWeight: 900 }}> CHỌN VỊ TRÍ</h3>
                     </div>
                     <div className="chuthich-ghe">
                         <div>
@@ -416,7 +505,7 @@ const BookKing = () => {
                     </div>
                     <div className="food-container">
                         <div style={{ display: 'flex' }} >
-                            <div className="tag"> 2</div>&nbsp;
+                            <div className="tag"> <a>2</a></div>&nbsp;
                             <h3 style={{ paddingTop: 5, color: 'black', fontWeight: 900 }}>
                                 CHỌN ĐỒ ĂN & THỨC UỐNG
                             </h3>

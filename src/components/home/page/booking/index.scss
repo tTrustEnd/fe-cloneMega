@@ -1,13 +1,16 @@
 .body-book {
     background-color: #f1ecec;
-
+display: flex;
+flex-direction: row;
+justify-content: center;
+width:'100%';
     .tag {
         text-align: center;
         font-size: 30px;
         border: 3px solid rgb(244, 245, 242);
         border-radius: 50%;
         background-color: rgb(235, 214, 24);
-        width: 30px;
+        width: 40px;
     }
 
     .chuthich-ghe {

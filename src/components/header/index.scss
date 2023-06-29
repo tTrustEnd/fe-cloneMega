@@ -24,10 +24,9 @@
         .content-top {
             display: flex;
             flex-direction: row;
-            padding-top: 15px;
+            padding-top: 25px;
             padding-left: 30px;
-            line-height: 47px;
-
+            line-height: 40px;
             ul,
             li,
             a {
@@ -82,7 +81,6 @@
 }
 
 .hello {
-    // width: 250px;
     height: 30px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -96,9 +94,8 @@
 
 .dangxuat {
     position: absolute;
-    // width: 300px;
-    // height: 20px;
-    height: -250px;
+    padding-top: 20px;
+    height: 2px;
     &:hover {
         cursor: pointer;
         text-decoration: underline;

@@ -15,7 +15,7 @@ export interface IUudai {
     name: string,
     time: string,
     image: string,
-    _id:string
+    _id: string
 }
 
 const Uudai = () => {
@@ -36,27 +36,30 @@ const Uudai = () => {
         const res = await getUudaiSV()
         setListUudai(res.data)
     }
- 
+
     const listUudai1 = listUudai.splice(0, 17);
     const listUudai2 = listUudai.splice(0, 23);
     useEffect(() => {
         getUudai()
-    }, [rap2,rap1])
-  
+    }, [rap2, rap1])
+
     return (
         <div>
             <CurrentPage
                 page={'uu-dai'}
             />
-            <Row style={{ display: 'flex' }} gutter={[20, 20]}>
+            <div style={{display:'flex',justifyContent:'center',paddingTop:35}}>
+                <div className="title-rap" style={{ display: 'flex', width:1000  }} >
+                    <h3 >
+                        ƯU DÃI
+                    </h3>
+                </div>
+            </div>
 
-                <Col xxl={4} ></Col>
-                <Col xxl={16} style={{ paddingLeft: 50, paddingTop: 40 }}>
-                    <div className="title-rap" >
-                        <h3 >
-                            ƯU DÃI
-                        </h3>
-                    </div>
+            <Row style={{ display: 'flex', justifyContent: 'center' }} gutter={[20, 20]}>
+
+                <Col xxl={18} style={{ paddingLeft: 50, paddingTop: 40 }}>
+
                     <div className="select-rap" >
                         <span>ƯU ĐÃI TẠI</span>
                         <span>
@@ -75,40 +78,40 @@ const Uudai = () => {
 
                     </div>
 
+                    <Col xl={25} lg={25}>
+                        {rap1 &&
 
-                    {rap1 &&
+                            <div className="container-uudai" style={{ display: 'flex' }}>
+                                {listUudai1 && listUudai1.length > 0
+                                    && listUudai1.map((item: IUudai, index: number) => {
+                                        return (
+                                            <a className="uudai" href={`/uu-dai/${item._id}`} key={`${index}`}>
+                                                <img src={`${import.meta.env.VITE_BASE_URL}/images/uudai/${item.image}`} alt="" />
 
-                        <div  className="container-uudai" style={{ display: 'flex' }}>
-                            {listUudai1 && listUudai1.length > 0
-                                && listUudai1.map((item: IUudai, index: number) => {
-                                    return (
-                                        <a className="uudai" href={`/uu-dai/${item._id}`} key={`${index}`}>
-                                            <img src={`${import.meta.env.VITE_BASE_URL}/images/uudai/${item.image}`} alt="" />
+                                                <div className="content-uudai">
+                                                    {item.name}
+                                                </div>
+                                                <i>{item.time}</i>
+                                            </a>
+                                        )
+                                    })
+                                }
 
-                                            <div className="content-uudai">
-                                                {item.name}
-                                            </div>
-                                            <i>{item.time}</i>
-                                        </a>
-                                    )
-                                })
-                            }
+                            </div>
 
-                        </div>
+                        }
+                    </Col>
 
-                    }
 
-                    <div>
 
-                    </div>
                     {rap2 &&
 
                         <div className="container-uudai" style={{ display: 'flex' }}>
                             {listUudai2 && listUudai2.length > 0
                                 && listUudai2.map((item: IUudai, index: number) => {
                                     return (
-                                        <a className="uudai" href={`/uu-dai/${item._id}`}  key={`${index}`}>
-                                            <img src={`${import.meta.env.VITE_BASE_URL}/images/uudai2/${item.image}`}  />
+                                        <a className="uudai" href={`/uu-dai/${item._id}`} key={`${index}`}>
+                                            <img src={`${import.meta.env.VITE_BASE_URL}/images/uudai2/${item.image}`} />
 
                                             <div className="content-uudai">
                                                 {item.name}
@@ -128,7 +131,6 @@ const Uudai = () => {
                     }
 
                 </Col>
-                <Col xxl={5}></Col>
             </Row>
         </div>
     )
