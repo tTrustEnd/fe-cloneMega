@@ -22,11 +22,11 @@ const Header = () => {
                     <a href="/megaPlus"> <ul>MEGA+</ul></a>
                     {!user && <a href="/register"><div> ĐĂNG KÝ</div> </a>}
 
-                    {!user && <a href="/login"> <button style={{ fontWeight: 600,height:50 }} className="btn btn-warning">ĐĂNG NHẬP</button></a>}
+                    {!user && <a href="/login"> <button style={{ fontWeight: 600, height: 40 }} className="btn btn-warning">ĐĂNG NHẬP</button></a>}
                     {user && user.name &&
-                        <div style={{ display: 'block' }}>
+                        <div style={{ display: 'flex' }}>
 
-                            <div className='hello'><Link to="/phim">Chào bạn : {user.name} !</Link>
+                            <div className='hello'><Link to="/"><b>Chào bạn : {user.name} ! </b></Link>
                             </div>
 
                             <div
@@ -52,8 +52,7 @@ const Header = () => {
                         <a style={{ paddingRight: 25 }} href="https://www.facebook.com/nguyenquang.truong.9237" target="_blank" title="Facebook"><img src={FB} /></a>
                         <a href="https://www.youtube.com/channel/UCYAIiDVBbuO6V4BBERWe-LQ" target="_blank" title="Youtube"><img src={YTB} /></a>
                     </div>
-
-                </div>
+                    </div>
             </div>
 
         </div>
