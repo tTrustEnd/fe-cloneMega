@@ -1,24 +1,26 @@
+import { Col, Row } from 'antd';
 import './index.scss'
 const Footer = () => {
     return (
-        <div className='mega-footer'>
+        <Col className='footer'>
+          <div className='mega-footer'>
             <div className='star-left'>
                 <img src="https://www.megagscinemas.vn/images/home/footer-star.png" alt="" />
             </div>
             <div className='star'>
                 <img src="https://www.megagscinemas.vn/images/home/f-star.png" alt="" />
             </div>
-            <div className='footer-content clearfix'>
+            <div className='footer-content '>
                 <div className='footer-left'>
-                    <div className='footer-link-1 clearfix'>
-                        <ul className='clearfix'>
+                    <div className='footer-link-1 '>
+                        <ul className=''>
                             <span>LỊCH CHIẾU</span>
                             <span>PHIM </span>
                             <span>RẠP & GIÁ VÉ</span>
                             <span>ƯU ĐÃI</span>
                         </ul>
                     </div>
-                    <ul className='clearfix'>
+                    <ul className=''>
                         <b>GIỚI THIỆU</b>
                         <b>SỰ KIỆN </b>
                         <b>DỊCH VỤ</b>
@@ -37,8 +39,8 @@ const Footer = () => {
                         Copyright ©2018 Mega GS Cinemas. All rights reserved.
                     </ul>
                 </div>
-                <div style={{ float: 'right', paddingRight: 230 }}>
-                    <div style={{paddingLeft:200}}> <span>TỔNG ĐÀI HỖ TRỢ</span></div>
+                <div style={{paddingLeft:100}}>
+                    <div > <span>TỔNG ĐÀI HỖ TRỢ</span></div>
                     <div style={{display:'flex'}}>
                     <div >
                         <div>
@@ -58,10 +60,10 @@ const Footer = () => {
             </div>
                     <div >
                         <div>
-                            <h4 style={{ float: 'right', color: 'yellow' }}>Rạp Lý Chính Thắng</h4>
+                            <h4 style={{  color: 'yellow' }}>Rạp Lý Chính Thắng</h4>
                         </div>
                         <div>
-                            <h5  style={{ float: 'right', color: 'yellow' }}>
+                            <h5  style={{color: 'yellow' }}>
                             028 6282 3737
 
                             </h5>
@@ -76,6 +78,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+        </Col>
     )
 }
 export default Footer;

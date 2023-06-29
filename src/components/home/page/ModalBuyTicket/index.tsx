@@ -108,30 +108,24 @@ const ModalBuyTicket = (props) => {
     }
     const handleChair = () => {
         console.log('check chair', chair)
+        if(window.location.pathname='lich-chieu'){
+            if(quantity1 > 0 || quantity2 > 0 || quantity3 > 0){
+                navigate('/booking/THE%20FLASH')
+            }
+            else{
+                message.error('Bạn cần chọn ít nhất 1 vé')
+            }
+        }
         if (quantity1 > 0 || quantity2 > 0 || quantity3 > 0) {
-            location.reload()
             close()
-          
+            location.reload()
         }
         else {
             message.error('Bạn cần chọn ít nhất 1 vé để mua')
         }
     }
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-    const handleCancel = async () => {
-        setValue1(0)
-        setValue2(0)
-        setValue3(0)
-        setQuantity1(0)
-        setQuantity2(0)
-        setQuantity3(0)
-        setIsModalOpen(false);
-        await updateChair()
-    };
     return(
-        <Modal className='modal-buy' keyboard={false} maskClosable={false}
+        <Modal className='modal-buy' keyboard={false} maskClosable={false} 
         width={800} footer={false} open={showModalBuyTicket} onOk={close} onCancel={close}>
         <Row gutter={[20, 20]}>
             <Col xxl={7} >

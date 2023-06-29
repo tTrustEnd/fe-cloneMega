@@ -523,17 +523,17 @@ const BookKing = () => {
                         <div>
                             {chairDidBuy && chairDidBuy[0] &&
                                 <div>
-                                    <span> Loại vé: </span><span style={{ color: 'red' }} >{chairDidBuy[0].name} </span>{chairDidBuy[0].quantity}<span>x</span> {chairDidBuy[0].price.toLocaleString()} VNĐ
+                                    <span> Loại vé: </span><span style={{ color: 'red' }} >{chairDidBuy[0].name} </span>{chairDidBuy[0].quantity}<span> x </span> {chairDidBuy[0].price.toLocaleString()} VNĐ
                                 </div>
                             }
                             {chairDidBuy && chairDidBuy[1] &&
                                 <div>
-                                    <span> Loại vé: </span> <span style={{ color: 'red' }} >{chairDidBuy[1].name} </span> {chairDidBuy[1].quantity} <span>x</span> {chairDidBuy[1].price.toLocaleString()} VNĐ
+                                    <span> Loại vé: </span> <span style={{ color: 'red' }} >{chairDidBuy[1].name} </span> {chairDidBuy[1].quantity} <span> x </span> {chairDidBuy[1].price.toLocaleString()} VNĐ
                                 </div>
                             }
                             {chairDidBuy && chairDidBuy[2] &&
                                 <div>
-                                    <span> Loại vé: </span><span style={{ color: 'red' }}>{chairDidBuy[2].name}  </span>  {chairDidBuy[2].quantity}<span>x</span> {chairDidBuy[2].price.toLocaleString()} VNĐ
+                                    <span> Loại vé: </span><span style={{ color: 'red' }}>{chairDidBuy[2].name}  </span>  {chairDidBuy[2].quantity}<span> x </span> {chairDidBuy[2].price.toLocaleString()} VNĐ
                                 </div>
                             }
                         </div>

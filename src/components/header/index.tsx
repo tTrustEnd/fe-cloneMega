@@ -11,8 +11,6 @@ const Header = () => {
             <div className="logo-header">
                 <a href="/"><img alt="example" src={Logo} /></a>
             </div>
-
-
             <div className="content-header">
                 <div className="content-top">
                     <a href="/gioi-thieu"><ul>GIỚI THIỆU</ul></a>
