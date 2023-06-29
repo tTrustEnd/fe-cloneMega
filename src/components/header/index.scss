@@ -23,6 +23,7 @@
     .content-header {
         .content-top {
             display: flex;
+            flex-direction: row;
             padding-top: 15px;
             padding-left: 30px;
             line-height: 47px;
@@ -30,6 +31,8 @@
             ul,
             li,
             a {
+                display: flex;
+                flex-direction: row;
                 color: #fff;
                 font-weight: 500;
                 padding-right: 5px;
@@ -48,7 +51,6 @@
         .content-bot {
             display: flex;
             flex-direction: row;
-            // justify-content: center;
             align-items: center;
             height: 50px;
             background-color: rgb(224, 210, 11);
@@ -80,8 +82,8 @@
 }
 
 .hello {
-    width: 250px;
-    // height: 30px;
+    // width: 250px;
+    height: 30px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(to left, rgb(243, 12, 12), rgba(218, 18, 4, 0.87), yellow, green, rgb(37, 143, 78), rgb(236, 64, 20), rgb(218, 205, 25));
@@ -93,10 +95,10 @@
 }
 
 .dangxuat {
-    width: 300px;
-    text-decoration: block;
-    height: 20px;
-
+    position: absolute;
+    // width: 300px;
+    // height: 20px;
+    height: -250px;
     &:hover {
         cursor: pointer;
         text-decoration: underline;

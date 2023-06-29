@@ -30,7 +30,9 @@ import { doRefreshFilm } from './redux/buy/buySlice';
 import { doRefresh } from './redux/user/userSlice';
 import BookKing from './components/home/page/booking';
 import { updateChair } from './service/api';
+
 const Layout = () => {
+
   return (
     <>
       <Header />
@@ -49,6 +51,7 @@ const LayoutAM = () => {
     </>
   )
 }
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -114,11 +117,13 @@ const router = createBrowserRouter([
       path: 'booking/:slug',
       element:<BookKing/>,
     },
+
     {
       path: "/login",
-      element: <Login />,
+      element:<Login /> ,
       errorElement: <NotFound />,
     },
+  
     {
       path: "/register",
       element: <Register />,

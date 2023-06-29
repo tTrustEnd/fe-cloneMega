@@ -4,6 +4,9 @@
 }
 
 .home-baner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     &:hover {
         .image-gallery-description {
             display: block;

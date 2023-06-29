@@ -24,21 +24,22 @@ const Header = () => {
                     <a href="/lien-he"><ul>LIÊN HỆ</ul></a>
                     <a href="/megaPlus"> <ul>MEGA+</ul></a>
                     {!user && <a href="/register"><div> ĐĂNG KÝ</div> </a>}
-                        
+
                     {!user && <a href="/login"> <button style={{ fontWeight: 600 }} className="btn btn-warning">ĐĂNG NHẬP</button></a>}
                     {user && user.name &&
-                        <div style={{ display: 'block' }}>
+                        <div style={{ display: 'block'}}>
 
-                            <span className='hello'><Link to="/phim">Chào bạn : {user.name} !</Link>
-                            </span>
-                            <i style={{color:"white"}}>  Điểm thưởng 0 {`>>`}</i>
-                            <span
+                            <div className='hello'><Link to="/phim">Chào bạn : {user.name} !</Link>
+                            </div>
+
+                            <div
                                 onClick={() => {
                                     localStorage.removeItem("access_token"),
-                                    localStorage.removeItem("persist:root"),
-                                    location.reload()
+                                        localStorage.removeItem("persist:root"),
+                                        location.reload()
                                 }} className='dangxuat'
-                                style={{ color: 'yellow', fontSize: 14, textAlign: 'center', height: 19,paddingLeft:10 }}>Đăng xuất</span>
+                                style={{ color: 'yellow', fontSize: 14, textAlign: 'center',margin:'0'}}>
+                                <i style={{ color: "white" }}>  Điểm thưởng 0 {`>>`}</i> Đăng xuất</div>
                         </div>
                     }
 

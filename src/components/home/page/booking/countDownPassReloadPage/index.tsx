@@ -1,12 +1,15 @@
 import { notification } from 'antd';
 import React, { useState, useEffect } from 'react';
 
+setTimeout(() => {
+  
+}, 1000);
 const Countdown = () => {
   const [count, setCount] = useState(() => {
     const storedCount = localStorage.getItem('count');
     return storedCount ? parseInt(storedCount) : 3000;
   });
- 
+
   const [timeIsUp, setTimeIsUp] = useState(false);
 
   useEffect(() => {

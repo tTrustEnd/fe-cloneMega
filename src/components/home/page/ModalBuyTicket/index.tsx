@@ -169,7 +169,7 @@ const ModalBuyTicket = (props) => {
                 </div>
             </div>
             {chair && chair.length &&
-                <Col style={{ textAlign: 'center', }} xxl={5} >
+                <Col style={{ textAlign: 'center', }} xxl={5} xl={12} lg={12} >
                     <div style={{ background: '#ffca2c' }}><b>SỐ LƯỢNG </b> </div>
                     <div style={{ paddingTop: 20 }}>
                         <MinusCircleOutlined onClick={() => { handleMinus1() }} /> <input value={value1} style={{ width: 50, height: 22, textAlign: 'center' }} type="text" name="" id="" readOnly /> <PlusCircleOutlined onClick={() => handlePlus1()} />

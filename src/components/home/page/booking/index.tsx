@@ -10,6 +10,7 @@ import { IChair } from "../.."
 import { useNavigate } from "react-router-dom"
 import ModalBuyTicket from "../ModalBuyTicket"
 import { faL } from "@fortawesome/free-solid-svg-icons"
+import ModalLogin from "../../../login/modalLogin"
 
 
 const BookKing = () => {
@@ -45,6 +46,7 @@ const BookKing = () => {
     const [isBuy, setIsBuy] = useState(true)
     const [isBuyChinhsach, setisBuyChinhsach] = useState(true)
     const [showModalBuyTicket, setShowModalBuyTicket] = useState(false)
+    const [isModalLogin, setIsModalLogin] = useState(false)
     const changeColor1 = () => {
         if (green1) {
             setChairSelected(chairSlected - 1)
@@ -231,6 +233,10 @@ const BookKing = () => {
     const close = () => {
         setShowModalBuyTicket(false)
         location.reload()
+    }
+    const closeModalLogin = () => {
+        setIsModalLogin(false)
+
     }
     const handleOk = () => {
         setIsModalOpen(false);
@@ -595,9 +601,15 @@ const BookKing = () => {
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
                             <div className="rject-buy" onClick={() => handleCancelBuy()} >Hủy đặt vé</div>
-                            <div>
-                                <button className="btn btn-warning" disabled={isBuy}> <a href={link}>THANH TOÁN</a></button>
+                     
+                            <div onClick={()=>{
+                                if(!user){
+                                    setIsModalLogin(true)
+                                }
+                            }}>
+                                <button className="btn btn-warning" disabled={isBuy}> <a href={user?link:""}>THANH TOÁN</a></button>
                             </div>
+                            
 
 
 
@@ -610,6 +622,9 @@ const BookKing = () => {
                     showModalBuyTicket={showModalBuyTicket}
                     close={close}
                 />
+         <ModalLogin
+                closeModalLogin={closeModalLogin}
+                isModalLogin={isModalLogin}/>
             </Row>
         </div>
     )
