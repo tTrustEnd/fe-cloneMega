@@ -9,8 +9,11 @@ import { getUserSV, loginSV } from "../../service/api";
 import { doLogin } from "../../redux/user/userSlice";
 import { AxiosResponse } from "axios";
 import CurrentPage from "../home/page/currentPage";
+import { useSelector } from "react-redux";
 
 const Login = () => {
+    const user = useSelector((state:any) => state.user.account.user)
+    console.log(user)
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [form] = Form.useForm();
@@ -39,7 +42,9 @@ const Login = () => {
         }
     }
     return (
-
+        <div>
+            {user?
+   
         <div style={{ display: 'block' }}>
 
             <CurrentPage
@@ -123,6 +128,7 @@ const Login = () => {
 
             </Row>
 
+        </div>:''}
         </div>
     )
 }

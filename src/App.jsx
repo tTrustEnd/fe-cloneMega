@@ -30,6 +30,8 @@ import { doRefreshFilm } from './redux/buy/buySlice';
 import { doRefresh } from './redux/user/userSlice';
 import BookKing from './components/home/page/booking';
 import { updateChair } from './service/api';
+import Success from './components/home/success';
+import ThatBai from './components/home/success/thatbai';
 
 const Layout = () => {
 
@@ -127,6 +129,16 @@ const router = createBrowserRouter([
     {
       path: "/register",
       element: <Register />,
+      errorElement: <NotFound />,
+    },
+    {
+      path: "/success",
+      element: <Success/>,
+      errorElement: <NotFound />,
+    },
+    {
+      path: "/failed",
+      element: <ThatBai/>,
       errorElement: <NotFound />,
     },
     ]

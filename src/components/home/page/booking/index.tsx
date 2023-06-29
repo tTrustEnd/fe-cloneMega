@@ -411,7 +411,7 @@ const BookKing = () => {
                         </tbody>
 
                     </table>
-                    <div style={{ display: 'flex', paddingTop: 10,  textAlign: 'center',float:'right' }}>
+                    <div style={{ display: 'flex', paddingTop: 10, textAlign: 'center', float: 'right' }}>
                         <button onClick={async () => { await updateChair(), setShowModalBuyTicket(true) }} style={{ display: 'flex' }} className="btn btn-warning"><div><RightCircleOutlined style={{ color: 'red', fontSize: 25, paddingRight: 5 }} /></div><div> Cập nhật số lượng vé</div> </button>
                     </div>
                     <div className="food-container">
@@ -593,7 +593,7 @@ const BookKing = () => {
                             <div style={{ paddingLeft: 0, paddingTop: 20, fontSize: 15, color: 'white' }}> Tôi đã đọc và đồng ý với
                                 <a href=""> Chính sách thanh toán vé trực tuyến</a></div>
                         </Checkbox>
-                        <div style={{color:'red'}}>
+                        <div style={{ color: 'red' }}>
                             (*)Vé đã mua không thể đổi hoặc hoàn tiền.
 
                             Mã vé sẽ được gửi qua tin nhắn SMS và Email đã nhập.
@@ -601,15 +601,17 @@ const BookKing = () => {
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
                             <div className="rject-buy" onClick={() => handleCancelBuy()} >Hủy đặt vé</div>
-                     
-                            <div onClick={()=>{
-                                if(!user){
+
+                            <div onClick={() => {
+                                if (!user) {
                                     setIsModalLogin(true)
                                 }
                             }}>
-                                <button className="btn btn-warning" disabled={isBuy}> <a href={user?link:""}>THANH TOÁN</a></button>
+                                <button className="btn btn-warning" disabled={isBuy}>
+                                    {user && <a href={link}>THANH TOÁN</a>}
+                                    {!user && <div> THANH TOÁN </div>} </button>
                             </div>
-                            
+
 
 
 
@@ -622,9 +624,9 @@ const BookKing = () => {
                     showModalBuyTicket={showModalBuyTicket}
                     close={close}
                 />
-         <ModalLogin
-                closeModalLogin={closeModalLogin}
-                isModalLogin={isModalLogin}/>
+                <ModalLogin
+                    closeModalLogin={closeModalLogin}
+                    isModalLogin={isModalLogin} />
             </Row>
         </div>
     )

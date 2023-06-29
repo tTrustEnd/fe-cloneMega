@@ -9,8 +9,10 @@ import FilmsNow from "../../../filmsNow";
 import { doBuyFilm } from "../../../../../redux/buy/buySlice";
 import { useDispatch } from "react-redux";
 import { IChair } from "../../..";
+import { useSelector } from "react-redux";
 
 const DetailFilm = () => {
+    const user = useSelector((state:any) => state.user.account.user)
     const [isModalOpen, setIsModalOpen] = useState(false)
     const dispatch = useDispatch()
     const [chair, setChair] = useState<any>()
@@ -314,9 +316,9 @@ const DetailFilm = () => {
 
                     </div>
                 </Row>
-                <div className='botModal' style={{ paddingLeft: 350 }}>
-                    <a href="/login">Đăng nhập</a> / <a href="/register">Đăng ký</a> Thành viên Mega+ để tích lũy điểm
-                </div>
+                {!user && <div className='botModal' style={{ paddingLeft: 350 }}>
+                            <a href="/login">Đăng nhập</a> / <a href="/register">Đăng ký</a> Thành viên Mega+ để tích lũy điểm
+                        </div>}
                 <div style={{ display: 'flex', paddingTop: 30 }}>
                     <b>Ghi chú: </b> &nbsp; <div style={{ color: 'red' }}> Mỗi lần đặt vé bạn chỉ được chọn tối đa 10 vé.</div>
                     <div style={{ paddingLeft: 290 }}>

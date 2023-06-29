@@ -66,6 +66,7 @@ const images = [
     },
 ];
 const Home = () => {
+    const user = useSelector((state:any) => state.user.account.user)
     const [openVe, setOpenVe] = useState(false)
     const [listFilms, setListFilms] = useState([])
     const [filmSelected, setFilmSelected] = useState([])
@@ -405,9 +406,10 @@ const Home = () => {
 
                             </div>
                         </Row>
-                        <div className='botModal' style={{ paddingLeft: 350 }}>
+                        {!user && <div className='botModal' style={{ paddingLeft: 350 }}>
                             <a href="/login">Đăng nhập</a> / <a href="/register">Đăng ký</a> Thành viên Mega+ để tích lũy điểm
-                        </div>
+                        </div>}
+                     
                         <div style={{ display: 'flex', paddingTop: 30 }}>
                             <b>Ghi chú: </b> &nbsp; <div style={{ color: 'red' }}> Mỗi lần đặt vé bạn chỉ được chọn tối đa 10 vé.</div>
                             <div style={{ paddingLeft: 290 }}>

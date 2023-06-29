@@ -50,8 +50,8 @@ const Phim = () => {
             label: <div className='btn' ><button className='btn btn-warning'> <h4 style={{ margin: '0 auto', textAlign: 'center' }}>PHIM ĐANG CHIẾU</h4> </button> </div>,
             children:
 
-                <Row gutter={[20, 20]} style={{ display:'flex', justifyContent:'center',paddingLeft:'100px',paddingRight:100, background: '#bebebe' }}>
-                    
+                <Row gutter={[20, 20]} style={{ display: 'flex', justifyContent: 'center', paddingLeft: '100px', paddingRight: 100, background: '#bebebe' }}>
+
                     <Modal
                         width={'100%'} footer={false} title="s" open={showVideo} onCancel={handleCancel}>
                         {showVideo && <iframe className="fullscreen-iframe" width="100% "
@@ -60,19 +60,19 @@ const Phim = () => {
                         >
                         </iframe>}
                     </Modal>
-              
-                 
+
+
 
                     {listFilms && listFilms.length > 0 &&
                         listFilms.map((item: IFilm, index) => {
                             return (
-                                <Col xl={9} >
+                                <Col xl={11}>
                                     <div className='khung' style={{ display: 'flex', background: ' rgb(190, 169, 127' }} key={`${index}`}>
 
                                         <div className="image">
                                             <a href={`phim/${item.name}`}> <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" /></a>
                                         </div>
-                                        <div className='contentss' style={{ width: 300, paddingLeft: 15 }}>
+                                        <div className='contentss' style={{ paddingLeft: 15 }}>
                                             <div><a href={`/phim/${item.name}/`}>{item.name} </a></div>
                                             <div style={{ display: 'flex' }}>
                                                 <FieldTimeOutlined style={{ paddingTop: 5 }} />  &nbsp;  <span> Thời lượng: {item.time}</span> </div>
@@ -113,25 +113,27 @@ const Phim = () => {
                     {listFilms && listFilms.length > 0 &&
                         listFilms.map((item: IFilm, index) => {
                             return (
+                                <Col xl={11}>
+                                    <div className='khung' style={{ display: 'flex', background: ' rgb(190, 169, 127'}} key={`${index}`}>
 
-                                <div className='khung' style={{ display: 'flex', background: ' rgb(190, 169, 127' }} key={`${index}`}>
+                                        <div className="image">
+                                            <a href={`phim/${item.name}`}> <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" /></a>
+                                        </div>
+                                        <div className='contentss' style={{ paddingLeft: 15 }}>
+                                            <div><a href={`/phim/${item.name}/`}>{item.name} </a></div>
+                                            <div style={{ display: 'flex' }}>
+                                                <FieldTimeOutlined style={{ paddingTop: 5 }} />  &nbsp;  <span> Thời lượng: {item.time}</span> </div>
+                                            <div style={{ display: 'flex' }}><TagOutlined style={{ paddingTop: 5 }} />   &nbsp;<span>Thể loại: {item.caterogy}</span> </div>
+                                            <div style={{ display: 'flex' }}> <CalendarOutlined style={{ paddingTop: 5 }} />  &nbsp;<span>Khởi chiếu: {item.premiere}</span></div>
+                                            <div><span>Đạo diễn: </span>{item.director}</div>
+                                            <div><span>Diễn viên: </span>{item.actor}</div>
+                                            <div><span>Phụ đề: </span>{item.sub}</div>
+                                        </div>
+                                        <div><button className='btn btn-warning' onClick={() => showTrailer(item)}> {`>>`}trailer</button> </div>
 
-                                    <div className="image">
-                                        <a href={`phim/${item.name}`}> <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" /></a>
                                     </div>
-                                    <div className='contentss' style={{ width: 300, paddingLeft: 15 }}>
-                                        <div><a href={`/phim/${item.name}/`}>{item.name} </a></div>
-                                        <div style={{ display: 'flex' }}>
-                                            <FieldTimeOutlined style={{ paddingTop: 5 }} />  &nbsp;  <span> Thời lượng:</span> {item.time}</div>
-                                        <div style={{ display: 'flex' }}><TagOutlined style={{ paddingTop: 5 }} />   &nbsp;<span>Thể loại: </span> {item.caterogy}</div>
-                                        <div style={{ display: 'flex' }}> <CalendarOutlined style={{ paddingTop: 5 }} />  &nbsp;<span>Khởi chiếu: </span>{item.premiere}</div>
-                                        <div><span>Đạo diễn: </span>{item.director}</div>
-                                        <div><span>Diễn viên: </span>{item.actor}</div>
-                                        <div><span>Phụ đề: </span>{item.sub}</div>
-                                    </div>
-                                    <div><button className='btn btn-warning' onClick={() => showTrailer(item)}> {`>>`}trailer</button> </div>
+                                </Col>
 
-                                </div>
 
 
 
