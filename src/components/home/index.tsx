@@ -103,7 +103,7 @@ const Home = () => {
             setOpenVe(true)
         }
 
-    };
+    };  
     const onChange = (key) => {
         console.log(key)
     };
@@ -191,16 +191,13 @@ const Home = () => {
     ];
     const handleBuy = async(item) => {
         await updateChair(0)
-        console.log(item)
         setIsModalOpen(true)
         dispatch(doBuyFilm(item))
 
     }
     const handleChair = () => {
-        console.log('check chair', chair)
         if (quantity1 > 0 || quantity2 > 0 || quantity3 > 0) {
             const filmSelected = film.film.name
-            console.log(filmSelected)
             navigate(`/booking/${filmSelected}`)
         }
         else {
