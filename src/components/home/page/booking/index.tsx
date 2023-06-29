@@ -411,7 +411,7 @@ const BookKing = () => {
                         </tbody>
 
                     </table>
-                    <div style={{ display: 'flex', paddingTop: 10, paddingLeft: 580, textAlign: 'center' }}>
+                    <div style={{ display: 'flex', paddingTop: 10,  textAlign: 'center',float:'right' }}>
                         <button onClick={async () => { await updateChair(), setShowModalBuyTicket(true) }} style={{ display: 'flex' }} className="btn btn-warning"><div><RightCircleOutlined style={{ color: 'red', fontSize: 25, paddingRight: 5 }} /></div><div> Cập nhật số lượng vé</div> </button>
                     </div>
                     <div className="food-container">

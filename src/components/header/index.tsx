@@ -25,9 +25,9 @@ const Header = () => {
                     <a href="/megaPlus"> <ul>MEGA+</ul></a>
                     {!user && <a href="/register"><div> ĐĂNG KÝ</div> </a>}
 
-                    {!user && <a href="/login"> <button style={{ fontWeight: 600 }} className="btn btn-warning">ĐĂNG NHẬP</button></a>}
+                    {!user && <a href="/login"> <button style={{ fontWeight: 600,height:50 }} className="btn btn-warning">ĐĂNG NHẬP</button></a>}
                     {user && user.name &&
-                        <div style={{ display: 'block'}}>
+                        <div style={{ display: 'block' }}>
 
                             <div className='hello'><Link to="/phim">Chào bạn : {user.name} !</Link>
                             </div>
@@ -38,7 +38,7 @@ const Header = () => {
                                         localStorage.removeItem("persist:root"),
                                         location.reload()
                                 }} className='dangxuat'
-                                style={{ color: 'yellow', fontSize: 14, textAlign: 'center',margin:'0'}}>
+                                style={{ color: 'yellow', fontSize: 14, textAlign: 'center', margin: '0' }}>
                                 <i style={{ color: "white" }}>  Điểm thưởng 0 {`>>`}</i> Đăng xuất</div>
                         </div>
                     }
