@@ -6,7 +6,7 @@ import './index.scss'
 import { FieldTimeOutlined, PlayCircleOutlined, TagOutlined } from '@ant-design/icons';
 import { FaYoutube } from "react-icons/fa6";
 import { IFilm } from '../page/phim';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const FilmsNow = () => {
     const [listFilms, setListFilms] = useState([])
@@ -80,9 +80,9 @@ const FilmsNow = () => {
                                 </div>
                                 <br /><br /><br />
 
-                                
-                                <div style={{ display: 'flex', paddingRight: 55,color:'yellow' }}>
-                                 {`>>`} Chọn vào xuất chiếu để đặt vé
+
+                                <div style={{ display: 'flex', paddingRight: 55, color: 'yellow' }}>
+                                    {`>>`} Chọn vào xuất chiếu để đặt vé
                                 </div>
 
                                 <div style={{ display: 'flex', paddingRight: 55 }}>
@@ -106,7 +106,7 @@ const FilmsNow = () => {
 
                                 <div style={{ padding: '0 8px' }}>
                                     <button title='Xem chi tiết' className='btn btn-warning'>
-                                        <a href={`/phim/${item.name}`} style={{ fontWeight: 700, margin: '0 auto' }}>Xem chi tiết</a>
+                                        <NavLink to={`/phim/${item.name}`} style={{ fontWeight: 700, margin: '0 auto' }}>Xem chi tiết</NavLink>
                                     </button >
                                 </div>
 

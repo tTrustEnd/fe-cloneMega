@@ -1,6 +1,6 @@
 import { Col, Modal, Row, message } from 'antd'
 import {useState,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { IChair } from '../..'
 import { useDispatch } from 'react-redux'
 import { doBuyFilm } from '../../../../redux/buy/buySlice'
@@ -108,14 +108,6 @@ const ModalBuyTicket = (props) => {
     }
     const handleChair = () => {
         console.log('check chair', chair)
-        if(window.location.pathname='lich-chieu'){
-            if(quantity1 > 0 || quantity2 > 0 || quantity3 > 0){
-                navigate('/booking/THE%20FLASH')
-            }
-            else{
-                message.error('Bạn cần chọn ít nhất 1 vé')
-            }
-        }
         if (quantity1 > 0 || quantity2 > 0 || quantity3 > 0) {
             close()
             location.reload()
@@ -288,7 +280,7 @@ const ModalBuyTicket = (props) => {
             </div>
         </Row>
         {!user && <div className='botModal' style={{ paddingLeft: 350 }}>
-                            <a href="/login">Đăng nhập</a> / <a href="/register">Đăng ký</a> Thành viên Mega+ để tích lũy điểm
+                            <NavLink to="/login">Đăng nhập</NavLink> / <NavLink to="/register">Đăng ký</NavLink> Thành viên Mega+ để tích lũy điểm
                         </div>}
         <div style={{ display: 'flex', paddingTop: 30 }}>
             <b>Ghi chú: </b> &nbsp; <div style={{ color: 'red' }}> Mỗi lần đặt vé bạn chỉ được chọn tối đa 10 vé.</div>

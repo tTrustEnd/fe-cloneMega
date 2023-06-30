@@ -19,6 +19,7 @@ import { faCamera, faEnvelope, faMapLocation } from '@fortawesome/free-solid-svg
 
 import { HomeOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { FaMapLocation, FaMapLocationDot } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 const Rap = () => {
     const images: any = [
@@ -116,12 +117,12 @@ const Rap = () => {
                                             <div style={{ display: 'flex', paddingTop: 25 }}>
 
                                                 <span style={{ paddingLeft: 35 }}>
-                                                    <a className="nav-link" target="_blank"
-                                                        href="https://www.google.com/maps/place/Mega+GS+Cinemas+-+L%C3%BD+
+                                                    <NavLink className="nav-link" target="_blank"
+                                                        to="https://www.google.com/maps/place/Mega+GS+Cinemas+-+L%C3%BD+
                                                     Ch%C3%ADnh+Th%E1%BA%AFng/@10.780639,106.6802296,17z/data=!3m1!4b1!4m5!3
                                                     m4!1s0x31752f8a1bb2e59f:0x46d2bcd3e7bff8a!8m2!3d10.780639!4d106.6824183
                                                     ?hl=vi-VN&shorturl=1">
-                                                        <FontAwesomeIcon className="iconMap" icon={faMapLocation} /></a>
+                                                        <FontAwesomeIcon className="iconMap" icon={faMapLocation} /></NavLink>
                                                 </span>
                                                 <b> Bản đồ</b>
                                             </div>
@@ -130,8 +131,7 @@ const Rap = () => {
 
 
                                         <div>
-                                            <button className="btn btn-warning">Xem lịch chiếu   </button>
-                                        </div>
+                                        <NavLink to='/lich-chieu'><button className="btn btn-warning">Xem lịch chiếu  </button> </NavLink>                                         </div>
 
 
 
@@ -186,16 +186,16 @@ const Rap = () => {
                                                 <div style={{ display: 'flex', paddingTop: 25 }}>
 
                                                     <span style={{ paddingLeft: 35 }}>
-                                                        <a className="nav-link" target="_blank"
-                                                            href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x31752f220559d037:0x6d815550960170a1?source=g.page.share">
-                                                            <FontAwesomeIcon className="iconMap" icon={faMapLocation} /></a>
+                                                        <NavLink className="nav-link" target="_blank"
+                                                            to="https://www.google.com/maps/place//data=!4m2!3m1!1s0x31752f220559d037:0x6d815550960170a1?source=g.page.share">
+                                                            <FontAwesomeIcon className="iconMap" icon={faMapLocation} /></NavLink>
                                                     </span>
                                                     <b> Bản đồ</b>
                                                 </div>
 
                                             </div>
                                             <div>
-                                                <button className="btn btn-warning">Xem lịch chiếu  </button>
+                                               <NavLink to='/lich-chieu'><button className="btn btn-warning">Xem lịch chiếu  </button> </NavLink> 
                                             </div>
 
                                         </div>

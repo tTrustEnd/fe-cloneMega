@@ -3,7 +3,7 @@ import { getFilmsByFieldSV, getFilmsSV } from '../../../../service/api'
 import { Col, Modal, Row, Tabs } from 'antd'
 import './index.scss'
 import { CalendarOutlined, FieldTimeOutlined, TagOutlined } from '@ant-design/icons'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import CurrentPage from '../currentPage'
 
 export interface IFilm {
@@ -36,9 +36,9 @@ const Phim = () => {
         setSrcTrailer(item.trailer)
 
     }
-    const handleCancel = () => {
-        setShowVideo(false);
-        setSrcTrailer('')
+    const handleCancel = async() => {
+        await setSrcTrailer('')
+       await setShowVideo(false);
     };
 
     useEffect(() => {
@@ -70,10 +70,10 @@ const Phim = () => {
                                     <div className='khung' style={{ display: 'flex', background: ' rgb(190, 169, 127' }} key={`${index}`}>
 
                                         <div className="image">
-                                            <a href={`phim/${item.name}`}> <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" /></a>
+                                            <NavLink to={`/phim/${item.name}`}> <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" /></NavLink>
                                         </div>
                                         <div className='contentss' style={{ paddingLeft: 15 }}>
-                                            <div><a href={`/phim/${item.name}/`}>{item.name} </a></div>
+                                            <div><NavLink to={`/phim/${item.name}/`}>{item.name} </NavLink></div>
                                             <div style={{ display: 'flex' }}>
                                                 <FieldTimeOutlined style={{ paddingTop: 5 }} />  &nbsp;  <span> Thời lượng: {item.time}</span> </div>
                                             <div style={{ display: 'flex' }}><TagOutlined style={{ paddingTop: 5 }} />   &nbsp;<span>Thể loại: {item.caterogy}</span> </div>
@@ -99,50 +99,10 @@ const Phim = () => {
         {
             key: '2',
             label: <div className='btn'> <button className='btn btn-warning'><h4 style={{ margin: '0 auto', textAlign: 'center' }}>PHIM SẮP CHIẾU</h4></button> </div>,
-            children:
+            children:<></>
+        }
 
-                <Row gutter={[20, 20]} style={{ paddingLeft: 350, background: '#bebebe' }}>
-
-                    <Modal
-                        width={'100%'} footer={false} title="s" open={showVideo} onCancel={handleCancel}>
-                        {showVideo && <iframe width="100% " height={800} style={{ margin: '0 auto' }}
-                            src={srcTrailer}
-                        >
-                        </iframe>}
-                    </Modal>
-
-                    {listFilms && listFilms.length > 0 &&
-                        listFilms.map((item: IFilm, index) => {
-                            return (
-                                <Col xl={11}>
-                                    <div className='khung' style={{ display: 'flex', background: ' rgb(190, 169, 127'}} key={`${index}`}>
-
-                                        <div className="image">
-                                            <a href={`phim/${item.name}`}> <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" /></a>
-                                        </div>
-                                        <div className='contentss' style={{ paddingLeft: 15 }}>
-                                            <div><a href={`/phim/${item.name}/`}>{item.name} </a></div>
-                                            <div style={{ display: 'flex' }}>
-                                                <FieldTimeOutlined style={{ paddingTop: 5 }} />  &nbsp;  <span> Thời lượng: {item.time}</span> </div>
-                                            <div style={{ display: 'flex' }}><TagOutlined style={{ paddingTop: 5 }} />   &nbsp;<span>Thể loại: {item.caterogy}</span> </div>
-                                            <div style={{ display: 'flex' }}> <CalendarOutlined style={{ paddingTop: 5 }} />  &nbsp;<span>Khởi chiếu: {item.premiere}</span></div>
-                                            <div><span>Đạo diễn: </span>{item.director}</div>
-                                            <div><span>Diễn viên: </span>{item.actor}</div>
-                                            <div><span>Phụ đề: </span>{item.sub}</div>
-                                            <div><button className='btn btn-warning' onClick={() => showTrailer(item)}> {`>>`}trailer</button> </div>
-                                        </div>
-
-                                    </div>
-                                </Col>
-
-
-
-
-                            )
-                        })
-                    }
-                </Row>,
-        },
+          
     ];
     const onChange = (key: any) => {
         console.log(key);

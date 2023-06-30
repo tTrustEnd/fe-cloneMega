@@ -6,6 +6,7 @@ import { CaretRightOutlined } from '@ant-design/icons';
 import type { CollapseProps } from 'antd';
 import { Collapse, theme } from 'antd';
 import { useState, type CSSProperties } from 'react';
+import { NavLink } from "react-router-dom";
 // import Mau from '../../../../public/'
 const TuyenDung = () => {
     const { token } = theme.useToken();
@@ -31,7 +32,7 @@ const TuyenDung = () => {
                 <ul><li>Sẵn sàng làm việc vào thứ 7, chủ nhật và ngày lễ.</li></ul>
                 Bạn nào có hứng thú với công việc này thì hãy điền thông tin vào mẫu tuyển dụng và nộp tại quầy thông tin lầu 7 rạp Mega <br />
                 GS - 19 Cao Thắng Q3 nhé :D <br />
-                Link mẫu tuyển dụng: <a href="/src/public/megags-formtuyendungparttime-đã-chuyển-đổi.docx" download>Tải</a><br /> <br />
+                Link mẫu tuyển dụng: <NavLink to="/src/public/megags-formtuyendungparttime-đã-chuyển-đổi.docx" download>Tải</NavLink><br /> <br />
                 Nộp kèm: <br />
                 <ul><li>Sơ yếu lý lịch.</li></ul>
                 <ul><li>CMND</li></ul>
@@ -84,13 +85,13 @@ const TuyenDung = () => {
                 </Col>
                 <Col className="left-link" xxl={5} style={{ paddingTop: 30 }}>
                     <div style={{ background: 'rgba(0,0,0,.3)', width: 300, height: 400 }}>
-                        <a href="/gioi-thieu"><b >GIỚI THIỆU</b><br /></a>
-                        <a href="/faqs"><b>FAQS</b><br /></a>
-                        <a className="active" href="/tuyen-dung"><b>TUYỂN DỤNG</b><br /></a>
-                        <a href="/lien-he"> <b>LIÊN HỆ</b><br /></a>
+                        <NavLink to="/gioi-thieu"><b >GIỚI THIỆU</b><br /></NavLink>
+                        <NavLink to="/faqs"><b>FAQS</b><br /></NavLink>
+                        <NavLink className="active" to="/tuyen-dung"><b>TUYỂN DỤNG</b><br /></NavLink>
+                        <NavLink to="/lien-he"> <b>LIÊN HỆ</b><br /></NavLink>
                         <a href=""><b>ĐIỀU KHOẢN CHUNG</b><br /></a>
                         <a href=""><b>CHÍNH SÁCH THANH TOÁN VÉ TRỰC TUYẾN</b><br /></a>
-                        <a href="/megaPlus"><b>MEGA+</b><br /></a>
+                        <NavLink to="/megaPlus"><b>MEGA+</b><br /></NavLink>
                     </div>
 
 

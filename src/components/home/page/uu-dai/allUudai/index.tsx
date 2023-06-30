@@ -3,6 +3,7 @@ import { getUudaiSV } from "../../../../../service/api";
 import { useState, useEffect } from 'react'
 import './index.scss'
 import Slider from "react-slick";
+import { NavLink } from "react-router-dom";
 
 
 const AllUudai = () => {

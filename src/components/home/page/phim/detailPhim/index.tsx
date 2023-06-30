@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { getChairs, getFilmsByFieldSV, updateChair } from "../../../../../service/api";
 import { useEffect, useState } from "react";
 import './index.scss'
@@ -317,7 +317,7 @@ const DetailFilm = () => {
                     </div>
                 </Row>
                 {!user && <div className='botModal' style={{ paddingLeft: 350 }}>
-                    <a href="/login">Đăng nhập</a> / <a href="/register">Đăng ký</a> Thành viên Mega+ để tích lũy điểm
+                    <NavLink to="/login">Đăng nhập</NavLink> / <NavLink to="/register">Đăng ký</NavLink> Thành viên Mega+ để tích lũy điểm
                 </div>}
                 <div style={{ display: 'flex', paddingTop: 30 }}>
                     <b>Ghi chú: </b> &nbsp; <div style={{ color: 'red' }}> Mỗi lần đặt vé bạn chỉ được chọn tối đa 10 vé.</div>
@@ -335,8 +335,8 @@ const DetailFilm = () => {
                         <div key={`${index}`}>
                             <div className="contents-page" >
                                 <div>
-                                    <a href="/">Trang chủ </a> {'> '}
-                                    <a href="/phim">Phim</a>
+                                    <NavLink to="/">Trang chủ </NavLink> {'> '}
+                                    <NavLink to="/phim">Phim</NavLink>
                                 </div>
                                 <div className="title">
                                     <h1>

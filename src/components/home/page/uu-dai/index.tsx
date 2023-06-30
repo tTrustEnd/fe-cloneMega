@@ -10,6 +10,7 @@ import { faCamera, faEnvelope, faMapLocation } from '@fortawesome/free-solid-svg
 import { HomeOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { FaMapLocation, FaMapLocationDot } from "react-icons/fa6";
 import { getUudaiSV } from "../../../../service/api";
+import { NavLink } from "react-router-dom";
 
 export interface IUudai {
     name: string,
@@ -85,14 +86,14 @@ const Uudai = () => {
                                 {listUudai1 && listUudai1.length > 0
                                     && listUudai1.map((item: IUudai, index: number) => {
                                         return (
-                                            <a className="uudai" href={`/uu-dai/${item._id}`} key={`${index}`}>
+                                            <NavLink className="uudai" to={`/uu-dai/${item._id}`} key={`${index}`}>
                                                 <img src={`${import.meta.env.VITE_BASE_URL}/images/uudai/${item.image}`} alt="" />
 
                                                 <div className="content-uudai">
                                                     {item.name}
                                                 </div>
                                                 <i>{item.time}</i>
-                                            </a>
+                                            </NavLink>
                                         )
                                     })
                                 }
@@ -110,7 +111,7 @@ const Uudai = () => {
                             {listUudai2 && listUudai2.length > 0
                                 && listUudai2.map((item: IUudai, index: number) => {
                                     return (
-                                        <a className="uudai" href={`/uu-dai/${item._id}`} key={`${index}`}>
+                                        <NavLink className="uudai" to={`/uu-dai/${item._id}`} key={`${index}`}>
                                             <img src={`${import.meta.env.VITE_BASE_URL}/images/uudai2/${item.image}`} />
 
                                             <div className="content-uudai">
@@ -121,7 +122,7 @@ const Uudai = () => {
 
 
 
-                                        </a>
+                                        </NavLink>
                                     )
                                 })
                             }

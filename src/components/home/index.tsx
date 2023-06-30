@@ -12,7 +12,7 @@ import { IFilm } from './page/phim';
 import { MinusCircleOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { doBuyFilm } from '../../redux/buy/buySlice';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { IfilmSelected } from '../../redux/store';
 export interface IChair {
@@ -28,7 +28,7 @@ const images = [
                 <div style={{ paddingTop: '100px', marginBottom: 0 }}>
                     <button
                         className='btn btn-warning'>
-                        <a className='nav-link' href='/phim/XỨ%20SỞ%20CÁC%20NGUYÊN%20TỐ%20%7C%20ELEMENTAL/'><h4 style={{ paddingTop: 10 }}>Xem chi tiết</h4></a>
+                        <NavLink className='nav-link' to='/phim/XỨ%20SỞ%20CÁC%20NGUYÊN%20TỐ%20%7C%20ELEMENTAL/'><h4 style={{ paddingTop: 10 }}>Xem chi tiết</h4></NavLink>
                     </button>
                 </div>
 
@@ -43,7 +43,7 @@ const images = [
                 <div style={{ paddingTop: '100px', marginBottom: 0 }}>
                     <button
                         className='btn btn-warning'>
-                        <a className='nav-link' href='/phim/THE%20FLASH'><h4 style={{ paddingTop: 10 }}>Xem chi tiết</h4></a>
+                        <NavLink className='nav-link' to='/phim/THE%20FLASH'><h4 style={{ paddingTop: 10 }}>Xem chi tiết</h4></NavLink>
                     </button>
                 </div>
 
@@ -57,8 +57,8 @@ const images = [
                 <div style={{ paddingTop: '100px', marginBottom: 0 }}>
                     <button
                         className='btn btn-warning'>
-                        <a className='nav-link' href='/phim/PHIM%20ĐIỆN%20ẢNH%20DORAEMON:%20NOBITA%20VÀ%20VÙNG%20ĐẤT%20LÝ%20TƯỞNG%20TRÊN%20BẦU%20TRỜI/'>
-                            <h4 style={{ paddingTop: 10 }}>Xem chi tiết</h4></a>
+                        <NavLink className='nav-link' to='/phim/PHIM%20ĐIỆN%20ẢNH%20DORAEMON:%20NOBITA%20VÀ%20VÙNG%20ĐẤT%20LÝ%20TƯỞNG%20TRÊN%20BẦU%20TRỜI/'>
+                            <h4 style={{ paddingTop: 10 }}>Xem chi tiết</h4></NavLink>
                     </button>
                 </div>
 
@@ -404,7 +404,7 @@ const Home = () => {
                             </div>
                         </Row>
                         {!user && <div className='botModal' style={{ paddingLeft: 350 }}>
-                            <a href="/login">Đăng nhập</a> / <a href="/register">Đăng ký</a> Thành viên Mega+ để tích lũy điểm
+                            <NavLink to="/login">Đăng nhập</NavLink> / <NavLink to="/register">Đăng ký</NavLink> Thành viên Mega+ để tích lũy điểm
                         </div>}
                      
                         <div style={{ display: 'flex', paddingTop: 30 }}>
@@ -507,22 +507,22 @@ const Home = () => {
                     className='tab' items={items} onChange={onChange} />
             </div >
             <div className='all' style={{ display: 'flex', justifyContent: 'center', padding: '15px 0' }}>
-                <a href="/phim"><h2>Xem tất cả</h2></a>
+                <NavLink to="/phim"><h2>Xem tất cả</h2></NavLink>
             </div>
 
             <div className='advertise-wrap'>
                 <div className='content'>
-                    <a href="/uu-dai/">
+                    <NavLink to="/uu-dai/">
                         <img title='Quảng cáo' src="https://cms.megagscinemas.vn//media/76783/banner-advertise-1.png" className="img-responsive" />
-                    </a>
+                    </NavLink>
                 </div>
             </div>
             <div className="big-offer img">
-                <a title="ƯU ĐÃI HỌC SINH - SINH VIÊN GIỎI HÈ 2023" className="bg-special" href="/uu-dai">
+                <NavLink title="ƯU ĐÃI HỌC SINH - SINH VIÊN GIỎI HÈ 2023" className="bg-special" to="/uu-dai">
                     <img alt="ƯU ĐÃI HỌC SINH - SINH VIÊN GIỎI HÈ 2023"
                         src="https://cms.megagscinemas.vn//media/77066/hè-1920-1080-px-1.png?width=745&amp;height=420"
                         style={{ width: 745, height: 420 }} />
-                </a>
+                </NavLink>
             </div>
 
 

@@ -1,7 +1,7 @@
 import './index.scss'
 import Logo from '../../../../src/public/logopage.png'
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const HeaderFlex = () => {
 
 
@@ -28,7 +28,7 @@ const HeaderFlex = () => {
     <div className="header-flex" id="header-flex">
       <div className='header'>
         <div className="logo-header">
-          <a href="/"><img alt="example" src={Logo} /></a>
+          <NavLink to="/"><img alt="example" src={Logo} /></NavLink>
         </div>
         <div className='mega-day'>
           <span>   MEGA DAY - THỨ 4 HÀNG TUẦN </span>
@@ -36,27 +36,27 @@ const HeaderFlex = () => {
         </div>
         <div>
           {user && user.name &&
-            <div style={{ display: 'block',paddingTop:3,paddingLeft:15 }}>
+            <div style={{ display: 'block', paddingTop: 3, paddingLeft: 15 }}>
 
               <span className='hello' ><Link to="#">Chào bạn : {user.name} !</Link>
               </span>
-              <br /><i style={{color:"white"}}>  Điểm thưởng 0 {`>>`}</i> &nbsp;
+              <br /><i style={{ color: "white" }}>  Điểm thưởng 0 {`>>`}</i> &nbsp;
               <span className='dangxuatflex'
                 onClick={() => {
                   localStorage.removeItem("access_token"),
                     localStorage.removeItem("persist:root"),
                     location.reload()
-                }} 
+                }}
                 style={{ color: 'yellow', fontSize: 14, textAlign: 'center', height: 19, }}><b>Đăng xuất </b> </span>
             </div>}
           {!user &&
             <div style={{ display: 'flex', paddingTop: 15, paddingLeft: 35 }}>
               <div style={{ paddingRight: 25 }}>
-                <a href="/register"><div> ĐĂNG KÝ</div> </a>
+                <NavLink to="/register"><div> ĐĂNG KÝ</div> </NavLink>
 
               </div>
               <div>
-                <a href="/login">ĐĂNG NHẬP</a>
+                <NavLink to="/login">ĐĂNG NHẬP</NavLink>
               </div>
             </div>
           }

@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="logo-header">
-                <a href="/"><img alt="example" src={Logo} /></a>
+                <NavLink to="/"><img alt="example" src={Logo} /></NavLink>
             </div>
             <div className="content-header">
                 <div className="content-top">
@@ -20,13 +20,13 @@ const Header = () => {
                     <NavLink to="/faqs"><ul>FAQS</ul></NavLink>
                     <NavLink to="/lien-he"><ul>LIÊN HỆ</ul></NavLink>
                     <NavLink to="/megaPlus"> <ul>MEGA+</ul></NavLink>
-                    {!user && <a href="/register"><div> ĐĂNG KÝ</div> </a>}
+                    {!user && <NavLink to="/register"><div> ĐĂNG KÝ</div> </NavLink>}
 
-                    {!user && <a href="/login"> <button style={{ fontWeight: 600, height: 40 }} className="btn btn-warning">ĐĂNG NHẬP</button></a>}
+                    {!user && <NavLink to="/login"> <button style={{ fontWeight: 600, height: 40 }} className="btn btn-warning">ĐĂNG NHẬP</button></NavLink>}
                     {user && user.name &&
                         <div style={{ display: 'flex' }}>
 
-                            <div className='hello'><Link to="/"><b>Chào bạn : {user.name} ! </b></Link>
+                            <div className='hello'><NavLink to="/"><b>Chào bạn : {user.name} ! </b></NavLink>
                             </div>
 
                             <div
@@ -49,10 +49,10 @@ const Header = () => {
                         <NavLink to="/uu-dai"><b>ƯU ĐÃI</b></NavLink>
                     </div>
                     <div style={{ paddingLeft: 50 }}>
-                        <a style={{ paddingRight: 25 }} href="https://www.facebook.com/nguyenquang.truong.9237" target="_blank" title="Facebook"><img src={FB} /></a>
-                        <a href="https://www.youtube.com/channel/UCYAIiDVBbuO6V4BBERWe-LQ" target="_blank" title="Youtube"><img src={YTB} /></a>
+                        <NavLink style={{ paddingRight: 25 }} to="https://www.facebook.com/nguyenquang.truong.9237" target="_blank" title="Facebook"><img src={FB} /></NavLink>
+                        <NavLink to="https://www.youtube.com/channel/UCYAIiDVBbuO6V4BBERWe-LQ" target="_blank" title="Youtube"><img src={YTB} /></NavLink>
                     </div>
-                    </div>
+                </div>
             </div>
 
         </div>

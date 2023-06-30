@@ -1,9 +1,11 @@
-const CurrentPage = (props:any) => {
-const {page} = props
+import { NavLink } from "react-router-dom"
+
+const CurrentPage = (props: any) => {
+    const { page } = props
     return (
         <div className='contents-page'>
-            <a href="/">Trang chủ </a> {'> '}
-            <a href={`${page}`}>{page}</a>
+            <NavLink to="/">Trang chủ </NavLink> {'> '}
+            <NavLink to={`/${page}`}>{page}</NavLink>
         </div>
     )
 }

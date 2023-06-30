@@ -3,6 +3,7 @@ import CurrentPage from "../currentPage"
 import './index.scss'
 import Gioithieu from '../../../../public/gioithieu.jpg'
 import Gioithieu2 from '../../../../public/gioithieu2.jpg'
+import { NavLink } from "react-router-dom";
 
 const GioiThieu = () => {
     return (
@@ -17,13 +18,13 @@ const GioiThieu = () => {
                 </Col>
                 <Col className="left-link" xxl={5} style={{ paddingTop: 30 }}>
                     <div style={{ background: 'rgba(0,0,0,.3)', width: 300, height: 400 }}>
-                        <a className="active" href="/gioi-thieu"><b >GIỚI THIỆU</b><br /></a>
-                        <a   href="/faqs"><b>FAQS</b><br /></a>
-                        <a   href="/tuyen-dung"><b>TUYỂN DỤNG</b><br /></a>
-                        <a  href="/lien-he"> <b>LIÊN HỆ</b><br /></a>
-                        <a  href=""><b>ĐIỀU KHOẢN CHUNG</b><br /></a>
-                        <a  href=""><b>CHÍNH SÁCH THANH TOÁN VÉ TRỰC TUYẾN</b><br /></a>
-                        <a href="/megaPlus"><b>MEGA+</b><br /></a>
+                        <NavLink className="active" to="/gioi-thieu"><b >GIỚI THIỆU</b><br /></NavLink>
+                        <NavLink to="/faqs"><b>FAQS</b><br /></NavLink>
+                        <NavLink to="/tuyen-dung"><b>TUYỂN DỤNG</b><br /></NavLink>
+                        <NavLink to="/lien-he"> <b>LIÊN HỆ</b><br /></NavLink>
+                        <a href=""><b>ĐIỀU KHOẢN CHUNG</b><br /></a>
+                        <a href=""><b>CHÍNH SÁCH THANH TOÁN VÉ TRỰC TUYẾN</b><br /></a>
+                        <NavLink to="/megaPlus"><b>MEGA+</b><br /></NavLink>
                     </div>
 
                 </Col>
