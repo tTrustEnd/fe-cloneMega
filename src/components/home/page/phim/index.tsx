@@ -66,8 +66,8 @@ const Phim = () => {
                     {listFilms && listFilms.length > 0 &&
                         listFilms.map((item: IFilm, index) => {
                             return (
-                                <Col xl={11}>
-                                    <div className='khung' style={{ display: 'flex', background: ' rgb(190, 169, 127' }} key={`${index}`}>
+                                <Col xl={11}  key={`${index}`}>
+                                    <div className='khung' style={{ display: 'flex', background: ' rgb(190, 169, 127' }}>
 
                                         <div className="image">
                                             <NavLink to={`/phim/${item.name}`}> <img src={`${import.meta.env.VITE_BASE_URL}/imagefilms/${item.image}`} alt="" /></NavLink>

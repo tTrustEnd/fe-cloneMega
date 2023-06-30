@@ -9,6 +9,12 @@ import { IFilm } from '../page/phim';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 const FilmsNow = () => {
+    // function scrollToTop() {
+    //     window.scrollTo({
+    //       top: 0,
+    //       behavior: 'smooth' // Để có hiệu ứng cuộn mượt
+    //     });
+    //   }
     const [listFilms, setListFilms] = useState([])
     const [current, setCurrent] = useState(1)
     const [pageSize, _setPageSize] = useState(4)
@@ -106,13 +112,13 @@ const FilmsNow = () => {
 
                                 <div style={{ padding: '0 8px' }}>
                                     <button title='Xem chi tiết' className='btn btn-warning'>
-                                        <NavLink to={`/phim/${item.name}`} style={{ fontWeight: 700, margin: '0 auto' }}>Xem chi tiết</NavLink>
+                                        <a href={`/phim/${item.name}`}  style={{ fontWeight: 700, margin: '0 auto' }}>Xem chi tiết</a>
                                     </button >
                                 </div>
 
                                 <div>
-                                    <button title='Xem chi tiết' className='btn btn-warning'>
-                                        <span onClick={() => navigate(`/phim/${item.name}`)} style={{ fontWeight: 700, margin: '0 auto' }}> Mua vé</span>
+                                    <button title='Xem chi tiết' className='btn btn-warning'>   
+                                        <a href={`/phim/${item.name}`} style={{ fontWeight: 700, margin: '0 auto' }}> Mua vé</a>
                                     </button >
                                 </div>
 

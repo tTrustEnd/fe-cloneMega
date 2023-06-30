@@ -5,22 +5,19 @@ import { Link, NavLink } from 'react-router-dom';
 const HeaderFlex = () => {
 
 
-  const user = useSelector((state) => state.user.account.user)
+  const user = useSelector((state:any) => state.user.account.user)
   window.addEventListener('scroll', function () {
-    const stickyHeader = document.getElementById('header-flex');
-    var openDiv = document.getElementById('openDiv');
+    const stickyHeader:any = document.getElementById('header-flex');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > 100) {
       stickyHeader.style.top = '0';
-      openDiv.classList.remove('show');
     } else {
       stickyHeader.style.top = '-200px';
-      openDiv.classList.add('show');
     }
   });
 
   const openDiv = () => {
-    const openDiv = document.getElementById('openDiv');
+    const openDiv:any = document.getElementById('openDiv');
     openDiv.classList.toggle('open');
   }
 
@@ -69,7 +66,15 @@ const HeaderFlex = () => {
 
 
           <div className='open-Div' id="openDiv" style={{ justifyContent: 'center', paddingTop: 25, background: '#313132' }}>
-
+          <div className='content'>
+              <NavLink onClick={()=>openDiv()} to="/gioi-thieu"><ul>GIỚI THIỆU</ul></NavLink>
+              <NavLink onClick={()=>openDiv()} to="/su-kien"><ul>SỰ KIỆN</ul></NavLink>
+              <NavLink onClick={()=>openDiv()} to="/dich-vu"><ul>DỊCH VỤ</ul></NavLink>
+              <NavLink onClick={()=>openDiv()} to="/tuyen-dung"><ul>TUYỂN DỤNG</ul></NavLink>
+              <NavLink onClick={()=>openDiv()} to="/faqs"><ul>FAQS</ul></NavLink>
+              <NavLink onClick={()=>openDiv()} to="/lien-he"><ul>LIÊN HỆ</ul></NavLink>
+              <NavLink onClick={()=>openDiv()} to="/megaPlus"> <ul>MEGA+</ul></NavLink>
+            </div>
           </div>
 
         </div>

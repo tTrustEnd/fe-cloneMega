@@ -41,7 +41,6 @@ const BookKing = () => {
     const [totalChairBought, setTotalChairBought] = useState(0)
     const [chairSlected, setChairSelected] = useState(0)
     const [totalAll, setTotalAll] = useState(0);
-    const [bankCode, setBankCode] = useState('')
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isBuy, setIsBuy] = useState(true)
     const [isBuyChinhsach, setisBuyChinhsach] = useState(true)
@@ -338,9 +337,11 @@ const BookKing = () => {
         setIsModalOpen(false);
     };
     const [link, setLinh] = useState('')
+    const [bankCode, setBankCode] = useState<string>('')
+
     const VnpAPI = async () => {
         setisBuyChinhsach(!isBuyChinhsach)
-        await Order({ amount: totalAll, bankCode: bankCode, language: 'vn', token: localStorage.getItem('access_token') })
+        await Order({ amount: totalAll, bankCode: bankCode, language: 'vn' })
     }
     const getlinkbuy = async () => {
         setIsBuy(!isBuy)
@@ -675,7 +676,7 @@ const BookKing = () => {
                         <div style={{ color: 'yellow', fontSize: 15 }}>
                             Phương thức thanh toán
                         </div>
-                        <Checkbox onClick={() => VnpAPI()} style={{ color: 'white' }} onChange={(e) => { if (e.target.checked) { setBankCode('VNBANK') } }}>
+                        <Checkbox onClick={() => VnpAPI()} style={{ color: 'white' }} >
                             NGÂN HÀNG TÙY CHỌN (ATM CARD)
                         </Checkbox>
                         <Checkbox disabled={isBuyChinhsach} onClick={() => getlinkbuy()}>

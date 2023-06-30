@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import NotFound from './components/notfound';
 import ProtectedRoute from './components/protectedRouter';
-import Phim from './components/home/page/phim';
+import Phim, { IFilm } from './components/home/page/phim';
 import DetailFilm from './components/home/page/phim/detailPhim';
 import HeaderFlex from './components/header/headerFlex';
 import Rap from './components/home/page/rap';
@@ -193,9 +193,9 @@ const router = createBrowserRouter([
 
 
 function App() {
-  const saveaccount = useSelector(state => state.auth);
+  const saveaccount = useSelector((state:any) => state.auth);
   const dispatch = useDispatch();
-  const film = useSelector(state => state.saveFilm.film)
+  const film = useSelector((state:any) => state.saveFilm.film)
   const getAccount = () => {
     dispatch(doRefreshFilm(film))
       dispatch(doRefresh(saveaccount))
