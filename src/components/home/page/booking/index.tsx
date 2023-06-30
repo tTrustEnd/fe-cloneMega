@@ -7,7 +7,7 @@ import { MinusCircleOutlined, PlusCircleOutlined, RightCircleOutlined } from "@a
 import { GetLink, Order, getChairDidBuy, updateChair } from "../../../../service/api"
 import Countdown from "./countDownPassReloadPage"
 import { IChair } from "../.."
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import ModalBuyTicket from "../ModalBuyTicket"
 import { faL } from "@fortawesome/free-solid-svg-icons"
 import ModalLogin from "../../../login/modalLogin"
@@ -223,32 +223,32 @@ const BookKing = () => {
         }
         setTotalAll(total)
         setTotalChairBought(totalQuantity)
-    if(totalChairBought===1){
+        if (totalChairBought === 1) {
             setGreen1(true)
             setChairSelected(1)
 
         }
-        if(totalChairBought===2){
+        if (totalChairBought === 2) {
             setGreen1(true)
             setGreen2(true)
             setChairSelected(2)
 
         }
-        if(totalChairBought===3){
+        if (totalChairBought === 3) {
             setGreen1(true)
             setGreen2(true)
             setGreen3(true)
             setChairSelected(3)
 
         }
-        if(totalChairBought===4){
+        if (totalChairBought === 4) {
             setGreen1(true)
             setGreen2(true)
             setGreen3(true)
             setGreen4(true)
             setChairSelected(4)
-        } 
-        if(totalChairBought===5){
+        }
+        if (totalChairBought === 5) {
             setGreen1(true)
             setGreen2(true)
             setGreen3(true)
@@ -257,7 +257,7 @@ const BookKing = () => {
             setChairSelected(5)
 
         }
-        if(totalChairBought===6){
+        if (totalChairBought === 6) {
             setGreen1(true)
             setGreen2(true)
             setGreen4(true)
@@ -266,7 +266,7 @@ const BookKing = () => {
             setChairSelected(6)
 
         }
-        if(totalChairBought===7){
+        if (totalChairBought === 7) {
             setGreen1(true)
             setGreen2(true)
             setGreen3(true)
@@ -277,7 +277,7 @@ const BookKing = () => {
             setChairSelected(7)
 
         }
-        if(totalChairBought===8){
+        if (totalChairBought === 8) {
             setGreen1(true)
             setGreen2(true)
             setGreen3(true)
@@ -289,7 +289,7 @@ const BookKing = () => {
             setChairSelected(8)
 
         }
-        if(totalChairBought===9){
+        if (totalChairBought === 9) {
             setGreen1(true)
             setGreen2(true)
             setGreen3(true)
@@ -302,7 +302,7 @@ const BookKing = () => {
             setChairSelected(9)
 
         }
-        if(totalChairBought===10){
+        if (totalChairBought === 10) {
             setGreen1(true)
             setGreen2(true)
             setGreen3(true)
@@ -319,8 +319,8 @@ const BookKing = () => {
     }
     useEffect(() => {
         getChair()
-    },[totalChairBought])
-  
+    }, [totalChairBought])
+
     const close = () => {
         setShowModalBuyTicket(false)
         location.reload()
@@ -359,18 +359,18 @@ const BookKing = () => {
     return (
         <div>
             <CurrentPage
-                page={`Booking-${film.name}`}
+                page={`booking/${film.name}`}
             />
-   <div>
-                    <Modal footer={false} title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                        <h2>Hủy đặt vé?</h2>
-                        <span>Các thông tin sẽ không lưu</span>
-                        <div style={{ display: 'flex', justifyContent: 'end' }}>
-                            <button onClick={() => { navigate('/') }} className="btn btn-warning">Ok</button>
-                        </div>
+            <div>
+                <Modal footer={false} title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                    <h2>Hủy đặt vé?</h2>
+                    <span>Các thông tin sẽ không lưu</span>
+                    <div style={{ display: 'flex', justifyContent: 'end' }}>
+                        <button onClick={() => { navigate('/') }} className="btn btn-warning">Ok</button>
+                    </div>
 
-                    </Modal>
-                </div>
+                </Modal>
+            </div>
 
             <Row className="body-book" gutter={[20, 20]}>
 
@@ -680,7 +680,7 @@ const BookKing = () => {
                         </Checkbox>
                         <Checkbox disabled={isBuyChinhsach} onClick={() => getlinkbuy()}>
                             <div style={{ paddingLeft: 0, paddingTop: 20, fontSize: 15, color: 'white' }}> Tôi đã đọc và đồng ý với
-                                <a href=""> Chính sách thanh toán vé trực tuyến</a></div>
+                                <NavLink to=""> Chính sách thanh toán vé trực tuyến</NavLink></div>
                         </Checkbox>
                         <div style={{ color: 'red' }}>
                             (*)Vé đã mua không thể đổi hoặc hoàn tiền.
@@ -697,7 +697,7 @@ const BookKing = () => {
                                 }
                             }}>
                                 <button className="btn btn-warning" disabled={isBuy}>
-                                    {user && <a href={link}>THANH TOÁN</a>}
+                                    {user && <NavLink to={link}>THANH TOÁN</NavLink>}
                                     {!user && <div> THANH TOÁN </div>} </button>
                             </div>
 
