@@ -75,3 +75,12 @@
 .open-Div.show {
     display: none;
 }
+.dangxuatflex{
+    &:hover{
+        b{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+  
+}

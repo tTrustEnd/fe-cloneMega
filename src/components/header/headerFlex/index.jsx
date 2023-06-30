@@ -38,16 +38,16 @@ const HeaderFlex = () => {
           {user && user.name &&
             <div style={{ display: 'block',paddingTop:3,paddingLeft:15 }}>
 
-              <span className='hello' ><Link to="/phim">Chào bạn : {user.name} !</Link>
+              <span className='hello' ><Link to="#">Chào bạn : {user.name} !</Link>
               </span>
               <br /><i style={{color:"white"}}>  Điểm thưởng 0 {`>>`}</i> &nbsp;
-              <span
+              <span className='dangxuatflex'
                 onClick={() => {
                   localStorage.removeItem("access_token"),
                     localStorage.removeItem("persist:root"),
                     location.reload()
                 }} 
-                style={{ color: 'yellow', fontSize: 14, textAlign: 'center', height: 19, }}>Đăng xuất</span>
+                style={{ color: 'yellow', fontSize: 14, textAlign: 'center', height: 19, }}><b>Đăng xuất </b> </span>
             </div>}
           {!user &&
             <div style={{ display: 'flex', paddingTop: 15, paddingLeft: 35 }}>
@@ -69,16 +69,6 @@ const HeaderFlex = () => {
 
 
           <div className='open-Div' id="openDiv" style={{ justifyContent: 'center', paddingTop: 25, background: '#313132' }}>
-
-            <div className='content'>
-              <a href="/gioi-thieu"><ul>GIỚI THIỆU</ul></a>
-              <a href="/su-kien"><ul>SỰ KIỆN</ul></a>
-              <a href="/dich-vu"><ul>DỊCH VỤ</ul></a>
-              <a href="/tuyen-dung"><ul>TUYỂN DỤNG</ul></a>
-              <a href="/faqs"><ul>FAQS</ul></a>
-              <a href="/lien-he"><ul>LIÊN HỆ</ul></a>
-              <a href="/megaPlus"> <ul>MEGA+</ul></a>
-            </div>
 
           </div>
 
